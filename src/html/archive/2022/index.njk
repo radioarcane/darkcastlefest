@@ -1,0 +1,43 @@
+{% set pageTitle = 'Dark Castle Fest 2022' %}
+{% set metaDescription = 'Featuring live performances by Twin Tribes, Wingtips, Faux Fear, Vazum, and Blood Handsome.' %}
+{% set metaImage = "/images/dark-castle-2022.jpg" %}
+
+{% set thisYear = 2022 %}
+
+{% import '_macros/image.njk' as img %}
+{% import '_macros/performer-card.njk' as performerCard %}
+
+{% extends '_layouts/default.njk' %}
+
+{% block main %}
+    <article class="container box-gap pv-lg">
+        <h1 class="title">Dark Castle Fest {{ thisYear }}</h1>
+
+        <figure>
+            {{ img.picture(
+                    jpg="/images/dark-castle-2022.jpg",
+                    webp="/images/dark-castle-2022.webp",
+                    avif="/images/dark-castle-2022.avif",
+                    alt="Dark Castle Festival {{ thisYear }} Poster"
+            )}}
+        </figure>
+
+        <p>First Annual Dark Castle Music Festival featuring live performances by TWIN TRIBES, WINGTIPS, FAUX FEAR, VAZUM, and BLOOD HANDSOME.</p>
+
+        <p class="text-secondary">
+            <time datetime="2022-07-20">Wednesday July 20, 2022</time>
+        </p>
+
+        <section class="performer-cards pv-lg">
+            {% for band in performers %}
+                {% if band.year == thisYear and band.type == 'band' %}
+                    {% if loop.index > 3 %}
+                      {{ performerCard.card(band, true) }}
+                    {% else %}
+                      {{ performerCard.card(band, false) }}
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        </section>
+    </article>
+{% endblock %}

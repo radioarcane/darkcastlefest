@@ -1,0 +1,102 @@
+{% set pageTitle = band.name + ' | Dark Castle Fest' %}
+
+{% set metaDescription = band.description %}
+{% set metaImage = band.image %}
+
+{% set crumbs = [{
+   path: '/',
+   title: 'Dark Castle Festival'
+}, {
+   path: '/lineup',
+   title: band.year + ' Line Up'
+}, {
+   path: '/bands/' + band.slug,
+   title: band.name
+}] %}
+
+{% import '_macros/image.njk' as img %}
+{% import '_macros/breadcrumb.njk' as breadcrumb %}
+
+{% extends '_layouts/default.njk' %}
+
+{% block main %}
+<div class="container box-gap">
+   {{ breadcrumb.breadcrumb(crumbs) }}
+
+   <article id="{{ band.slug }}" class="l-performer">
+      <header class="l-performer-header">
+         <h1 class="l-performer-title">{{ band.name }}</h1>
+      </header>
+
+      <section class="l-performer-info">
+         <p class="l-performer-location mb-0">
+            <span aria-label="Location">
+               <img src="/images/icons/location.svg" inline class="icon" aria-hidden="true" />
+            </span>
+            <span>{{ band.location }}</span>
+         </p>
+
+         <p class="mb-0">
+            Dark Castle Festival {{ band.year }}
+         </p>
+      </section>
+
+      <section>
+         <figure class="l-performer-figure">
+            {{ img.picture(
+                  jpg=band.image,
+                  webp=band.imageWebp,
+                  avif=band.imageAvif,
+                  alt=band.name,
+                  className="l-performer-img"
+            ) }}
+         </figure>
+
+         <div class="l-performer-bio">
+            {% for item in band.content %}
+               <p>{{ item.text }}</p>
+            {% endfor %}
+         </div>
+      </section>
+
+      <footer class="l-performer-footer">
+         <section class="l-performer-links">
+            {% for name, link in band.links %}
+               {% if link %}
+                  <a href="{{ link }}" 
+                     target="_blank" 
+                     title="{{ band.name }} @ {{ name | capitalize }}"
+                     aria-label="{{ band.name }} @ {{ name | capitalize }}" 
+                     class="l-performer-link"
+                  >
+                     <img src="/images/icons/{{ name }}.svg" inline class="icon" aria-hidden="true" />
+                  </a>
+               {% endif %}
+            {% endfor %}
+         </section>
+
+         <hr />
+
+         <section class="l-perfomer-secondary">
+            {% if band.year == 2023 %}
+               <a class="btn btn--primary" href="{{ tickets }}" target="_blank">
+                  <img src="/images/icons/ticket.svg" class="icon ml-0" aria-hidden="true" inline /> <span class="inline-block">Purchase Tickets</a>
+               </a>
+            {% endif %}
+
+            <p>
+               {% if band.year == 2023 %}
+                  <a href="/lineup">
+                     <span class="inline-block">View the full Dark Castle Festival {{ band.year }} Line Up</span> <img src="/images/icons/right-open.svg" class="icon" aria-hidden="true" inline />
+                  </a>
+               {% else %}
+                  <a href="/archive/{{ band.year }}">
+                     <span class="inline-block">View the full Dark Castle Festival {{ band.year }} Line Up</span> <img src="/images/icons/right-open.svg" class="icon" aria-hidden="true" inline />
+                  </a>
+               {% endif %}
+            </p>
+         </section>
+      </footer>         
+   </article>
+</div>
+{% endblock %}

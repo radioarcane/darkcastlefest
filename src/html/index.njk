@@ -1,0 +1,83 @@
+{% set pageTitle = 'Dark Castle Fest 2023 - Louisville, KY' %}
+{% set metaDescription = "Radio Arcane presents Dark Castle Fest. A Gothic Music & Dark Arts Festival featuring performances by Astari Nite, The Kentucky Vampires, and more." %}
+{% set metaImage = "/images/dark-castle-festival-2023-poster.jpg" %}
+
+{% import '_macros/image.njk' as img %}
+
+{% extends '_layouts/default.njk' %}
+
+{% block main %}
+   <div class="container box-gap pv-lg">
+      <article>
+         <h1 class="title">Dark Castle Fest 2023</h1>
+
+         <div id="home-primary-grid" class="grid grid--center grid--collapse">
+            <div class="grid-item xs-12 md-6 lg-7">
+               <h2 class="mb-0">
+                  <a class="text-default" href="https://www.radio-arcane.com" target="_blank">Radio Arcane</a> presents <strong>Dark Castle Fest</strong><br>
+                  A Gothic Music & Dark Arts Festival
+               </h2>
+
+               <p class="text-secondary">
+                  <time datetime="2023-07-28">Friday July 28, 2023</time> and <time datetime="2023-07-29">Saturday July 29, 2023</time><br>
+                  Louisville, Kentucky
+               </p>
+
+               <p class="mb-0 text-secondary">Featuring live performances by:</p>
+
+               <ul class="inline-list">
+                  {% for band in performers %}
+                     {% if band.year == 2023 and band.type == 'band' %}
+                        <li>
+                           {{ band.name }}
+                        </li>
+                     {% endif %}
+                  {% endfor %}
+               </ul>
+
+               <p class="mb-0 text-secondary">DJs:</p>
+
+               <ul class="inline-list">
+                  {% for dj in performers %}
+                     {% if dj.year == 2023 and dj.type == 'dj' %}
+                        <li>
+                           {{ dj.name }}
+                        </li>
+                     {% endif %}
+                  {% endfor %}
+               </ul>
+
+               <p>
+                  Vendors &ndash; The Dark Market TBA<br>
+                  Food Truck &ndash; TBA
+               </p>
+
+               <a class="btn btn--primary" href="{{ tickets }}" target="_blank">
+                  <img src="/images/icons/ticket.svg" class="icon ml-0" aria-hidden="true" inline /> <span class="inline-block">Purchase Tickets</a>
+               </a>
+
+               <div class="location">
+                  <img src="/images/icons/location.svg" class="icon ml-0" aria-hidden="true" inline />
+                  <a class="location-title" href="https://www.art-sanctuary.org/" target="_blank">Art Sanctuary</a>
+                  <span class="location-address">
+                     1433 S Shelby St.<br>
+                     Louisville, Kentucky 40217
+                  </span>
+               </div>
+            </div>
+            <div class="grid-item xs-12 sm-10 md-6 lg-5 text-center">
+               <figure>
+                  {{ img.picture(
+                     jpg="/images/dark-castle-festival-2023-poster.jpg",
+                     webp="/images/dark-castle-festival-2023-poster.webp",
+                     avif="/images/dark-castle-festival-2023-poster.avif",
+                     alt="Dark Castle Festival 2023 Poster"
+                  )}}
+               </figure>
+            </div>
+         </div>
+      </article>
+{% endblock %}
+
+{% block custom_scripts %}
+{% endblock %}

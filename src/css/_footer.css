@@ -1,0 +1,4 @@
+#footer {
+    background: var(--background-mid);
+    padding: var(--space-lg) 0 var(--space-md);
+}

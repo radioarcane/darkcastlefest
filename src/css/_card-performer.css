@@ -1,0 +1,37 @@
+.performer-cards {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    gap: calc(var(--size-gap) * 2);
+}
+
+.performer-card {
+    width: 30%;
+}
+
+.performer-card .card-cover {
+    transition: all 250ms ease-in-out;
+    filter: grayscale(0);
+}
+
+.performer-card:hover .card-cover {
+    filter: grayscale(0.6);
+}
+
+.performer-card-location {
+    color: var(--color-text-secondary);
+    font-size: 75%;
+}
+
+.performer-card-footer {
+    padding-top: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: calc(var(--size-gap) / 2);
+    align-items: stretch;
+    font-size: 28px;
+}
+
+.performer-card-footer a {
+    color: var(--color-text);
+}

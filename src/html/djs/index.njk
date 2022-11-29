@@ -1,0 +1,37 @@
+{% set pageTitle = 'DJs | Dark Castle Fest' %}
+
+{% import '_macros/image.njk' as img %}
+
+{% extends '_layouts/default.njk' %}
+
+{% set years = [
+   2023
+] %}
+
+{% block main %}
+   <div class="container box-gap">
+      <h1>DJs</h1>
+
+      <p>Past and Future DJs who have performed at Dark Castle Festival</p>
+
+      {% for yr in years %}
+         <section>
+            <h2 class="title">Dark Castle Fest {{ yr }}</h2>
+
+            {% for dj in performers %}
+               <ul>
+                  {% if dj.year == yr and dj.type == 'dj' %}
+                     <li>
+                        <a href="{{ dj.path }}">
+                           {{ dj.name }}
+                        </a>
+                     </li>
+                  {% endif %}
+               </ul>
+            {% endfor %}
+         </section>
+
+         <hr>
+      {% endfor %}
+   </div>
+{% endblock %}

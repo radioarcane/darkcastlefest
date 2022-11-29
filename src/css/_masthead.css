@@ -1,0 +1,37 @@
+#masthead {
+    background: var(--background-mid);
+    box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);
+    position: relative;
+    padding: var(--space-sm);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+ 
+.masthead_social {
+    font-size: 45px;
+    color: var(--color-primary);
+
+    /*
+    position: absolute;
+    z-index: 10;
+    position: absolute;
+    left: -3000px;
+    right: 0;
+    width: 0;
+    */
+ }
+
+ @media screen and (min-width: 900px) {
+    .masthead_social {
+        font-size: 40px;
+
+        /*
+        left: auto;
+        width: auto;
+        position: relative;
+        padding-right: calc(var(--size-gap) / 2);
+        background: transparent;
+        */
+    }
+}

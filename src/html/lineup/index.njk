@@ -1,0 +1,159 @@
+{% set pageTitle = '2023 Line Up | Dark Castle Fest' %}
+
+{% set metaDescription = "Dark Castle Fest 2023 featuring Astari Nite, The Kentucky Vampires, The Waning Moon, The Palace of Tears, Scary Black, and more." %}
+
+{% set metaImage = "/images/dark-castle-festival-2023-poster.jpg" %}
+
+{% set currentYear = 2023 %}
+
+{% set friSchedule = [
+  ["06:00", "18:00", "Doors open"],
+  ["07:00", "19:00", "Ominous Erotica"],
+  ["07:30", "19:30", "break"],
+  ["07:40", "19:40", "Wireworks"],
+  ["08:10", "20:10", "break"],
+  ["08:20", "20:20", "In A Darkened Room"],
+  ["08:50", "20:50", "break"],
+  ["09:00", "21:00", "Happy Phantom"],
+  ["09:30", "21:30", "break"],
+  ["09:40", "21:40", "The Neuro Farm"],
+  ["10:10", "22:10", "break"],
+  ["10:20", "22:20", "The Kentucky Vampires"],
+  ["11:00", "23:00", "Bands over by 11pm"]
+] %}
+
+{% set satSchedule = [
+  ["06:00", "018:00", "Doors open"],
+  ["06:20", "018:20", "Sinister Senile"],
+  ["06:50", "018:50", "break"],
+  ["07:00", "019:00", "Chrysanthemum Ballroom"],
+  ["07:30", "019:30", "break"],
+  ["07:40", "019:40", "Motuvius Rex"],
+  ["08:10", "020:10", "break"],
+  ["08:20", "020:20", "Scary Black"],
+  ["08:50", "020:50", "break"],
+  ["09:00", "021:00", "The Palace of Tears"],
+  ["09:30", "021:30", "break"],
+  ["09:40", "021:40", "The Waning Moon"],
+  ["10:10", "022:10", "break"],
+  ["10:20", "022:20", "Astari Nite"],
+  ["11:00", "023:00", "Bands over by 11pm"]
+] %}
+
+{% import '_macros/image.njk' as img %}
+{% import '_macros/performer-card.njk' as performerCard %}
+
+{% extends '_layouts/default.njk' %}
+
+{% block main %}
+   <article class="container box-gap pv-lg">
+      <section id="info" class="pb-lg">
+        <h1 class="title">Dark Castle Fest {{ currentYear }} Line Up</h1>
+
+        <p>
+          <time datetime="2023-07-28">Friday July 28, 2023</time> and <time datetime="2023-07-29">Saturday July 29, 2023</time>
+        </p>
+
+        <p>
+          <strong>Ticket Options:</strong><br>
+          Weekend Pass &ndash; $65<br>
+          <sup class="text-secondary">*</sup>Babacastillo Pass &ndash; $95<br>
+          Single Day Pass - $45
+        </p>
+
+        <p class="text-secondary">
+          <small>
+            <sup>*</sup>Babacastillo Pass details: Full event pass plus event t-shirt, event poster autographed by The Kentucky Vampires, two event stickers, single packet of Taco Bell Fire Sauce autographed by Albie Mason of Scary Black and an option for a free pic taken with Dark Castle monster Babacastillo.
+          </small>
+        </p>
+
+        <a class="btn btn--primary" href="{{ tickets }}" target="_blank">
+          <img src="/images/icons/ticket.svg" class="icon ml-0" aria-hidden="true" inline /> <span class="inline-block">Purchase Tickets</a>
+        </a>
+
+        <p>
+          18 to enter<br>
+          <a href="#schedule">Event Schedule</a>
+          <br>
+          <a href="{{ social.facebookEvent }}" target="_blank">
+            Facebook Event Page
+          </a>
+          <br>
+          Event Location: <a href="https://www.google.com/maps/place/Art+Sanctuary/@38.2264103,-85.7413458,15z/data=!4m2!3m1!1s0x0:0xe8b5fa85d9ebd15f?ved=2ahUKEwjD0efWu_rfAhVKhq0KHV-nAdMQ_BIwDnoECAEQCA" target="_blank">Art Sanctuary</a>
+          <br>
+        </p>
+      </section>
+
+      <section id="bands" class="pb-lg">
+        <h2 class="title">Bands</h2>
+
+        <div class="cards performer-cards">
+            {% for band in performers %}
+                {% if band.year == currentYear and band.type == 'band' %}
+                    {{ performerCard.card(band, true) }}
+                {% endif %}
+            {% endfor %}
+        </div>
+      </section>
+
+      <section id="djs" class="pv-lg">
+        <h2 class="title">DJs</h2>
+
+        <div class="cards performer-cards">
+            {% for dj in performers %}
+                {% if dj.year == currentYear and dj.type == 'dj' %}
+                    {{ performerCard.card(dj, true) }}
+                {% endif %}
+            {% endfor %}
+        </div>
+      </section>
+
+      <section id="schedule" class="pv-lg">
+        <h3 class="title">Schedule (EST)</h3>
+
+        <div class="grid">
+          <section class="grid-item xs-12 md-6">
+            <h4 class="text-secondary title">
+              <time datetime="2023-07-28">Friday July 28, 2023</time><br>
+              <small><time datetime="2023-07-28T18:00">6:00pm</time> &ndash; <time datetime="2023-07-29T02:00">2:00am</time></small>
+            </h4>
+
+            <ol class="list-unstyled">
+              {% for item in friSchedule %}
+                <li>
+                  <time datetime="2028-07-28T{{ item[1] }}">{{ item[0] }}<small>pm</small></time> <span class="text-secondary">&ndash;</span> {{ item[2 ]}}
+                </li>
+              {% endfor %}
+            </ol>
+
+            <p>
+              DJs Dead Souls Gothic Lounge + Count Grozny before, between, and after bands until 2:00<small>am</small>.
+            </p>
+          </section>
+
+          <section class="grid-item xs-12 md-6">
+            <h4 class="text-secondary title">
+              <time datetime="2023-07-29">Saturday July 29, 2023</time><br>
+              <small><time datetime="2023-07-29T18:00">6:00pm</time> &ndash; <time datetime="2023-07-30T02:00">2:00am</time></small>
+            </h4>
+
+            <ol class="list-unstyled">
+              {% for item in satSchedule %}
+                <li>
+                  <time datetime="2028-07-29T{{ item[1] }}">{{ item[0] }}</time> <span class="text-secondary">&ndash;</span> {{ item[2 ]}}
+                </li>
+              {% endfor %}
+            </ol>
+
+            <p>
+              DJs Rickbats + Sorrow-Vomit before, between, and after bands until 2:00<small>am</small>.
+            </p>
+          </section>
+
+          <section class="grid-item xs-12 text-center pt-md">
+            <p class="text-secondary">Dark Market Vendors and food truck 6pm to midnight.</p>
+          </section>
+        </div>
+      </section>
+   </article>
+{% endblock %}

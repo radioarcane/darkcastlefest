@@ -1,0 +1,17 @@
+{% macro breadcrumb(links) %}
+    <ol class="breadcrumb">
+        {% for item in links %}
+            <li class="breadcrumb-item">
+                {% if loop.last %}
+                    <a href="{{ item.path }}" aria-current="page" class="breadcrumb-link">
+                        {{ item.title }}
+                    </a>
+                {% else %}
+                    <a href="{{ item.path }}" class="breadcrumb-link">
+                        {{ item.title }}
+                    </a>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ol>
+{% endmacro %}

@@ -1,0 +1,60 @@
+{% import '_macros/image.njk' as img %}
+
+{% macro card(performer, lazyLoad=false) %}
+    <section id="{{ performer.slug }}" class="card performer-card">
+        <div class="card-header">
+            <h4 class="card-title">
+                {{ performer.name }}
+            </h4>
+
+            <span class="performer-card-location">
+                {{ performer.location }}
+            </span>
+        </div>
+      
+        <div class="card-cover">
+            {% if lazyLoad %}
+             {{ img.lazyPic(
+                jpg=performer.image,
+                webp=performer.imageWebp,
+                avif=perfmer.imageAvif,
+                alt=performer.name,
+                className="card-img"
+            )}}
+            {% else %}
+                {{ img.picture(
+                    jpg=performer.image,
+                    webp=performer.imageWebp,
+                    avif=perfmer.imageAvif,
+                    alt=performer.name,
+                    className="card-img"
+                )}}
+            {% endif %}
+        </div>
+
+        <div class="card-content">
+            <p>
+                {#
+                {{ performer.content[0].text | truncate(150) }} <a href="{{ performer.path }}">Read More...</a>
+                #}
+                {{ performer.description }}
+                <br><a href="{{ performer.path }}">Read More...</a>
+            </p>
+        </div>
+
+        <footer class="card-footer performer-card-footer">
+            {% for name, link in performer.links %}
+               {% if link %}
+                  <a href="{{ link }}" 
+                     target="_blank" 
+                     title="{{ performer.name }} @ {{ name | capitalize }}"
+                     aria-label="{{ performer.name }} @ {{ name | capitalize }}" 
+                     class="performer-card-link"
+                  >
+                     <img src="/images/icons/{{ name }}.svg" inline class="icon" aria-hidden="true" />
+                  </a>
+               {% endif %}
+            {% endfor %}
+        </footer>
+    </section>
+{% endmacro %}

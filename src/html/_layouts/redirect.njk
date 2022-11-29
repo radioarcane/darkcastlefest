@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="{{ language }}">
+<head>
+   <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta http-equiv="refresh" content="0;url={{ domain }}{{ redirectPath }}" />
+</head>
+<body>
+   <p>
+      <a href="{{ domain }}{{ redirectPath }}">
+         Redirecting to: {{ domain }}{{ redirectPath }}
+      </a>
+   </p>
+
+   <script>
+      window.location.replace(`{{ domain }}{{ redirectPath }}`);
+   </script>
+</body>
+</html>

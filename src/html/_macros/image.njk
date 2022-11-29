@@ -1,0 +1,55 @@
+{% macro picture(jpg=false, webp=false, avif=false, png=false, alt='', className=false) %}
+   {% set classCode =' class="' + className + '"' if className %}
+
+   <picture>
+      {% if avif %}
+         <source srcset="{{ avif }}" type="image/avif">
+      {% endif %}
+
+      {% if webp %}
+         <source srcset="{{ webp }}" type="image/webp">
+      {% endif %}
+
+      {% if jpg %}
+         <source srcset="{{ jpg }}" type="image/jpeg">
+      {% endif %}
+
+      {% if png %}
+         <source srcset="{{ png }}" type="image/png">
+      {% endif %}
+
+      <img src="{{ png if png else jpg }}" alt="{{ alt }}"{{ classCode |safe if className }}>
+   </picture>
+{% endmacro %}
+
+{% macro lazyPic(jpg=false, webp=false, avif=false, png=false, alt='', className='') %}
+   {% set classes = 'lazy' %}
+
+   {% if className %}
+      {% set classes = classes + ' ' + className %}
+   {% endif %}
+
+   <picture>
+      {% if avif %}
+         <source srcset="{{ avif }}" type="image/avif">
+      {% endif %}
+
+      {% if webp %}
+         <source data-srcset="{{ webp }}" type="image/webp">
+      {% endif %}
+
+      {% if jpg %}
+         <source data-srcset="{{ jpg }}" type="image/jpeg">
+      {% endif %}
+
+      {% if png %}
+         <source data-srcset="{{ png }}" type="image/png">
+      {% endif %}
+
+      <img class="{{ classes }}" data-src="{{ png if png else jpg }}" alt="{{ alt }}">
+
+      <noscript>
+         <img class="{{ classes }}" src="{{ png if png else jpg }}" alt="{{ alt }}">
+      </noscript>
+   </picture>
+{% endmacro %}

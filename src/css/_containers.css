@@ -1,0 +1,9 @@
+.container {
+    margin: auto;
+    max-width: 1400px;
+}
+
+.box-gap {
+    padding-left: var(--size-gap);
+    padding-right: var(--size-gap);
+}

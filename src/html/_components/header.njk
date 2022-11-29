@@ -1,0 +1,51 @@
+{% import '_macros/image.njk' as img %}
+
+{% set menu = [{
+   title: 'Home',
+   path: '/'
+}, {
+   title: 'Line Up',
+   path: '/lineup'
+}, {
+   title: 'Info & Tickets',
+   path: '/info'
+}, {
+   title: 'Archive',
+   path: '/archive/2022'
+}, {
+   title: 'Louisville',
+   path: '/louisville'
+}] %}
+
+<header id="masthead" class="masthead" role="banner">
+   {#
+   <div class="masthead_nav">
+      <div class="masthead__nav_top">
+         <button id="nav-toggle-open" class="masthead__hamburger" title="Menu" aria-label="Open Navigation Menu" href="#navigation">
+            <img inline src="/images/icons/bars.svg" class="icon" aria-hidden="true" />
+         </button>
+
+         <button id="nav-toggle-close" class="masthead__close" title="Close Menu" aria-label="Close Navigation Menu">
+            <img inline src="/images/icons/times.svg" class="icon" aria-hidden="true" />
+         </button>
+      </div>
+   
+      <nav id="navigation" class="mast-nav">
+         <ul class="nav-menu">
+            {% for item in menu %}
+               <li class="nav-menu_item">
+                  <a class="nav-menu__link" href="{{ item.path }}">
+                     {{ item.title }}
+                  </a>
+               </li>
+            {% endfor %}
+         </ul>
+      </nav>
+   #}
+   
+
+      <nav class="masthead_social">
+         {% include "_partials/social-icons.njk" %}
+      </nav>
+   </div>
+</header>
