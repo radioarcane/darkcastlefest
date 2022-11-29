@@ -44,6 +44,7 @@ export function nunjucks(src = [], onComplete = f => f) {
                        .replace('.njk', '.html');
 
       jsonData.path = filePath;
+      jsonData.currPage = `/${ filePath }`.slice(0, -1);
       jsonData.canonical = `${ jsonData.domain }/${ filePath }`;
       jsonData.production = devMode === false;
       jsonData.cacheBust = Date.now();

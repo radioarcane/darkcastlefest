@@ -293,6 +293,36 @@
          }
       },
       {
+         "name": "Talking To Shadows",
+         "slug": "talking-to-shadows",
+         "path": "/bands/talking-to-shadows",
+         "type": "band",
+         "year": 2023,
+         "date": "2023-07-28",
+         "location": "Baltimore, Maryland",
+         "image": "/images/bands/talking-to-shadows.jpg",
+         "logo": null,
+         "description": "Alternative/shoegaze rock from Baltimore, MD.",
+         "content": [{
+            "type": "p",
+            "text": "Alternative/shoegaze rock from Baltimore, MD."
+         }],
+         "genres": ["Shoegaze", "Alternative", "Dream Pop"],
+         "links": {
+            "bandcamp": "https://talkingtoshadows.bandcamp.com",
+            "youtube": "https://www.youtube.com/@talkingtoshadows5806",
+            "spotify": "https://open.spotify.com/artist/2M5Rc376sJiHQH8lqguH6f",
+            "facebook": "https://www.facebook.com/TalkingtoShadowsMusic",
+            "instagram": "https://www.instagram.com/talkingtoshadows",
+            "linktree": "https://linktr.ee/talking2shadows",
+            "twitter": "",
+            "official": "",
+            "mixcloud": null,
+            "soundcloud": null,
+            "twitch": null
+         }
+      },
+      {
          "name": "Chrysanthemum Ballroom",
          "slug": "chrysanthemum-ballroom",
          "path": "/bands/chrysanthemum-ballroom",
@@ -456,10 +486,10 @@
          "location": "San Antonio, Texas",
          "image": "/images/djs/rick-bats.jpg",
          "logo": null,
-         "description": "Forthcoming ...",
+         "description": "Bio forthcoming...",
          "content": [{
             "type": "p",
-            "text": "..."
+            "text": "Bio forthcoming..."
          }],
          "genres": ["Gothic Rock", "Deathrock"],
          "links": {
