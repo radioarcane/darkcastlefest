@@ -5,7 +5,11 @@ main {
     padding-bottom: var(--space-lg);
 }
 
-@media (hover: none) {
+#root {
+    max-width: 1920px;
+} 
+
+@media (hover: hover) {
     #root {
         max-width: 1920px;
         background-image: url('/images/bg/knight.svg');
@@ -16,7 +20,7 @@ main {
     } 
 }
 
-@media (hover: none) and (min-width: 900px) {
+@media (hover: hover) and (min-width: 900px) {
     #root {
         background-position: left top;
         background-size: 100%;
