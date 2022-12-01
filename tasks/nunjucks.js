@@ -53,9 +53,16 @@ export function nunjucks(src = [], onComplete = f => f) {
          const webp = item.image ? item.image.replace('.jpg', '.webp') : null;
          const avif = item.image ? item.image.replace('.jpg', '.avif') : null;
 
+         let textContent = '';
+
+         item.content.forEach(o => {
+            textContent += ` ${ o.text }`;
+         });
+
          return Object.assign({}, item, {
             imageWebp: webp,
             imageAvif: avif,
+            textContent: textContent.trim(),
          });
       });
 

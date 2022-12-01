@@ -34,11 +34,15 @@
 
         <div class="card-content">
             <p>
+                
+                {{ performer.textContent | truncate(150) }}
+
                 {#
-                {{ performer.content[0].text | truncate(150) }} <a href="{{ performer.path }}">Read More...</a>
+                    {{ performer.description }}
                 #}
-                {{ performer.description }}
-                <br><a href="{{ performer.path }}">Read More...</a>
+                
+                <br>
+                <a href="{{ performer.path }}">Continue Reading...</a>
             </p>
         </div>
 

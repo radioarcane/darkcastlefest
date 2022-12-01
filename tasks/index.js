@@ -252,7 +252,7 @@ export function build() {
 
          fs.copySync("./src/static", "./public");
 
-         //siteMap();
+         siteMap();
       });
 
       resolve();

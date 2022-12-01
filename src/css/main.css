@@ -12,7 +12,9 @@
 @import "_breadcrumb.css";
 @import "_button.css";
 @import "_card.css";
+@import "_card-event.css";
 @import "_card-performer.css";
+@import "_util-text.css";
 @import "_containers.css";
 @import "_grid.css";
 @import "_icon.css";
@@ -30,7 +32,7 @@
 }
 
 .social-nav_item {
-    margin: 0 4px;
+    margin: 0;
 }
 
 .social-nav_link {

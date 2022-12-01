@@ -1,9 +1,16 @@
 .container {
     margin: auto;
-    max-width: 1400px;
+    max-width: var(--max-width);
 }
 
 .box-gap {
     padding-left: var(--size-gap);
     padding-right: var(--size-gap);
+}
+
+@media screen and (min-width: 900px) {
+    .box-gap {
+        padding-left: calc(var(--size-gap) * 2);
+        padding-right: calc(var(--size-gap) * 2);
+    }    
 }

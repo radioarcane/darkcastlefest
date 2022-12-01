@@ -1,14 +1,20 @@
 {% set pageTitle = band.name + ' | Dark Castle Fest' %}
 
-{% set metaDescription = band.description %}
+{% set metaDescription = band.textContent %}
 {% set metaImage = band.image %}
+
+{% set lineupPath = "/archive/" + band.year %}
+
+{% if band.year == currYear %}
+   {% set lineupPath = "/lineup" %}
+{% endif %}
 
 {% set crumbs = [{
    path: '/',
-   title: 'Dark Castle Festival'
+   title: 'Dark Castle Fest'
 }, {
-   path: '/lineup',
-   title: band.year + ' Line Up'
+   path: lineupPath,
+   title: band.year + ' Lineup'
 }, {
    path: '/bands/' + band.slug,
    title: band.name
@@ -37,7 +43,7 @@
          </p>
 
          <p class="mb-0">
-            Dark Castle Festival {{ band.year }}
+            Dark Castle Fest {{ band.year }}
          </p>
       </section>
 
@@ -87,11 +93,11 @@
             <p>
                {% if band.year == 2023 %}
                   <a href="/lineup">
-                     <span class="inline-block">View the full Dark Castle Festival {{ band.year }} Line Up</span> <img src="/images/icons/right-open.svg" class="icon" aria-hidden="true" inline />
+                     <span class="inline-block">View the full Dark Castle Fest {{ band.year }} Lineup</span> <img src="/images/icons/right-open.svg" class="icon" aria-hidden="true" inline />
                   </a>
                {% else %}
                   <a href="/archive/{{ band.year }}">
-                     <span class="inline-block">View the full Dark Castle Festival {{ band.year }} Line Up</span> <img src="/images/icons/right-open.svg" class="icon" aria-hidden="true" inline />
+                     <span class="inline-block">View the full Dark Castle Fest {{ band.year }} Lineup</span> <img src="/images/icons/right-open.svg" class="icon" aria-hidden="true" inline />
                   </a>
                {% endif %}
             </p>

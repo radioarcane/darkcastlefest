@@ -69,6 +69,36 @@
          }
       },
       {
+         "name": "The Waning Moon",
+         "slug": "the-waning-moon",
+         "path": "/bands/the-waning-moon",
+         "type": "band",
+         "year": 2023,
+         "date": "2023-07-29",
+         "location": "Costa Rica / Florida",
+         "image": "/images/bands/the-waning-moon.jpg",
+         "logo": "/images/bands/the-waning-moon-logo.jpg",
+         "description": "Goth Rock to its core, The Waning Moon combines the talents of Ariel Maniki (Ariel Maniki and The Black Halos) and Zac Campbell (The Kentucky Vampires).",
+         "content": [{
+            "type": "p",
+            "text": "The Waning Moon is a traditional goth rock band comprised of vocalist and guitarist Ariel Maniki (from Ariel Maniki and the Black Halos), Zac Campbell (from the Kentucky Vampires) on lead guitars, Magali C on keyboards, and Ian Joseph (DJ Vampdaddy) on bass. The Waning Moon pays homage to the sounds of 90s traditional goth rock while maintaining their own sound with modern influences."
+         }],
+         "genres": ["Gothic Rock"],
+         "links": {
+            "bandcamp": "https://thewaningmoonband.bandcamp.com",
+            "youtube": "https://www.youtube.com/@TheWaningMoon",
+            "spotify": "https://open.spotify.com/artist/7Il9RN1UMf1Ssz8mqmzJEK",
+            "facebook": "https://www.facebook.com/Thewaningmoonband",
+            "instagram": "https://www.instagram.com/thewaningmoonband",
+            "twitter": null,
+            "official": null,
+            "mixcloud": null,
+            "soundcloud": null,
+            "twitch": null,
+            "linktree": null
+         }
+      },
+      {
          "name": "The Neuro Farm",
          "slug": "the-neuro-farm",
          "path": "/bands/the-neuro-farm",
@@ -100,36 +130,6 @@
             "official": "https://www.theneurofarm.com",
             "soundcloud": "https://soundcloud.com/theneurofarm",
             "mixcloud": null,
-            "twitch": null,
-            "linktree": null
-         }
-      },
-      {
-         "name": "The Waning Moon",
-         "slug": "the-waning-moon",
-         "path": "/bands/the-waning-moon",
-         "type": "band",
-         "year": 2023,
-         "date": "2023-07-29",
-         "location": "Costa Rica / Florida",
-         "image": "/images/bands/the-waning-moon.jpg",
-         "logo": "/images/bands/the-waning-moon-logo.jpg",
-         "description": "Goth Rock to its core, The Waning Moon combines the talents of Ariel Maniki (Ariel Maniki and The Black Halos) and Zac Campbell (The Kentucky Vampires).",
-         "content": [{
-            "type": "p",
-            "text": "The Waning Moon is a traditional goth rock band comprised of vocalist and guitarist Ariel Maniki (from Ariel Maniki and the Black Halos), Zac Campbell (from the Kentucky Vampires) on lead guitars, Magali C on keyboards, and Ian Joseph (DJ Vampdaddy) on bass. The Waning Moon pays homage to the sounds of 90s traditional goth rock while maintaining their own sound with modern influences."
-         }],
-         "genres": ["Gothic Rock"],
-         "links": {
-            "bandcamp": "https://thewaningmoonband.bandcamp.com",
-            "youtube": "https://www.youtube.com/@TheWaningMoon",
-            "spotify": "https://open.spotify.com/artist/7Il9RN1UMf1Ssz8mqmzJEK",
-            "facebook": "https://www.facebook.com/Thewaningmoonband",
-            "instagram": "https://www.instagram.com/thewaningmoonband",
-            "twitter": null,
-            "official": null,
-            "mixcloud": null,
-            "soundcloud": null,
             "twitch": null,
             "linktree": null
          }
@@ -305,7 +305,10 @@
          "description": "Alternative/shoegaze rock from Baltimore, MD.",
          "content": [{
             "type": "p",
-            "text": "Alternative/shoegaze rock from Baltimore, MD."
+            "text": "Talking to Shadows is a rock and roll band from Baltimore, MD. Their sound is a mixture between contemporary dream pop and the familiar shoegaze and alternative genres of the 1990s. “It’s like [if] Mazzy Star and Hum had a baby.” The four piece formed in 2018 when singer and songwriter, Carolyn Gilde (Pai Mae) and bassist, Ron Weldon (Grey March) began writing songs together. Soon after, the two were joined by Greg Palmer (Sorry Marshal) on guitar and Alex Hughes on drums rounding out the current lineup."
+         }, {
+            "type": "p",
+            "text": "In the summer of 2020, the band recorded their first EP at Wright Way Studios in Baltimore, MD and released their self-titled debut in 2021, which featured the single “Ruined.” In July 2022, the band released the single “Give Me Some of You,” described by Buzzslayers as having “feedback riddled distorition… slamming drums and beautiful melodic vocals that all come together to build this atmosphere you can't help but get swept away with.” In August of 2022, the foursome went back into the studio and completed their first recording session in two years. This time the band elicited the expertise of J. Robbins (Jawbox, Burning Airlines) at Baltimore’s renowned Magpie Cage Studio who recorded and helped produce Talking to Shadows’ forthcoming sophomore effort set to be released sometime in 2023."
          }],
          "genres": ["Shoegaze", "Alternative", "Dream Pop"],
          "links": {

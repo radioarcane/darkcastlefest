@@ -1,5 +1,23 @@
 main {
-    background: var(--background);
     box-shadow: 0 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0 1px 3px 0px rgba(0,0,0,0.12);
     min-height: 80vh;
+    padding-top: var(--space-md);
+    padding-bottom: var(--space-lg);
+}
+
+
+#root {
+    max-width: 1920px;
+    background-image: url('/images/bg/knight.svg');
+    background-position: center center;
+    background-size: 95% 95%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+} 
+
+@media screen and (min-width: 900px) {
+    #root {
+        background-position: left top;
+        background-size: 100%;
+    } 
 }

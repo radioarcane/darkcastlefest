@@ -1,0 +1,52 @@
+{% set pageTitle = 'Archive | Dark Castle Fest' %}
+{% set metaDescription = 'Past Dark Castle Events presented by Radio Arcane in Louisville, Kentucky.' %}
+{% set metaImage = "/images/dark-castle-festival-2023-poster.jpg" %}
+
+{% set thisYear = 2022 %}
+
+{% import '_macros/image.njk' as img %}
+
+{% extends '_layouts/default.njk' %}
+
+{% block main %}
+    <article class="container box-gap">
+        <h1 class="title">Archive: Past Events</h1>
+
+        <div class="event-cards">
+            <section class="card event-card">
+                <div class="card-header">
+                    <h4 class="card-title">
+                        Dark Castle Fest 2022
+                    </h4>
+
+                    <span class="event-card-date">
+                        <time datetime="2022-07-20">July 20, 2022</time>
+                    </span>
+                </div>
+
+                <div class="card-cover">
+                    {{ img.picture(
+                        jpg="/images/dark-castle-2022.jpg",
+                        webp="/images/dark-castle-2022.webp",
+                        avif="/images/dark-castle-2022.avif",
+                        alt="Dark Castle Festival {{ thisYear }} Poster"
+                    )}}
+                </div>
+
+                <div class="card-content">
+                    <ul class="inline-list">
+                        {% for performer in performers %}
+                            {% if performer.year == 2022 %}
+                                <li>{{ performer.name }}</li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+
+                    <p>
+                        <a href="/archive/2022">View Info</a>
+                    </p>
+                </div>
+            </section>
+        </div>
+    </article>
+{% endblock %}

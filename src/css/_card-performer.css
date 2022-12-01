@@ -2,11 +2,27 @@
     display: flex;
     flex-wrap: wrap;
     align-items: stretch;
-    gap: calc(var(--size-gap) * 2);
+    gap: var(--size-gap);
 }
 
 .performer-card {
-    width: 30%;
+    width: 100%;
+}
+
+@media screen and (min-width: 600px) {
+    .performer-card {
+        width: 48%;
+    }   
+}
+
+@media screen and (min-width: 900px) {
+    .performer-cards {
+        gap: calc(var(--size-gap) * 2);
+    }
+
+    .performer-card {
+        width: 30%;
+    }   
 }
 
 .performer-card .card-cover {
@@ -27,7 +43,7 @@
     padding-top: 0;
     display: flex;
     flex-wrap: wrap;
-    gap: calc(var(--size-gap) / 2);
+    gap: calc(var(--size-gap) / 4);
     align-items: stretch;
     font-size: 28px;
 }

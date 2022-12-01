@@ -4,48 +4,66 @@
    title: 'Home',
    path: '/'
 }, {
-   title: 'Line Up',
+   title: 'Lineup',
    path: '/lineup'
 }, {
    title: 'Info & Tickets',
    path: '/info'
 }, {
    title: 'Archive',
-   path: '/archive/2022'
-}, {
-   title: 'Louisville',
-   path: '/louisville'
+   path: '/archive'
 }] %}
 
-<header id="masthead" class="masthead" role="banner">
-   {#
-   <div class="masthead_nav">
-      <div class="masthead__nav_top">
-         <button id="nav-toggle-open" class="masthead__hamburger" title="Menu" aria-label="Open Navigation Menu" href="#navigation">
-            <img inline src="/images/icons/bars.svg" class="icon" aria-hidden="true" />
-         </button>
+{% import '_macros/image.njk' as img %}
 
-         <button id="nav-toggle-close" class="masthead__close" title="Close Menu" aria-label="Close Navigation Menu">
-            <img inline src="/images/icons/times.svg" class="icon" aria-hidden="true" />
-         </button>
+<header id="masthead" class="masthead" role="banner">
+   <div class="masthead-top">
+      <div class="masthead-brand">
+         <a href="/">
+            {{ img.picture(
+               jpg="/images/banner-3.jpg",
+               webp="/images/banner-3.webp",
+               avif="/images/banner-3.avif",
+               alt="Dark Castle Fest"
+            )}}
+         </a>
       </div>
-   
+
+      <button id="menu-toggle" 
+              class="menu-toggle" 
+              title="Open Menu" 
+              aria-label="Open Menu" 
+              aria-haspopup="true"
+              aria-controls="navigation-menu"
+              aria-expanded="false"
+         >
+         <span></span>
+         <span></span>
+         <span></span>
+      </button>
+   </div>
+
+   <div class="masthead-nav">
       <nav id="navigation" class="mast-nav">
-         <ul class="nav-menu">
+         <ul id="navigation-menu" class="nav-menu" aria-labelledby="navigation-menu" role="menu">
             {% for item in menu %}
-               <li class="nav-menu_item">
-                  <a class="nav-menu__link" href="{{ item.path }}">
+               {% set ariaCode =  "" %}
+
+               {% if item.path == currPage %}
+                  {% set ariaCode =  'aria-page="current"' %}
+               {% endif %}
+
+               <li class="nav-menu-item">
+                  <a class="nav-menu-link" href="{{ item.path }}" role="menuitem" {{ ariaCode |safe }}>
                      {{ item.title }}
                   </a>
                </li>
             {% endfor %}
          </ul>
       </nav>
-   #}
-   
 
-      <nav class="masthead_social">
+      <address class="masthead-social">
          {% include "_partials/social-icons.njk" %}
-      </nav>
+      </address>
    </div>
 </header>
