@@ -28,7 +28,13 @@
 .card-content {
     padding: var(--space-sm) var(--space-md);
     color: var(--color-text-secondary);
-    font-size: 80%;
+    font-size: 90%;
+}
+
+@media screen and (min-width: 900px) {
+    .card-content {
+        font-size: 80%;
+    } 
 }
 
 .card-content *:last-child {

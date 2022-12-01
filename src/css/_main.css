@@ -5,17 +5,18 @@ main {
     padding-bottom: var(--space-lg);
 }
 
+@media (hover: none) {
+    #root {
+        max-width: 1920px;
+        background-image: url('/images/bg/knight.svg');
+        background-position: center center;
+        background-size: 95% 95%;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    } 
+}
 
-#root {
-    max-width: 1920px;
-    background-image: url('/images/bg/knight.svg');
-    background-position: center center;
-    background-size: 95% 95%;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-} 
-
-@media screen and (min-width: 900px) {
+@media (hover: none) and (min-width: 900px) {
     #root {
         background-position: left top;
         background-size: 100%;
