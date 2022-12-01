@@ -53,8 +53,8 @@
                   {% set ariaCode =  'aria-page="current"' %}
                {% endif %}
 
-               <li class="nav-menu-item">
-                  <a class="nav-menu-link" href="{{ item.path }}" role="menuitem" {{ ariaCode |safe }}>
+               <li class="nav-menu-item" role="menuitem">
+                  <a class="nav-menu-link" href="{{ item.path }}" {{ ariaCode |safe }}>
                      {{ item.title }}
                   </a>
                </li>
