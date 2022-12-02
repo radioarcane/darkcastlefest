@@ -480,19 +480,19 @@
          }
       },
       {
-         "name": "Rick Bats",
-         "slug": "rick-bats",
-         "path": "/djs/rick-bats",
+         "name": "DJ Rickbats",
+         "slug": "rickbats",
+         "path": "/djs/rickbats",
          "type": "dj",
          "year": 2023,
          "date": "2023-07-29",
          "location": "San Antonio, Texas",
-         "image": "/images/djs/rick-bats.jpg",
+         "image": "/images/djs/rickbats.jpg",
          "logo": null,
-         "description": "Bio forthcoming...",
+         "description": "Rick Shaddix (aka DJ Rickbats) has been dj’ing consistently in the Goth scene since 2000. In that time he has held several residencies such as Synthetic Void, Skeleton Danse, Nox and co-host of Decayed Lace on WEFT 90.1FM in Champaign, Illinois and 1313 in San Antonio,Texas as well as his own nights Stitches, Night Gallery and currently Something Wicked.",
          "content": [{
             "type": "p",
-            "text": "Bio forthcoming..."
+            "text": "Rick Shaddix (aka DJ Rickbats) has been dj’ing consistently in the Goth scene since 2000. In that time he has held several residencies such as Synthetic Void, Skeleton Danse, Nox and co-host of Decayed Lace on WEFT 90.1FM in Champaign, Illinois and 1313 in San Antonio,Texas as well as his own nights Stitches, Night Gallery and currently Something Wicked. Rick is well traveled with many guest spots and opened for many touring bands over the years and has participated in festivals such as Saturnalia, Convergence, Dracula’s Ball, Drop Dead, San La Muerte and Wave Gotik Treffen and has had interviews featured in magazines such as Gothic and Procession. In 2006 Rick along with Paul Cuska (Kiss The Blade/Strobelight Records) compiled the Kaliffornian Deathrock compilation for what was the 25th Strobelight Records release marking what was also the 25th anniversary of California Deathrock."
          }],
          "genres": ["Gothic Rock", "Deathrock"],
          "links": {
