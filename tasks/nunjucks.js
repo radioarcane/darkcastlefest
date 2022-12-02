@@ -79,6 +79,119 @@ export function nunjucks(src = [], onComplete = f => f) {
          }
       });
 
+      let jsonLd = {
+         '@context': 'https://schema.org',
+         '@type': 'MusicEvent',
+         name: 'Dark Castle Fest',
+         url: jsonData.domain,
+         startDate: '2023-07-28T18:00',
+         endDate: '2023-07-30T02:00',
+         image: jsonData.domain + '/images/dark-castle-festival-2023-poster.jpg',
+         description: 'Radio Arcane presents Dark Castle Fest: A Gothic Music & Dark Arts Festival',
+         sameAs: [
+            jsonData.social.facebook,
+            jsonData.social.instagram
+         ],
+         location: {
+            '@type': 'Place',
+            name: 'Art Sanctuary',
+            address: {
+               '@type': 'PostalAddress',
+               streetAddress: '1433 S Shelby St.',
+               addressLocality: 'Louisville',
+               addressRegion: 'Kentucky',
+               postalCode: '40217',
+               addressCountry: 'US'
+             },
+             hasMap: 'https://www.google.com/maps/place/Art+Sanctuary/@38.2264103,-85.7413458,15z/data=!4m2!3m1!1s0x0:0xe8b5fa85d9ebd15f?ved=2ahUKEwjD0efWu_rfAhVKhq0KHV-nAdMQ_BIwDnoECAEQCA',
+             sameAs: [
+               'http://www.art-sanctuary.org',
+               'https://www.facebook.com/pages/category/Arts---Entertainment/Art-Sanctuary-122260903695',
+               'https://www.instagram.com/art.sanctuary'
+             ]
+         },
+         offers: {
+            '@type': 'Offer',
+            description: 'Weekend Pass: $65, Single Day Pass: $45',
+            url: jsonData.tickets,
+            price: 65,
+            priceCurrency: 'USD',
+            availability: 'https://schema.org/InStock',
+            validFrom: '2023-07-30'
+         },
+         eventStatus: 'https://schema.org/EventScheduled',
+         organizer: {
+            '@type': 'Organization',
+            name: 'Radio Arcane',
+            logo: 'https://www.radio-arcane.com/img/radio-arcane.jpg',
+            url: 'https://www.radio-arcane.com',
+            sameAs: [
+               'https://www.facebook.com/RadioArcaneEvents',
+               'https://www.instagram.com/radio_arcane',
+               'https://www.youtube.com/@RadioArcane',
+               'https://www.twitch.tv/radio_arcane_tv',
+               'https://twitter.com/Radio_Arcane',
+               'https://open.spotify.com/show/1agKdqPjtH92Gw33dcLbS1',
+               'https://www.mixcloud.com/Radio-Arcane',
+               'https://soundcloud.com/radio_arcane'
+            ]
+         },
+         performer: jsonData.performers.filter(item => {
+            return item.year === 2023;
+         })
+         .map(item => {
+            let p = {
+               '@type': 'MusicGroup',
+               '@id': item.hasOwnProperty('@id') ? item['@id'] : null,
+               name: item.name,
+               description: item.textContent,
+               logo: (() => {
+                  if (item.logo) {
+                     return {
+                        '@type': 'ImageObject',
+                        url: jsonData.domain + item.logo
+                     };
+                  }
+
+                  return null;
+               })(),
+               image: {
+                  '@type': 'ImageObject',
+                  url: jsonData.domain + item.image
+               },
+               url: item.links.official ? item.links.official : null,
+               genre: item.genres || [],
+               sameAs: (() => {
+                  let links = [];
+
+                  Object.keys(item.links).forEach(prop => {
+                     if (item.links[prop] && prop !== 'official') {
+                        links.push(item.links[prop]);
+                     }
+                  });
+
+                  return links;
+               })(),
+            };
+
+            let obj = Object.assign({}, p);
+
+            for (const prop in obj) {
+               if (obj[prop] === null) {
+                  delete obj[prop];
+               }
+            }
+            
+            return obj;
+         }),
+      };
+
+
+      jsonData.jsonLd = {
+         '2023': JSON.stringify(jsonLd),
+      };
+
+
       return jsonData;
    }))
    .on('error', function(err) {

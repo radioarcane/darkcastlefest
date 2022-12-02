@@ -80,4 +80,7 @@
 {% endblock %}
 
 {% block custom_scripts %}
+   <script type="application/ld+json">
+      {{ jsonLd['2023'] |safe }}
+   </script>
 {% endblock %}

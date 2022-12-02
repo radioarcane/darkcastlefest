@@ -1,5 +1,6 @@
 {
    "performers": [{
+         "@id": "https://musicbrainz.org/artist/87770db3-ed30-424e-9bea-d79011c7189e",
          "name": "Astari Nite",
          "slug": "astari-nite",
          "path": "/bands/astari-nite",
@@ -33,6 +34,7 @@
          }
       },
       {
+         "@id": "https://musicbrainz.org/artist/922ecc37-24f8-4674-bee7-5257af8f8c25",
          "name": "The Kentucky Vampires",
          "slug": "the-kentucky-vampires",
          "path": "/bands/the-kentucky-vampires",
@@ -69,6 +71,7 @@
          }
       },
       {
+         "@id": "https://musicbrainz.org/artist/a0c3bb14-13ce-4084-903f-3e39590939f2",
          "name": "The Waning Moon",
          "slug": "the-waning-moon",
          "path": "/bands/the-waning-moon",
@@ -135,6 +138,7 @@
          }
       },
       {
+         "@id": "https://musicbrainz.org/artist/31debc41-73b9-4cdb-898d-a82de46ce7c6",
          "name": "The Palace of Tears",
          "slug": "the-palace-of-tears",
          "path": "/bands/the-palace-of-tears",
@@ -200,6 +204,7 @@
          }
       },
       {
+         "@id": "https://musicbrainz.org/artist/58235a60-c5cc-4d83-b26d-c94b57048e83",
          "name": "Scary Black",
          "slug": "scary-black",
          "path": "/bands/scary-black",
@@ -260,6 +265,7 @@
          }
       },
       {
+         "@id": "https://musicbrainz.org/artist/0172f3f7-affd-4ded-8d26-1813d983d6a6",
          "name": "Motuvius Rex",
          "slug": "motuvius-rex",
          "path": "/bands/motuvius-rex",
@@ -356,6 +362,7 @@
          }
       },
       {
+         "@id": "https://musicbrainz.org/artist/46b35b30-39c3-4490-98d9-a1e82c8260a4",
          "name": "Wireworks",
          "slug": "wireworks",
          "path": "/bands/wireworks",
@@ -386,6 +393,7 @@
          }
       },
       {
+         "@id": "https://musicbrainz.org/artist/9e05fa31-045b-455d-8c64-a386a9acc023",
          "name": "Ominous Erotica",
          "slug": "ominous-erotica",
          "path": "/bands/ominous-erotica",
@@ -606,6 +614,7 @@
          }
       },
       {
+         "@id": "https://musicbrainz.org/artist/bf629fc0-2d07-4fa3-90dd-1e77629be935",
          "name": "Twin Tribes",
          "slug": "twin-tribes",
          "path": "/bands/twin-tribes",
@@ -636,6 +645,7 @@
          }
       },
       {
+         "@id": "https://musicbrainz.org/artist/0d6ba8ae-2c2c-4f01-bd56-a3971bfcfc03",
          "name": "Wingtips",
          "slug": "wingtips",
          "path": "/bands/wingtips",
@@ -699,6 +709,7 @@
          }
       },
       {
+         "@id": "https://musicbrainz.org/artist/ad70e2ee-c64b-4351-948a-caa1e6a20598",
          "name": "Vazum",
          "slug": "vazum",
          "path": "/bands/vazum.jpg",
@@ -729,6 +740,7 @@
          }
       },
       {
+         "@id": "https://musicbrainz.org/artist/9c3c7673-d5ce-46d6-8656-dfae94af04ec",
          "name": "Blood Handsome",
          "slug": "blood-handsome",
          "path": "/bands/blood-handsome",
