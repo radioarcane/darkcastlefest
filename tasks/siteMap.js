@@ -16,9 +16,10 @@ const siteData = getJsonData();
 const fileFilter = filter([
    '**',
    '!*public/page-0.html',
-   '!*public/error/index.html',
-   '!*public/error/404.html',
-   '!*public/error/error.html',
+   '!*public/error*',
+   '!*public/404*',
+   '!*public/google*',
+   '!*public/djs/rick-bats/*'
 ], {
    restore: false
 });
