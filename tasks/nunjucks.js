@@ -86,6 +86,8 @@ export function nunjucks(src = [], onComplete = f => f) {
          url: jsonData.domain,
          startDate: '2023-07-28T18:00',
          endDate: '2023-07-30T02:00',
+         eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+         eventStatus: "https://schema.org/EventScheduled",
          image: jsonData.domain + '/images/dark-castle-festival-2023-poster.jpg',
          description: 'Radio Arcane presents Dark Castle Fest: A Gothic Music & Dark Arts Festival',
          sameAs: [
