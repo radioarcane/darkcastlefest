@@ -13,23 +13,25 @@
         </div>
       
         <div class="card-cover">
-            {% if lazyLoad %}
-             {{ img.lazyPic(
-                jpg=performer.image,
-                webp=performer.imageWebp,
-                avif=perfmer.imageAvif,
-                alt=performer.name,
-                className="card-img"
-            )}}
-            {% else %}
-                {{ img.picture(
+            <a href="{{ performer.path }}">
+                {% if lazyLoad %}
+                {{ img.lazyPic(
                     jpg=performer.image,
                     webp=performer.imageWebp,
                     avif=perfmer.imageAvif,
                     alt=performer.name,
                     className="card-img"
                 )}}
-            {% endif %}
+                {% else %}
+                    {{ img.picture(
+                        jpg=performer.image,
+                        webp=performer.imageWebp,
+                        avif=perfmer.imageAvif,
+                        alt=performer.name,
+                        className="card-img"
+                    )}}
+                {% endif %}
+            </a>
         </div>
 
         <div class="card-content">

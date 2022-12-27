@@ -12,7 +12,7 @@
     <article class="container box-gap">
         <h1 class="title">Archive: Past Events</h1>
 
-        <div class="event-cards">
+        <div class="event-cards pb-md">
             <section class="card event-card">
                 <div class="card-header">
                     <h4 class="card-title">
@@ -25,15 +25,17 @@
                 </div>
 
                 <div class="card-cover">
-                    {{ img.picture(
-                        jpg="/images/dark-castle-2022.jpg",
-                        webp="/images/dark-castle-2022.webp",
-                        avif="/images/dark-castle-2022.avif",
-                        alt="Dark Castle Festival {{ thisYear }} Poster"
-                    )}}
+                    <a href="/archive/2022">
+                        {{ img.picture(
+                            jpg="/images/dark-castle-2022.jpg",
+                            webp="/images/dark-castle-2022.webp",
+                            avif="/images/dark-castle-2022.avif",
+                            alt="Dark Castle Festival {{ thisYear }} Poster"
+                        )}}
+                    </a>
                 </div>
 
-                <div class="card-content">
+                <div class="card-content pb-md">
                     <ul class="inline-list">
                         {% for performer in performers %}
                             {% if performer.year == 2022 %}
@@ -42,9 +44,9 @@
                         {% endfor %}
                     </ul>
 
-                    <p>
-                        <a href="/archive/2022">View Info</a>
-                    </p>
+                    <a class="btn" href="/archive/2022">
+                        View Info
+                    </a>
                 </div>
             </section>
         </div>
