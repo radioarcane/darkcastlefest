@@ -435,7 +435,7 @@
          ],
          "genres": ["Gothic", "Darkwave"],
          "links": {
-            "bandcamp": null,
+            "bandcamp": "https://ominouserotica.bandcamp.com",
             "spotify": null,
             "youtube": null,
             "facebook": null,
