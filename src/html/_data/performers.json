@@ -169,38 +169,34 @@
          }
       },
       {
-         "name": "Happy Phantom",
-         "slug": "happy-phantom",
-         "path": "/bands/happy-phantom",
+         "name": "Dead Cool",
+         "slug": "dead-cool",
+         "path": "/bands/dead-cool",
          "type": "band",
          "date": "2023-07-28",
          "year": 2023,
-         "location": "Dallas, Texas",
-         "image": "/images/bands/happy-phantom.jpg",
-         "logo": "/images/bands/happy-phantom-logo.png",
-         "description": "Happy Phantom is a five piece Dark Wave, Cold Wave, Post Punk, Dream Goth band formed by SEVIT front man and singer/song writer, and multi instrumentalist.",
+         "location": "Wilmington, North Carolina",
+         "image": "/images/bands/dead-cool.jpg",
+         "logo": null,
+         "description": "Dead Cool is a dark electronic duo formed in 2020 by husband and wife duo, Johnny and Angela Yeagher. Their sound combines elements of darkwave, post-punk and synth pop.",
          "content": [{
                "type": "p",
-               "text": "Happy Phantom is a five piece post punk, dark wave, cold wave, band originated by Jackie Legos, Colby Sias and Alex Lohmann."
-            },
-            {
-               "type": "p",
-               "text": "The group is based out of the Dallas Texas area and consists of additional musicians Mark Smith and Chris Soda. Happy Phantom recently released their debut album “REQUIEM” under the Dark Entry Records label in Pittsburgh PA."
+               "text": "Dead Cool is a dark electronic duo formed in 2020 by husband and wife duo, Johnny and Angela Yeagher. They currently reside in Wilmington, NC, USA. Their sound combines elements of darkwave, post-punk and synth pop. They have released 8 singles to date, have been featured in Procession Magazine performed live at Absolution FEST as well as  rated in the Top 50 Goth Bands of 2022 by Goths Worldwide. They have performed with Bootblacks, ACTORS, Riki, Astari Nite, Kanga, Korine, Vision Video, Xeno & Oaklander and Rosegarden Funeral Party just to name a few. They are known for their catchy dark anthems and spectacularly spooky stage performance. The band is building steam all over the world and quickly becoming one of the top darkwave bands currently on the scene."
             }
          ],
-         "genres": ["Post-Punk", "Darkwave", "Coldwave"],
+         "genres": ["Darkwave", "Post-Punk", "Synthpop"],
          "links": {
-            "bandcamp": "https://happyphantommusic.bandcamp.com",
-            "facebook": "https://www.facebook.com/HappyPhantomMusicUSA",
-            "instagram": "https://www.instagram.com/happyphantommusicusa",
-            "twitter": "https://twitter.com/HappyPhantom17",
-            "official": "https://happyphantomband.wixsite.com/music",
-            "soundcloud": "https://soundcloud.com/happyphantomband",
-            "spotify": null,
-            "youtube": null,
+            "bandcamp": "https://deadcool.bandcamp.com",
+            "facebook": "http://www.facebook.com/deadcoolband",
+            "instagram": "https://instagram.com/deadcoolband",
+            "twitter": null,
+            "official": null,
+            "soundcloud": "https://soundcloud.com/deadcoolband",
+            "spotify": "https://open.spotify.com/artist/2XXpwbjg9u2HcdD7VKHTkl?si=3TqOASzCQMmDJe_x4ZBP6Q",
+            "youtube": "https://www.youtube.com/@DEADCOOLBAND",
             "mixcloud": null,
             "twitch": null,
-            "linktree": null
+            "linktree": "https://linktr.ee/deadcool"
          }
       },
       {
