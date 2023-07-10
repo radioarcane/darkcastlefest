@@ -8,7 +8,7 @@
 
 {% block main %}
    <div class="container box-gap">
-      <article>
+      <article class="pb-lg">
          <h1 class="title">Dark Castle Fest 2023</h1>
 
          <section class="grid grid--center grid--collapse">
@@ -48,8 +48,9 @@
                </ul>
 
                <p>
-                  Vendors &ndash; The Dark Market<br>
-                  Food Truck &ndash; TBA
+                  <span class="text-secondary">Facilitator of Festivities &ndash;</span> Father James Mitchell<br>
+                  <span class="text-secondary">Vendors &ndash;</span> The Dark Market<br>
+                  <span class="text-secondary">Food Truck &ndash;</span> TBA
                </p>
 
                <a class="btn btn--primary" href="{{ tickets }}" target="_blank">
@@ -68,15 +69,71 @@
             <div class="grid-item xs-12 sm-10 md-6 lg-5 text-center">
                <figure>
                   {{ img.picture(
-                     jpg="/images/dark-castle-festival-2023.jpg",
-                     webp="/images/dark-castle-festival-2023.webp",
-                     avif="/images/dark-castle-festival-2023.avif",
+                     jpg="/images/dark-castle-festival-2023-gothic-music.jpg",
+                     webp="/images/dark-castle-festival-2023-gothic-music.webp",
+                     avif="/images/dark-castle-festival-2023-gothic-music.avif",
                      alt="Dark Castle Festival 2023 Poster"
                   )}}
                </figure>
             </div>
          </section>
       </article>
+
+      <aside class="pb-sm">
+         <h3 class="title">Sponsors</h3>
+
+         <div class="cards">
+            <div class="card">
+               <div class="card-header">
+                  <h4 class="card-title">
+                     Moon Coil Media
+                  </h4>
+               </div>
+
+               <div class="card-content">
+                  <p>
+                     Moon Coil Media is the premier PR & artist management agency specializing in the following genres: goth, industrial, ebm, darkwave, post-punk, synthpop, horror punk, deathrock & extreme metal.
+                  </p>
+               </div>
+
+               <footer class="card-footer performer-card-footer">
+                  <a href="https://mooncoilmedia.com" 
+                     target="_blank" 
+                     title="Moon Coil Media Official Website"
+                     aria-label="Moon Coil Media Official Website" 
+                     class="performer-card-link"
+                  >
+                     <img src="/images/icons/official.svg" inline class="icon" aria-hidden="true" />
+                  </a>
+
+                  <a href="https://www.facebook.com/Moon-Coil-Media-106151935362238" 
+                     target="_blank" 
+                     title="Moon Coil Media @ Facebook"
+                     aria-label="Moon Coil Media @ Facebook" 
+                     class="performer-card-link"
+                  >
+                     <img src="/images/icons/facebook.svg" inline class="icon" aria-hidden="true" />
+                  </a>
+
+                  <a href="https://www.instagram.com/mooncoilmedia" 
+                     target="_blank" 
+                     title="Moon Coil Media @ Instagram"
+                     aria-label="Moon Coil Media @ Instagram" 
+                  >
+                     <img src="/images/icons/instagram.svg" inline class="icon" aria-hidden="true" />
+                  </a>
+
+                  <a href="https://twitter.com/MoonCoilMedia" 
+                     target="_blank" 
+                     title="Moon Coil Media @ Twitter"
+                     aria-label="Moon Coil Media @ Twitter" 
+                  >
+                     <img src="/images/icons/twitter.svg" inline class="icon" aria-hidden="true" />
+                  </a>
+               </footer>
+            </div>
+         </div>
+      </aisde>
 {% endblock %}
 
 {% block custom_scripts %}
