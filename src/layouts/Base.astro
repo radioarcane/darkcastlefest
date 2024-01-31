@@ -1,0 +1,57 @@
+---
+import "../styles/main.css";
+import SiteHeader from "../components/SiteHeader.astro";
+import SiteFooter from "../components/SiteFooter.astro";
+import Sponsors from "../components/Sponsors.astro";
+import GoogleAnalytics from "../components/GoogleAnalytics.astro";
+---
+
+<!doctype html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width" />
+
+      <slot name="seo" />
+
+      <link
+         rel="apple-touch-icon"
+         sizes="180x180"
+         href="/apple-touch-icon.png"
+      />
+      <link
+         rel="icon"
+         type="image/png"
+         sizes="32x32"
+         href="/favicon-32x32.png"
+      />
+      <link
+         rel="icon"
+         type="image/png"
+         sizes="16x16"
+         href="/favicon-16x16.png"
+      />
+      <link rel="manifest" href="/site.webmanifest" />
+      <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#121212" />
+      <meta name="msapplication-TileColor" content="#da532c" />
+      <meta name="theme-color" content="#121212" />
+      <link rel="sitemap" href="/sitemap-index.xml" />
+   </head>
+   <body>
+      <div id="root">
+         <SiteHeader />
+
+         <main id="main" role="main">
+            <slot />
+         </main>
+
+         <Sponsors />
+
+         <SiteFooter />
+      </div>
+
+      <GoogleAnalytics />
+
+      <slot name="jsonLd" />
+   </body>
+</html>

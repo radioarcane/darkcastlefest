@@ -1,0 +1,149 @@
+---
+import { SEO } from "astro-seo";
+import { getCollection, getEntry } from "astro:content";
+import { Picture } from "astro:assets";
+import { musicEventSchema } from "../util/jsonLd";
+import Layout from "../layouts/Base.astro";
+import Container from "../components/Container.astro";
+import Icon from "../components/Icon.astro";
+import Location from "../components/Location.astro";
+
+import darkCastleFestPoster from "../images/dark-castle-festival-2023-gothic-music.jpg";
+
+const { currentYear, domain, siteName } = Astro.locals;
+
+const allEvents = await getCollection("events");
+const nextEvent = allEvents.find(({ data }) => data.year === currentYear);
+const nextEventBands = nextEvent?.data.bands || [];
+const nextEventDjs = nextEvent?.data.djs || [];
+
+const location = nextEvent
+   ? await getEntry("locations", nextEvent.data.location.slug)
+   : null;
+
+let bands = [];
+let djs = [];
+
+for (const { slug } of nextEventBands) {
+   const band = await getEntry("performers", slug);
+
+   if (band) {
+      bands.push(band);
+   }
+}
+
+for (const { slug } of nextEventDjs) {
+   const dj = await getEntry("performers", slug);
+
+   if (dj) {
+      djs.push(dj);
+   }
+}
+
+const jsonSchema = nextEvent ? await musicEventSchema(nextEvent.slug) : {};
+---
+
+<Layout>
+   <SEO
+      slot="seo"
+      title="Dark Castle Fest 2024 - Louisville, KY"
+      description="Radio Arcane presents Dark Castle Fest. A Gothic Music & Dark Arts Festival featuring performances by Astari Nite, The Kentucky Vampires, and more."
+      openGraph={{
+         basic: {
+            title: "Dark Castle Fest - Louisville, KY",
+            image: `${domain}/images/dark-castle-festival-2023.jpg`,
+            type: "website",
+            url: domain,
+         },
+         optional: {
+            locale: "en_US",
+            siteName,
+         },
+      }}
+   />
+
+   <Container boxGap={true} tag="article">
+      <h1 class="title">{nextEvent?.data?.title}</h1>
+
+      <section class="grid grid--center grid--collapse">
+         <div class="grid-item xs-12 md-6 lg-7">
+            <h2 class="mb-0">
+               <a
+                  class="text-default"
+                  href="https://www.radio-arcane.com"
+                  target="_blank">Radio Arcane</a
+               > presents Dark Castle Fest<br />
+               A Gothic Music & Dark Arts Festival
+            </h2>
+
+            <p class="text-secondary">
+               <time datetime="2023-07-28">Friday July 28, 2023</time> and <time
+                  datetime="2023-07-29">Saturday July 29, 2023</time
+               ><br />
+               Louisville, Kentucky
+            </p>
+
+            <p class="mb-0 text-secondary">Featuring live performances by:</p>
+
+            <ul class="inline-list">
+               {bands.map(({ data }) => <li>{data.name}</li>)}
+            </ul>
+
+            <p class="mb-0 text-secondary">DJs:</p>
+
+            <ul class="inline-list">
+               {djs.map(({ data }) => <li>{data.name}</li>)}
+            </ul>
+
+            <p>
+               <span class="text-secondary"
+                  >Facilitator of Festivities &ndash;</span
+               > Father James Mitchell<br />
+               <span class="text-secondary">Vendors &ndash;</span>
+               <a
+                  href="https://www.facebook.com/darkmarketky"
+                  target="_blank"
+                  rel="noopener">The Dark Market</a
+               ><br />
+               <span class="text-secondary">Food Truck &ndash;</span>
+               <a
+                  href="https://www.facebook.com/FrightBites"
+                  target="_blank"
+                  rel="noopener">Fright Bites</a
+               >
+            </p>
+
+            {
+               nextEvent?.data?.ticketsUrl && (
+                  <a
+                     class="btn btn--primary"
+                     href={nextEvent.data.ticketsUrl}
+                     target="_blank"
+                  >
+                     <Icon icon="ticket" />
+                     <span class="inline-block">Purchase Tickets</span>
+                  </a>
+               )
+            }
+
+            {location && <Location location={location} />}
+         </div>
+         <div class="grid-item xs-12 sm-10 md-6 lg-5 text-center">
+            <figure>
+               <Picture
+                  src={darkCastleFestPoster}
+                  formats={["webp", "avif"]}
+                  alt="Dark Castle Festival 2023 Poster"
+                  fallbackFormat="jpg"
+               />
+            </figure>
+         </div>
+      </section>
+   </Container>
+
+   <script
+      slot="jsonLd"
+      type="application/ld+json"
+      set:html={JSON.stringify(jsonSchema)}
+   />
+</Layout>

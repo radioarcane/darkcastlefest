@@ -1,0 +1,41 @@
+---
+import type { HTMLTag } from "astro/types";
+
+interface Props {
+   collapse?: boolean;
+   center?: boolean;
+   centerItems?: boolean;
+   classes?: string;
+   tag?: HTMLTag;
+}
+
+const {
+   tag: Element = "div",
+   collapse,
+   center,
+   centerItems,
+   classes,
+} = Astro.props;
+
+const classNames = ["grid"];
+
+if (collapse) {
+   classNames.push(`grid--collapse`);
+}
+
+if (center) {
+   classNames.push(`grid--center`);
+}
+
+if (centerItems) {
+   classNames.push(`grid--center-items`);
+}
+
+if (classes) {
+   classNames.push(classes);
+}
+---
+
+<Element class={classNames.join(" ")}>
+   <slot />
+</Element>

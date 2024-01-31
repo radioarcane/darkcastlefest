@@ -1,0 +1,48 @@
+---
+export interface Props {
+    facebook: string;
+    instagram: string;
+    spotify?: string;
+}
+
+import Icon from "./Icon.astro";
+
+const socialLinks = [
+   {
+      url: Astro.props?.facebook,
+      title: "Dark Castle Fest @ Facebook",
+      icon: "facebook-square",
+   },
+   {
+      url: Astro.props?.instagram,
+      title: "Dark Castle Fest @ Instagram",
+      icon: "instagram",
+   },
+   {
+      url: Astro.props?.spotify,
+      title: "Dark Castle Fest Spotify Playlist",
+      icon: "spotify",
+   },
+];
+---
+
+<ul class="social-nav">
+   {
+      socialLinks
+      .filter(item => item?.url)
+      .map((item) => (
+         <li class="social-nav_item">
+            <a
+               href={item.url}
+               target="_blank"
+               class="social-nav_link"
+               title={item.title}
+               aria-label={item.title}
+               rel="noopener"
+            >
+               <Icon icon={item.icon} />
+            </a>
+         </li>
+      ))
+   }
+</ul>

@@ -1,0 +1,50 @@
+---
+import { getDynamicImage } from "../util/images";
+import dayjs from "dayjs";
+import { Picture } from "astro:assets";
+import Button from "./Button.astro";
+import InlineList from "./InlineList.astro";
+
+interface Props {
+   title: string;
+   year: number;
+   image: string;
+   startDatetime: string | null;
+   performers: string[];
+}
+
+const { title, year, image, startDatetime, performers } = Astro.props;
+const img = getDynamicImage(image);
+---
+
+<section class="card event-card">
+   <header class="card-header">
+      <h4 class="card-title">{title}</h4>
+
+      {
+         startDatetime && (
+            <span class="event-card-date">
+               <time datetime={startDatetime}>
+                  {dayjs(startDatetime).format("MMMM D, YYYY")}
+               </time>
+            </span>
+         )
+      }
+   </header>
+   <div class="card-cover">
+      <a href={`/archive/${year}`}>
+         <Picture
+            class="card-img"
+            src={img}
+            formats={["webp", "avif"]}
+            alt={`${title} Cover Image`}
+            fallbackFormat={image.split(".").pop()}
+         />
+      </a>
+   </div>
+   <div class="card-content pb-md">
+      <InlineList items={performers} />
+
+      <Button tag="a" href={`/archive/${year}`}>View Info</Button>
+   </div>
+</section>

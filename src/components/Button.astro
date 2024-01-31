@@ -1,0 +1,36 @@
+---
+import type { HTMLTag } from "astro/types";
+
+interface Props {
+   href?: string;
+   variant?: "primary" | "accent" | "secondary" | "light";
+   classes?: string;
+   tag?: HTMLTag;
+   nodeProps?: any;
+}
+
+const { variant, classes, href } = Astro.props;
+
+let Element = Astro.props?.tag || "button";
+
+if (href) {
+   Element = "a";
+}
+
+const classNames = [
+   "btn",
+   variant ? `btn--${variant}` : "",
+   classes ? classes : "",
+].filter((className) => className);
+
+const nodeProps = Astro.props?.nodeProps || {};
+
+const btnProps = {
+   class: classNames.join(" "),
+   href: href || null,
+};
+---
+
+<Element {...btnProps} {...nodeProps}>
+   <slot />
+</Element>

@@ -1,0 +1,42 @@
+---
+import type { CollectionEntry } from "astro:content";
+import Icon from "./Icon.astro";
+
+interface Props {
+   location: CollectionEntry<"locations">;
+}
+
+const { location } = Astro.props;
+---
+
+<div class="location">
+   <Icon icon="location" classes="ml-0" />
+
+   {
+      location?.data?.website && (
+         <a
+            class="location-title"
+            href={location.data.website}
+            rel="noopener"
+            target="_blank"
+         >
+            {location.data.title}
+         </a>
+      )
+   }
+
+   <span class="location-address">
+      {location.data.address}
+      <br />
+      {
+         location?.data?.address2 && (
+            <>
+               {location.data.address2}
+               <br />
+            </>
+         )
+      }
+      {location.data.city}, {location.data.stateLong || location.data.state}
+      {location.data.zipcode}
+   </span>
+</div>

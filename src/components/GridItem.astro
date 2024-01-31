@@ -1,0 +1,47 @@
+---
+import type { HTMLTag } from "astro/types";
+
+type GridSizeRange = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
+
+interface Props {
+   xs?: GridSizeRange;
+   sm?: GridSizeRange;
+   md?: GridSizeRange;
+   lg?: GridSizeRange;
+   xl?: GridSizeRange;
+   tag?: HTMLTag;
+   classes?: string;
+}
+
+const { tag: Element = "div", classes, xs, sm, md, lg, xl } = Astro.props;
+
+const classNames = ["grid-item"];
+
+if (xs) {
+   classNames.push(`xs-${xs}`);
+}
+
+if (sm) {
+   classNames.push(`sm-${sm}`);
+}
+
+if (md) {
+   classNames.push(`md-${md}`);
+}
+
+if (lg) {
+   classNames.push(`lg-${lg}`);
+}
+
+if (xl) {
+   classNames.push(`xl-${xl}`);
+}
+
+if (classes) {
+   classNames.push(classes);
+}
+---
+
+<Element class={classNames.join(" ")}>
+   <slot />
+</Element>

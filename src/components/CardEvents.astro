@@ -1,0 +1,18 @@
+---
+import type { HTMLTag } from "astro/types";
+
+interface Props {
+   classes?: string;
+   tag?: HTMLTag;
+}
+
+const { tag: Element = "div", classes } = Astro.props;
+
+const classNames = ["event-cards", classes ? classes : ""].filter(
+   (className) => className
+);
+---
+
+<Element class={classNames.join(" ")}>
+   <slot />
+</Element>

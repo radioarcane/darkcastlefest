@@ -1,0 +1,29 @@
+---
+interface Crumb {
+    href: string;
+    title: string;
+}
+
+interface Props {
+	crumbs: Crumb[]
+}
+
+const { crumbs } = Astro.props;
+---
+<ol class="breadcrumb">
+    { crumbs.map((crumb, i) => (
+        <li class="breadcrumb-item">
+            { i !== crumbs.length-1 && (
+                <a class="breadcrumb-link" href={crumb.href}>
+                    { crumb.title }
+                </a>
+            )}
+
+            { i === crumbs.length-1 && (
+                <a class="breadcrumb-link" href={crumb.href} aria-current="page">
+                    { crumb.title }
+                </a>
+            )}
+        </li>
+    ))}
+</ol>

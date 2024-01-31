@@ -1,0 +1,90 @@
+---
+import { Picture } from "astro:assets";
+import SocialIcons from "./SocialIcons.astro";
+import brandLogo from "../images/radio-arcane-logo.jpg";
+
+const currentPath = Astro.url.pathname;
+const { social, spotifyPlaylist } = Astro.locals;
+
+const nav = [
+   {
+      title: "Home",
+      path: "/",
+      ariaProps: {},
+   },
+   {
+      title: "Lineup",
+      path: "/lineup",
+      ariaProps: {},
+   },
+   {
+      title: "Info & Tickets",
+      path: "/info",
+      ariaProps: {},
+   },
+   {
+      title: "Archive",
+      path: "/archive",
+      ariaProps: {},
+   },
+].map((item) => {
+   if (item.path === currentPath) {
+      item.ariaProps = { "aria-page": "current" };
+   }
+
+   return item;
+});
+---
+
+<footer id="footer" class="footer" role="contentinfo">
+   <div class="footer-container">
+      <div class="footer-info">
+         <Picture
+            src={brandLogo}
+            formats={["webp", "avif"]}
+            alt="Radio Arcane"
+            fallbackFormat="jpg"
+         />
+
+         <p>
+            Dark Castle Fest<br />
+            Gothic Music & Dark Arts Festival<br />
+            Presented by <a
+               href="https://www.radio-arcane.com"
+               target="_blank"
+               rel="noopener">Radio Arcane</a
+            >
+         </p>
+      </div>
+
+      <nav class="footer-nav">
+         <ul class="footer-menu">
+            {
+               nav.map((item) => (
+                  <li class="footer-menu-item">
+                     <a
+                        class="footer-menu-link"
+                        href={item.path}
+                        {...item.ariaProps}
+                     >
+                        {item.title}
+                     </a>
+                  </li>
+               ))
+            }
+         </ul>
+      </nav>
+
+      <address class="footer-social">
+         <SocialIcons
+            facebook={social.facebook}
+            instagram={social.instagram}
+            spotify={spotifyPlaylist}
+         />
+      </address>
+
+      <div class="footer-copy">
+         <p>© {new Date().getFullYear()} Radio Arcane</p>
+      </div>
+   </div>
+</footer>
