@@ -20,6 +20,7 @@ links:
    instagram: "https://www.instagram.com/thetokyoteens"
    linktree: "https://linktr.ee/tokyoteens"
 description: "Modern and dark with a slice of hope. Features songwriter, multi instrumentalist, and vocalist Jimmi B. and vocals, guitar, keys, and production by Grammy winning producer Billy Hume."
+seoDescription: "Immerse yourself in the captivating synth-laden sounds of Tokyo Teens at Dark Castle Fest 2024! This 80's inspired Darkpop band, a perfect blend of modern darkness with a slice of hope, showcase a feel-good vibe with attractive melodies, effortlessly blending moping forlorn glumness with delightful tunes."
 ref: null
 ---
 

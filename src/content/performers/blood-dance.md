@@ -20,7 +20,8 @@ links:
    twitter: "https://www.twitter.com/BloodDanceBand1"
    soundcloud: "https://soundcloud.com/blood-dance"
    official: "http://blood-dance.com"
-description: "Blood dance is a Gothic Rock, Dark Wave band formed in Mexico City in 2016."
+description: "Blood Dance is a Gothic Rock, Dark Wave band formed in Mexico City in 2016."
+seoDescription: "Get ready to experience the dark and enchanting sounds of Blood Dance at Dark Castle Fest 2024, all the way from Mexico City, Mexico! We're thrilled to host this Gothic Rock and Dark Wave sensation, offering you a rare opportunity to witness their live performance in Louisville. Hailing from the thriving Gothic scene of CDMX, Blood Dance brings a unique flavor to Art Sanctuary, adding another compelling reason not to miss this festival."
 ref: "https://musicbrainz.org/artist/1afea110-9a38-4dc2-aa01-d5311a0769f1"
 ---
 

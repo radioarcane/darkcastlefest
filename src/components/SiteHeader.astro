@@ -35,7 +35,7 @@ const nav = [
    },
 ].map((item) => {
    if (item.path === currentPath) {
-      item.ariaProps = { "aria-page": "current" };
+      item.ariaProps = { "aria-current": "page" };
    }
 
    return item;
@@ -51,6 +51,8 @@ const nav = [
                formats={["webp", "avif"]}
                alt="Dark Castle Fest"
                fallbackFormat="jpg"
+               loading="eager"
+               width={200}
             />
          </a>
       </div>

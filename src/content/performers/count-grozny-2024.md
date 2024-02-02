@@ -19,6 +19,7 @@ links:
    twitch: "https://www.twitch.tv/radio_arcane_tv"
    youtube: "https://www.youtube.com/@RadioArcane"
 description: "Count Grozny has been lurking in the shadows of Louisville's dark music scene since 2005. After getting their start under the tutelage of Louisville Gothic's founding members the Count would go on to spread his abysmal vision via various dark dance nights and concerts across the city."
+seoDescription: "Embark on a journey into the shadows with Count Grozny at Dark Castle Fest 2024. Our esteemed Count has been a captivating presence in the city's dark music scene since 2005. Having honed their craft under the guidance of Louisville Gothic's founding members, Count Grozny has expanded their abysmal vision across the city, hosting various dark dance nights and concerts."
 ref: null
 ---
 

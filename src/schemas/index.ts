@@ -24,6 +24,7 @@ export const performerSchema = z.object({
       twitch: z.optional(z.string().url().nullable()),
     }),
     description: z.string(),
+    seoDescription: z.optional(z.string().nullable()),
     ref: z.string().url().nullable(),
   });
 

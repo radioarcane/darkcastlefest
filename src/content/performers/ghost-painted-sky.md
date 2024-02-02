@@ -22,6 +22,7 @@ links:
    linktree: "https://linktr.ee/ghostpaintedsky"
    official: "http://www.ghostpaintedsky.com"
 description: "New England-based band creating dark, intense, introspective music, with a sound built upon the influence of the classic goth, post-punk, and darkwave sounds of the 80s and 90s."
+seoDescription: "Introducing Ghost Painted Sky at Dark Castle Fest 2024, hailing from Massachusetts! Since 2014, this band has crafted atmospheric, melodic gloominess that fits Dark Castle perfectly. With webbing guitars, anchored bass, and tribal drumming, Ghost Painted Sky offers a Gothic sound firmly rooted in tradition. Featuring the dynamic interplay of a dark baritone male and an angelic female vocalist, their music seamlessly seeps into your subconscious, growing on you with each listen."
 ref: "https://musicbrainz.org/artist/4622918a-fdc3-4c20-b713-b60ce07d151c"
 ---
 

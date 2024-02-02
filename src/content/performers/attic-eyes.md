@@ -20,6 +20,7 @@ links:
    instagram: "https://www.instagram.com/attic_eyes"
    soundcloud: "https://soundcloud.com/atticeyes"
 description: "Attic Eyes is 3-piece band based in Knoxville, TN. The band's music is inspired by post-punk, cold wave, goth and industrial bands from the 80s and 90s."
+seoDescription: "Welcome Attic Eyes to Dark Castle Fest 2024! Hailing from Knoxville, Tennessee, this up-and-coming Dark Wave/Gothic project has captured our hearts with their well-crafted, powerful songs. Attic Eyes is no ordinary dark project – it's a display of old-school talent across the board."
 ref: null
 ---
 

@@ -20,6 +20,7 @@ links:
    twitter: "https://twitter.com/_SOSD_"
    soundcloud: "https://soundcloud.com/user-882873547"
 description: "A four piece rock show, curated with traditional aspects of folk and country sounds."
+seoDescription: "Experience the authentic Appalachian soul with Saddle of Southern Darkness at Dark Castle Fest 2024! Adding a distinctive touch to our American Gothic experience, Saddle blends Nick Cave with Bill Monroe, infusing folk magic and Granny Witchcraft into their real Dark Folk sound. A four-piece rock show curated with traditional folk and country elements, Saddle offers a unique stage performance featuring percussive upright bass and dynamic drum application."
 ref: "https://musicbrainz.org/artist/1555d8d3-dd99-465d-bd82-37c45fd468bd"
 ---
 

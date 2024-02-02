@@ -133,6 +133,8 @@ const jsonSchema = nextEvent ? await musicEventSchema(nextEvent.slug) : {};
                   formats={["webp", "avif"]}
                   alt=`Dark Castle Festival ${currentYear} Poster`
                   fallbackFormat="jpg"
+                  loading="eager"
+                  width={900}
                />
             </figure>
          </GridItem>

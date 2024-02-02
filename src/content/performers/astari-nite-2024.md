@@ -22,6 +22,7 @@ links:
    soundcloud: "https://soundcloud.com/astariniteofficial"
    linktree: "https://linktr.ee/AstariNite"
 description: "Astari Nite crosses an obscure mix between Gothic Rock, Post-Punk and Darkwave, exploring themes of death, love, and the occult."
+seoDescription: "Join us at Dark Castle Fest 2024 for an unforgettable experience with Astari Nite! Witness the magic of their flawless musicianship and excellently crafted songs that blend gothic rock and post-punk.If you haven't seen them live, you're missing out on one of the absolute best touring bands today."
 ref: "https://musicbrainz.org/artist/87770db3-ed30-424e-9bea-d79011c7189e"
 ---
 

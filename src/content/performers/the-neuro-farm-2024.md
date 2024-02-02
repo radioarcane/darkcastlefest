@@ -21,6 +21,7 @@ links:
    soundcloud: "https://soundcloud.com/theneurofarm"
    official: "https://www.theneurofarm.com"
 description: "The Neuro Farm is a darkwave gothic rock band based in Washington DC. Combining vocal harmony with soaring violin melodies, driving rhythm guitar, and ethereal sonic textures."
+seoDescription: "Prepare for the mesmerizing return of The Neuro Farm at Dark Castle Fest 2024! After their incredible performance in 2023, we couldn't resist bringing them back for more. With their unique blend of darkwave and gothic rock, The Neuro Farm captivates with soaring violin melodies, operatic vocals, and a neoclassical edge that perfectly complements Dark Castle's atmosphere."
 ref: "https://musicbrainz.org/artist/80559a54-d377-4b1e-a00c-b87f3bc537ef"
 ---
 

@@ -18,6 +18,7 @@ links:
    facebook: "https://www.facebook.com/sombrearcane"
    instagram: "https://www.instagram.com/sombre_arcane"
 description: "Sombre Arcane is a theatrical Dungeon Synth / Fantasy Ambient band that mixes medieval folk instruments with synthesizer music. Bringing dungeon synth out of the basement and onto the stage since 2017."
+seoDescription: "Embark on a mystical journey with Sombre Arcane at Dark Castle Fest 2024. This theatrical Dungeon Synth/Fantasy Ambient band has been enchanting audiences since 2017, seamlessly blending medieval folk instruments with synthesizer music. Sombre Arcane takes dungeon synth out of the basement and onto the stage, offering a captivating experience. Whether you're seeking a soundtrack for your next Dungeons & Dragons campaign or Warhammer Fantasy Battle, Sombre Arcane has you covered."
 ref: "https://musicbrainz.org/artist/088d6ed3-73cb-4de4-9f0a-7697455f1e7e"
 ---
 

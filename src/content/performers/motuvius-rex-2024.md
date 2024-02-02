@@ -18,6 +18,7 @@ links:
    facebook: "https://www.facebook.com/motuvius.rex"
    instagram: "https://www.instagram.com/motuvius.rex"
 description: "Motuvius Rex is a music project focused primarily on a fairly traditional Gothic sound with roots in Dark Folk and New Wave."
+seoDescription: "Get ready for a local delight at Dark Castle Fest 2024 – Motuvius Rex is back! As essentially our house band at Art Sanctuary, Motuvius Rex represents the unique voice of Kentucky in dark music and culture. Based in Louisville, they blend Gothic Folk with Psychedelic Rock, Appalachian influences, and a diverse range inspired by artists like Boy George, Genesis P-Orridge, Merle Haggard, and more. A concoction of Gothic Rock, New Wave, and Neofolk, Motuvius Rex's sound is Art School weirdness with a rural life experience, featuring acoustic instruments, mandolins, and vintage electronics."
 ref: "https://musicbrainz.org/artist/0172f3f7-affd-4ded-8d26-1813d983d6a6"
 ---
 

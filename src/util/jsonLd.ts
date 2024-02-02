@@ -34,7 +34,7 @@ export async function performerSchema (slug: string) {
         "@type": "MusicGroup",
         "@id": performer?.data?.ref || null,
         name: performer?.data.name,
-        description: performer?.data?.description || null,
+        description: performer?.data?.seoDescription || performer?.data?.description || null,
         logo: performer?.data?.logo ? {
             "@type": "ImageObject",
             url: `${domain}${performer.data.logo}`

@@ -17,6 +17,7 @@ links:
    facebook: "https://www.facebook.com/thekentuckyvampires"
    instagram: "https://www.instagram.com/the_kentucky_vampires"
 description: "The Kentucky Vampires are an unapologetically Gothic Rock band with roots in the city of Louisville, Kentucky."
+seoDescription: "Get ready for the return of The Kentucky Vampires at Dark Castle Fest 2024! After the incredible fun last year, we couldn't resist bringing them back for another round. This Gothic Rock quartet, rooted in Louisville, delivers dramatic songs about ancient times, sorcery, and dark romance."
 ref: "https://musicbrainz.org/artist/922ecc37-24f8-4674-bee7-5257af8f8c25"
 ---
 

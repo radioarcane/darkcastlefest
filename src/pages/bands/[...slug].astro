@@ -60,7 +60,8 @@ const jsonSchema = performer ? await performerSchema(performer.slug) : {};
    <SEO
       slot="seo"
       title=`${performer.data.name} | Dark Castle Fest  ${musicEvent?.data?.year}`
-      description={performer?.data?.description}
+      description={performer?.data?.seoDescription ||
+         performer?.data?.description}
       openGraph={{
          basic: {
             title: `${performer.data.name} | Dark Castle Fest ${musicEvent?.data?.year}`,
@@ -104,6 +105,8 @@ const jsonSchema = performer ? await performerSchema(performer.slug) : {};
                   formats={["webp", "avif"]}
                   alt={performer?.data?.name}
                   fallbackFormat={performer?.data?.image.split(".").pop()}
+                  loading="eager"
+                  width={500}
                />
             </figure>
 

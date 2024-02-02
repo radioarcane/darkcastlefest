@@ -15,6 +15,7 @@ links:
    bandcamp: "https://sinistersenile.bandcamp.com"
    youtube: "https://www.youtube.com/@sinistersenile5138"
 description: "Sinister Senile is an evolving experimental project with a dark electro-accoustc edge."
+seoDescription: "Prepare for a magical experience with Sinister Senile at Dark Castle Fest 2024, returning to enchant Louisville, Kentucky once again! Led by the skilled Mage Kensaku Nishizato, this evolving experimental project with a dark electro-acoustic edge casts spells that transcend traditional genres."
 ref: null
 ---
 

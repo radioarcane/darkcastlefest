@@ -19,6 +19,7 @@ links:
    soundcloud: "https://soundcloud.com/atticeyes"
    linktree: "https://linktr.ee/batnoise"
 description: "Bat Noise is industrial avant-garde goth jazz freak witch wave ceremony, formerly V.E.X. Vortex Empath Xen, Ventriloquest Ectoplasmold Xanaxax, synthpunk deathwave postpunk noise. Roxy Monoxide and LuLu Gammaray are also Moira Scar."
+seoDescription: "Dive into the avant-garde enchantment of Bat Noise at Dark Castle Fest 2024! Immerse yourself in visually exciting performances featuring live saxophone, theremin, trombone, live percussion, and synth sequences – a fresh, intriguing weirdness that stimulates the imagination. Our castle was made for bats, and this haunted improv duo, known for their experimental, haunted, and strange industrial sequences, fits right in. As part of other projects like Moira Scar and V.E.X., Bat Noise has an impressive history, having played alongside renowned acts like Psychic T.V., 45 Grave, HIDE, and many more."
 ref: null
 ---
 

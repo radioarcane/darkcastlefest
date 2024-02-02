@@ -25,6 +25,7 @@ const { Content } = await performer.render();
          formats={["webp", "avif"]}
          alt={performer?.data?.name}
          fallbackFormat={performer?.data?.image.split(".").pop()}
+         width={700}
       />
    </figure>
 
@@ -67,26 +68,6 @@ const { Content } = await performer.render();
    .story-figure :global(img) {
       border-radius: 4px;
    }
-
-   /*
-   @media screen and (min-width: 800px) and (max-width: 1119px) {
-      .story {
-         display: flow-root;
-         overflow: hidden;
-      }
-
-      .story:nth-child(even) > .story-figure {
-         float: right;
-         margin-left: calc(2 * var(--size-gap));
-      }
-
-      .story:nth-child(odd) > .story-figure {
-         float: left;
-         margin-right: calc(2 * var(--size-gap));
-         clear: both;
-      }
-   }
-   */
 
    @media screen and (min-width: 800px) {
       .story {

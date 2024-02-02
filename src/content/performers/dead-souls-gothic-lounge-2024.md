@@ -21,6 +21,7 @@ links:
    mixcloud: "https://www.mixcloud.com/naggaroth-wych"
    twitch: "https://www.twitch.tv/dead_souls_gothic_lounge"
 description: "Dead Souls Gothic Lounge is the creation of Indianapolis-based DJs Gomez and Naggaroth Wych. It would differentiate itself from other nights by being all-ages, showcasing a wide variety of music under the goth umbrella including lesser-known artists from South America and eastern Europe."
+seoDescription: "Get ready for a hauntingly delightful experience with Dead Souls Gothic Lounge at Dark Castle Fest 2024! Our gloriously gloomy kinfolk, led by DJs Gomez and Naggaroth Wych, will make the journey to keep the castle ballroom pulsating with excitement."
 ref: null
 ---
 

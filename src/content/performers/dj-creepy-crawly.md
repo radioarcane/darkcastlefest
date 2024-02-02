@@ -20,6 +20,7 @@ links:
    twitch: "https://www.twitch.tv/dj_creepycrawly"
    linktree: "https://linktr.ee/Fermenteddarknessradio"
 description: "Creepy Crawly is owner, DJ and curator for Fermenteddarkness Radio out of the Pocono Mountains of Pennsylvania. There’s not a more supportive DJ in the dark music community and we appreciate his all seeing eye."
+seoDescription: "Prepare for an immersive sonic journey with DJ Creepy Crawly at Dark Castle Fest 2024! DJ Creepy Crawly is a beacon of support in the dark music community, thanks to his all-seeing eye. We can't wait to dance to your beats!"
 ref: null
 ---
 

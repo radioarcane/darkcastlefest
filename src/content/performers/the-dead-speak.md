@@ -19,6 +19,7 @@ links:
    instagram: "https://www.instagram.com/thedeadspeak.band"
    linktree: "https://linktr.ee/TheDeadSpeak"
 description: "The Dead Speak is a Louisville, Kentucky-based horror cow-beret duo that invoke goth rockabilly energy. Jaime Muerte (she/her) and Wayne Robinson (he/him) fuse guttural, impassioned vocals with stories centering around themes of suicide, folklore and substance abuse."
+seoDescription: "Join the seance at Dark Castle Fest 2024 and step into the eerie realm of The Dead Speak, a horror cow-beret duo hailing from Louisville, Kentucky – where Ouija boards play music. Jaime Muerte and Wayne Robinson, the voices behind the duo, summon goth rockabilly energy that's truly unique. Their music delves into guttural, impassioned vocals, weaving tales of suicide, folklore, and substance abuse."
 ref: "https://musicbrainz.org/artist/c6cfb1d0-f9d1-4e6e-b381-f40a067b6823"
 ---
 
