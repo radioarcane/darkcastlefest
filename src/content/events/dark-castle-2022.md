@@ -5,7 +5,7 @@ archive: true
 year: 2022
 image: "/images/dark-castle-2022.jpg"
 startDatetime: "2022-07-20T19:00:00Z"
-endDatetime: "2023-07-21T00:00:00Z"
+endDatetime: "2022-07-21T00:00:00Z"
 location: "art-sanctuary"
 facebookEvent: null
 ticketsUrl: null
@@ -17,4 +17,5 @@ djs: []
 ---
 
 First Annual Dark Castle Music Festival featuring live performances by:
+
 TWIN TRIBES, WINGTIPS, FAUX FEAR, VAZUM, and BLOOD HANDSOME.

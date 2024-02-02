@@ -17,9 +17,10 @@ genres:
    - Minimal Synthwave
 links:
    facebook: "https://www.facebook.com/DeadSoulsGothicLounge"
+   instagram: "https://www.instagram.com/dead_souls_gothic_lounge"
    mixcloud: "https://www.mixcloud.com/naggaroth-wych"
    twitch: "https://www.twitch.tv/dead_souls_gothic_lounge"
-description: "Dead Souls Gothic Lounge is the creation of Indianapolis-based DJs Gomez and Naggaroth differentiate itself from other nights by being all-ages, showcasing a wide variety of music under the goth umbrella including lesser-known artists from South America and eastern Europe."
+description: "Dead Souls Gothic Lounge is the creation of Indianapolis-based DJs Gomez and Naggaroth. It would differentiate itself from other nights by being all-ages, showcasing a wide variety of music under the goth umbrella including lesser-known artists from South America and eastern Europe."
 ref: null
 ---
 

@@ -1,9 +1,9 @@
 ---
 title: "Dark Castle Fest 2023"
 slug: "dark-castle-fest-2023"
-archive: false
+archive: true
 year: 2023
-image: "/images/dark-castle-2023.jpg"
+image: "/images/dark-castle-festival-2023-gothic-music.jpg"
 startDatetime: "2023-07-28T18:00:00Z"
 endDatetime: "2023-07-30T02:00:00Z"
 location: "art-sanctuary"
@@ -33,5 +33,7 @@ djs: [ichabod, dead-souls-gothic-lounge, count-grozny, sorrow-vomit]
 ---
 
 Second Annual Dark Castle Music Festival featuring live performances by:
+
 Astari Nite, The Kentucky Vampires, The Waning Moon, The Neuro Farm, The Palace of Tears, Dead Cool, Scary Black, In A Darkened Room, Motuvius Rex, Talking To Shadows, Chrysanthemum Ballroom, Wireworks, Ominous Erotica, and Sinister Senile.
-DJs: Ichabod, Dead Souls Gothic Lounge, Count Grozny, Sorrow-Vomit
+
+DJs: Ichabod, Dead Souls Gothic Lounge, Count Grozny, and Sorrow-Vomit.

@@ -74,12 +74,12 @@ const satSchedule = [
 <Layout>
    <SEO
       slot="seo"
-      title=`${currentYear} Lineup | Dark Castle Fest`
-      description="Dark Castle Fest 2023 featuring Astari Nite, The Kentucky Vampires, Dead Cool, The Waning Moon, The Palace of Tears, Scary Black, and more."
+      title=`${currentYear} Lineup | Dark Castle Fest 2024`
+      description="Dark Castle Fest 2024 featuring Astari Nite, The Kentucky Vampires, The Neuro Farm, Blood Dance, Attic Eyes, and more..."
       openGraph={{
          basic: {
-            title: `${currentYear} Lineup | Dark Castle Fest`,
-            image: `${domain}/images/dark-castle-festival-2023.jpg`,
+            title: `${currentYear} Lineup | Dark Castle Fest 2024`,
+            image: `${domain}/images/dark-castle-fest-2024.jpg`,
             type: "website",
             url: `${domain}/lineup`,
          },
@@ -95,19 +95,26 @@ const satSchedule = [
          <h1 class="title">Dark Castle Fest {currentYear} Lineup</h1>
 
          <p>
-            <time datetime="2023-07-28">Friday July 28, 2023</time> and <time
-               datetime="2023-07-29">Saturday July 29, 2023</time
-            >
+            <time datetime="2024-09-26">Thursday September 26, 2024</time> –
+            <time datetime="2024-09-28">Saturday September 28, 2024</time>
          </p>
 
          <div class="grid grid--collapse">
             <div class="grid-item xs-12 md-8">
+               <!-- 
                <p>
                   <strong>Ticket Options:</strong><br />
                   Weekend Pass &ndash; $65<br />
                   <sup class="text-secondary">*</sup>Babacastillo Pass &ndash;
                   $95<br />
                   Single Day Pass - $45
+               </p>
+               -->
+
+               <p>
+                  <strong>Ticket Options:</strong><br />
+                  A link to purchase tickets for Dark Castle Fest 2024 will be available
+                  here once they go on sale.
                </p>
 
                {
@@ -124,6 +131,7 @@ const satSchedule = [
                   )
                }
 
+               <!-- 
                <p class="text-secondary">
                   <small>
                      <sup>*</sup>Babacastillo Pass details: Full event pass plus
@@ -134,6 +142,7 @@ const satSchedule = [
                      Babacastillo.
                   </small>
                </p>
+               -->
             </div>
             <div class="grid-item xs-12 md-4">
                <p>
@@ -165,7 +174,7 @@ const satSchedule = [
       </section>
 
       <section id="bands" class="pb-lg">
-         <h2 class="title">Bands</h2>
+         <h2 class="title">Band Announcements</h2>
 
          <div class="cards performer-cards">
             {bands.map((item) => <CardPerformer performer={item} />)}
@@ -173,7 +182,7 @@ const satSchedule = [
       </section>
 
       <section id="djs" class="pv-lg">
-         <h2 class="title">DJs</h2>
+         <h2 class="title">DJ Announcements</h2>
 
          <div class="cards performer-cards">
             {djs.map((item) => <CardPerformer performer={item} />)}
@@ -183,74 +192,9 @@ const satSchedule = [
       <section id="schedule">
          <h3 class="title">Schedule (EST)</h3>
 
-         <div class="grid grid--collapse">
-            <section class="grid-item xs-12 md-6">
-               <h4 class="text-secondary title">
-                  <time datetime="2023-07-28">Friday July 28, 2023</time><br />
-                  <small
-                     ><time datetime="2023-07-28T18:00">6:00pm</time> &ndash; <time
-                        datetime="2023-07-29T02:00">2:00am</time
-                     ></small
-                  >
-               </h4>
-
-               <ol class="list-unstyled">
-                  {
-                     friSchedule.map((arr) => (
-                        <li>
-                           <time datetime={`2028-07-28T${arr[1]}`}>
-                              {arr[0]}
-                              <small>pm</small>
-                           </time>
-                           <span class="text-secondary">&ndash;</span> {arr[2]}
-                        </li>
-                     ))
-                  }
-               </ol>
-
-               <p>
-                  DJs Dead Souls Gothic Lounge + Count Grozny before, between,
-                  and after bands until 2:00<small>am</small>.
-               </p>
-            </section>
-
-            <section class="grid-item xs-12 md-6">
-               <h4 class="text-secondary title">
-                  <time datetime="2023-07-29">Saturday July 29, 2023</time><br
-                  />
-                  <small
-                     ><time datetime="2023-07-29T18:00">6:00pm</time> &ndash; <time
-                        datetime="2023-07-30T02:00">2:00am</time
-                     ></small
-                  >
-               </h4>
-
-               <ol class="list-unstyled">
-                  {
-                     satSchedule.map((arr) => (
-                        <li>
-                           <time datetime={`2028-07-29T${arr[1]}`}>
-                              {arr[0]}
-                              <small>pm</small>
-                           </time>
-                           <span class="text-secondary">&ndash;</span> {arr[2]}
-                        </li>
-                     ))
-                  }
-               </ol>
-
-               <p>
-                  DJs Ichabod + Sorrow-Vomit before, between, and after bands
-                  until 2:00<small>am</small>.
-               </p>
-            </section>
-
-            <section class="grid-item xs-12 text-center pt-md">
-               <p class="text-secondary">
-                  Dark Market Vendors and food truck 6pm to midnight.
-               </p>
-            </section>
-         </div>
+         <p>
+            The {currentYear} schedule will be posted here once it becomes available.
+         </p>
       </section>
    </div>
 

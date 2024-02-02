@@ -6,6 +6,7 @@ import dayjs from "dayjs";
 import { getDynamicImage } from "../../util/images";
 import { musicEventSchema } from "../../util/jsonLd";
 import Layout from "../../layouts/Base.astro";
+import Breadcrumb from "../../components/Breadcrumb.astro";
 import Container from "../../components/Container.astro";
 import Grid from "../../components/Grid.astro";
 import GridItem from "../../components/GridItem.astro";
@@ -51,6 +52,31 @@ for (const { slug } of musicEvent.data.djs) {
 
 const musicEventImage = getDynamicImage(musicEvent.data?.image);
 
+let startDate = dayjs(musicEvent?.data?.startDatetime);
+const endDate = dayjs(musicEvent?.data?.endDatetime);
+const festivalDates = [musicEvent?.data?.startDatetime];
+const diffDays = endDate.diff(musicEvent?.data?.startDatetime, "day");
+
+for (let x = 1; x <= diffDays && diffDays > 0; x++) {
+   startDate = startDate.add(1, "day");
+   festivalDates.push(`${startDate.format("YYYY-MM-DD")}`);
+}
+
+const crumbs = [
+   {
+      href: "/",
+      title: "Dark Castle Fest",
+   },
+   {
+      href: "/archive",
+      title: "Archive: Past Events",
+   },
+   {
+      href: `/archive/${musicEvent?.data?.year}`,
+      title: musicEvent?.data?.title,
+   },
+];
+
 const bandNames = bands.map((band) => band.data?.name).join(", ");
 
 const jsonSchema = musicEvent ? await musicEventSchema(musicEvent.slug) : {};
@@ -78,6 +104,10 @@ const seoDescription =
       }}
    />
 
+   <Container boxGap={true} classes="pb-md">
+      <Breadcrumb crumbs={crumbs} />
+   </Container>
+
    <Container tag="article" boxGap={true}>
       <section>
          <h1 class="title">{musicEvent.data?.title}</h1>
@@ -85,13 +115,13 @@ const seoDescription =
          <Grid center={true} collapse={true}>
             <GridItem xs={12} md={6} lg={8}>
                <p class="text-secondary">
-                  <time datetime={musicEvent.data?.startDatetime}
-                     >{
-                        dayjs(musicEvent.data?.startDatetime).format(
-                           `dddd MMMM D, YYYY`
-                        )
-                     }</time
-                  >
+                  {
+                     festivalDates.map((timestamp) => (
+                        <time datetime={timestamp} style="display: block;">
+                           {dayjs(timestamp).format(`dddd MMMM D, YYYY`)}
+                        </time>
+                     ))
+                  }
                </p>
 
                <Content />

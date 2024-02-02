@@ -24,3 +24,7 @@
     color: var(--color-text-disabled);
 }
 
+.uppercase {
+    text-transform: uppercase;
+}
+
