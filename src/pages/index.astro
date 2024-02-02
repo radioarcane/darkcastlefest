@@ -15,10 +15,9 @@ const { currentYear, domain, siteName, social } = Astro.locals;
 
 const allEvents = await getCollection("events");
 const nextEvent = allEvents.find(({ data }) => data.year === currentYear);
-/*
+
 const nextEventBands = nextEvent?.data.bands || [];
 const nextEventDjs = nextEvent?.data.djs || [];
-
 
 const location = nextEvent
    ? await getEntry("locations", nextEvent.data.location.slug)
@@ -41,7 +40,6 @@ for (const { slug } of nextEventDjs) {
       djs.push(dj);
    }
 }
-*/
 
 const lastestActs = [];
 
