@@ -62,13 +62,17 @@ export async function performerSchema (slug: string) {
 
 export async function musicEventSchema (slug: string) {
     const musicEvent = await getEntry("events", slug);
-    const performing = [...musicEvent?.data.bands, ...musicEvent?.data.djs];
+    const bands = musicEvent?.data?.bands || [];
+    const djs = musicEvent?.data?.djs || [];
+    const performing = [...bands, ...djs];
     const performers = [];
 
     for (const { slug } of performing) {
         const performer = await performerSchema(slug);
         performers.push(performer);
     }
+
+    const locationSlug = musicEvent?.data?.location?.slug;
 
     return {
         "@context": "https://schema.org",
@@ -88,7 +92,7 @@ export async function musicEventSchema (slug: string) {
             "https://www.facebook.com/dark.castle.fest",
             "https://www.instagram.com/dark.castle.fest",
         ],
-        location: await locationSchema(musicEvent?.data?.location?.slug),
+        location: locationSlug ? await locationSchema(locationSlug) : null,
         offers: {
             "@type": "Offer",
             description: musicEvent?.data?.ticketDescription || null,
