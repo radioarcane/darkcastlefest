@@ -1,0 +1,275 @@
+---
+import { SEO } from "astro-seo";
+import { getCollection, getEntry } from "astro:content";
+import Layout from "../../layouts/Base.astro";
+import Icon from "../../components/Icon.astro";
+import Grid from "../../components/Grid.astro";
+import GridItem from "../../components/GridItem.astro";
+import Location from "../../components/Location.astro";
+
+const { currentYear, domain, siteName, social } = Astro.locals;
+
+const allEvents = await getCollection("events");
+const nextEvent = allEvents.find(({ data }) => data.year === currentYear);
+
+const location = nextEvent
+   ? await getEntry("locations", nextEvent.data.location.slug)
+   : null;
+---
+
+<Layout>
+   <SEO
+      slot="seo"
+      title=`Info & Tickets | Dark Castle Fest ${currentYear}`
+      description=`Dark Castle Fest ${currentYear} tickets and information. Gothic Music Festival.`
+      openGraph={{
+         basic: {
+            title: `Info & Tickets | Dark Castle Fest ${currentYear}`,
+            image: `${domain}/images/dark-castle-fest-2024.jpg`,
+            type: "website",
+            url: `${domain}/info`,
+         },
+         optional: {
+            locale: "en_US",
+            siteName,
+         },
+      }}
+   />
+
+   <article class="container box-gap">
+      <section id="tickets" class="pb-sm">
+         <h2 class="title">Tickets</h2>
+
+         <!-- 
+         <p>
+            Dark Castle Fest {currentYear} tickets are available now.
+         </p>
+         -->
+
+         <p>
+            Dark Castle Fest {currentYear} ticket information will be posted here
+            once available.
+         </p>
+
+         <!-- 
+             <p>
+            18+ entry<br />
+            21+ bar
+         </p>
+
+         
+         <p>
+            <strong>Ticket Options:</strong><br />
+            Weekend Pass &ndash; $65<br />
+            <sup class="text-secondary">*</sup>Babacastillo Pass &ndash; $95<br
+            />
+            Single Day Pass - $45
+         </p>
+         -->
+
+         {
+            nextEvent?.data?.ticketsUrl && (
+               <a
+                  class="btn btn--primary"
+                  href="changme"
+                  target="_blank"
+                  rel="noopener"
+               >
+                  <Icon icon="ticket" classes="ml-0" />
+                  <span class="inline-block">Purchase Tickets</span>
+               </a>
+            )
+         }
+
+         <!-- 
+         <p class="text-secondary">
+            <small>
+               <sup>*</sup>Babacastillo Pass details: Full event pass plus event
+               t-shirt, event poster autographed by The Kentucky Vampires, two
+               event stickers, single packet of Taco Bell Fire Sauce autographed
+               by Albie Mason of Scary Black and an option for a free pic taken
+               with Dark Castle monster Babacastillo.
+            </small>
+         </p>
+         -->
+      </section>
+
+      <section id="social" class="pb-sm">
+         <h2 class="title">Festival Announcements</h2>
+
+         <p>
+            To keep up on the latest news and announcements, please consider
+            following Dark Castle Fest at the links below:
+         </p>
+
+         <ul class="list-unstyled">
+            {
+               nextEvent?.data?.facebookEvent && (
+                  <li>
+                     <a
+                        href={nextEvent.data.facebookEvent}
+                        target="_blank"
+                        rel="noopener"
+                     >
+                        {currentYear} Facebook Event Page
+                     </a>
+                  </li>
+               )
+            }
+            {
+               social?.facebook && (
+                  <li>
+                     <a href={social.facebook} target="_blank" rel="noopener">
+                        Dark Castle Fest @ Facebook
+                     </a>
+                  </li>
+               )
+            }
+            {
+               social?.instagram && (
+                  <li>
+                     <a href={social.instagram} target="_blank" rel="noopener">
+                        Dark Castle Fest @ Instagram
+                     </a>
+                  </li>
+               )
+            }
+         </ul>
+      </section>
+
+      {
+         location && (
+            <section id="venue" class="pb-sm">
+               <h2 class="title">Venue Information</h2>
+
+               <Grid collapse={true}>
+                  <GridItem xs={12} md={6} lg={4}>
+                     <Location location={location} />
+                  </GridItem>
+                  <GridItem xs={12} md={6} lg={4}>
+                     <ul class="list-unstyled">
+                        {location?.data?.mapUrl && (
+                           <li>
+                              <a
+                                 href={location.data.mapUrl}
+                                 target="_blank"
+                                 rel="noopener"
+                              >
+                                 Map / Directions
+                              </a>
+                           </li>
+                        )}
+
+                        {location?.data?.website && (
+                           <li>
+                              <a
+                                 href={location.data.website}
+                                 target="_blank"
+                                 rel="noopener"
+                              >
+                                 Official Website
+                              </a>
+                           </li>
+                        )}
+
+                        {location?.data?.facebook && (
+                           <li>
+                              <a
+                                 href={location.data.facebook}
+                                 target="_blank"
+                                 rel="noopener"
+                              >
+                                 {location?.data?.title} @ Facebook
+                              </a>
+                           </li>
+                        )}
+
+                        {location?.data?.instagram && (
+                           <li>
+                              <a
+                                 href={location.data.instagram}
+                                 target="_blank"
+                                 rel="noopener"
+                              >
+                                 {location?.data?.title} @ Instagram
+                              </a>
+                           </li>
+                        )}
+                     </ul>
+                  </GridItem>
+               </Grid>
+            </section>
+         )
+      }
+
+      <section id="schedule" class="pb-sm">
+         <h2 class="title">Schedule</h2>
+
+         <!-- 
+         <p>
+            <time datetime="2023-07-28T18:00:00">Friday July 28, 2023</time>
+            <span class="text-secondary"
+               >6:00<small>pm</small> &ndash; 2:00<small>am</small> (EST)</span
+            >
+            <br />
+            <time datetime="2023-07-29T18:00:00">Saturday July 29, 2023</time>
+            <span class="text-secondary"
+               >6:00<small>pm</small> &ndash; 2:00<small>am</small> (EST)</span
+            >
+         </p>
+         -->
+
+         <p>
+            <time datetime="2024-09-26T18:00:00"
+               >Thursday September 26, 2024</time
+            >
+            <br />
+            <time datetime="2024-09-27T18:00:00">Friday September 27, 2024</time
+            >
+            <br />
+            <time datetime="2024-09-28T18:00:00"
+               >Saturday September 28, 2024</time
+            >
+         </p>
+
+         <p>
+            Visit our <a href="/lineup/#schedule">Lineup Page</a> to view the festival
+            itinerary.
+         </p>
+      </section>
+
+      <section id="lodging" class="pb-sm">
+         <h2 class="title">Lodging</h2>
+
+         <p>
+            The nearest hotel to the venue is the Quality Inn & Suites.<br />
+            Approximately a three minutes drive (0.9 mile), and right off of the
+            interstate.
+         </p>
+
+         <p>
+            Quality Inn & Suites University/Airport<br />
+            311 E Gaulbert Ave<br />
+            Louisville, KY 40208<br />
+            <a
+               href="https://www.google.com/travel/hotels/Quality%20Inn%20%26%20Suites%20University%2FAirport/entity/CgsI8tCd0ZP7x77cARAB/prices?q=Quality%20Inn%20%26%20Suites%20University%2FAirport"
+               target="_blank"
+               rel="noopener">Booking Options</a
+            >
+         </p>
+
+         <p>
+            Several nearby vacation rentals can also be found on Airbnb and
+            Vrbo.
+         </p>
+
+         <p>
+            Additional resources: <a
+               href="https://www.gotolouisville.com/hotels"
+               target="_blank"
+               rel="noopener">https://www.gotolouisville.com/hotels</a
+            >
+         </p>
+      </section>
+   </article>
+</Layout>

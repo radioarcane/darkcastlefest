@@ -1,0 +1,66 @@
+---
+import { Picture } from "astro:assets";
+import { getDynamicImage } from "../util/images";
+import Icon from "../components/Icon.astro";
+const { performer } = Astro.props;
+const img = getDynamicImage(performer.data.image);
+---
+
+<section id={performer.data.slug} class="card performer-card">
+   <div class="card-header">
+      <h4 class="card-title">{performer?.data?.name}</h4>
+
+      {
+         performer?.data?.location && (
+            <span class="performer-card-location">
+               {performer?.data?.location}
+            </span>
+         )
+      }
+   </div>
+
+   <div class="card-cover">
+      <a href={performer?.data?.path}>
+         <Picture
+            class="card-img"
+            src={img}
+            formats={["webp", "avif"]}
+            alt={performer?.data?.name}
+            fallbackFormat={performer?.data?.image.split(".").pop()}
+            width={600}
+         />
+      </a>
+   </div>
+
+   <div class="card-content">
+      <p>
+         {performer?.data?.description}<br />
+         <a href={performer?.data?.path}>Continue Reading...</a>
+      </p>
+   </div>
+
+   <footer class="card-footer performer-card-footer">
+      {
+         Object.keys(performer?.data?.links).map((key) => {
+            if (performer?.data?.links[key]) {
+               return (
+                  <a
+                     href={performer?.data?.links[key]}
+                     target="_blank"
+                     rel="noopener"
+                     title={`${performer?.data?.name} @ ${
+                        key[0].toUpperCase() + key.slice(1)
+                     }`}
+                     aria-label={`${performer?.data?.name} @ ${
+                        key[0].toUpperCase() + key.slice(1)
+                     }`}
+                     class="performer-card-link"
+                  >
+                     <Icon icon={key} />
+                  </a>
+               );
+            }
+         })
+      }
+   </footer>
+</section>

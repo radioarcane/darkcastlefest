@@ -1,0 +1,154 @@
+---
+import { SEO } from "astro-seo";
+import Layout from "../../layouts/Base.astro";
+import Container from "../../components/Container.astro";
+
+const { domain, siteName } = Astro.locals;
+---
+
+<Layout>
+   <SEO
+      slot="seo"
+      title=`Contact | Dark Castle Fest`
+      description=`Interested in performing or being a vendor at Dark Castle Fest in 2024?`
+      openGraph={{
+         basic: {
+            title: `Contact | Dark Castle Fest`,
+            image: `${domain}/images/dark-castle-fest-2024.jpg`,
+            type: "website",
+            url: `${domain}/contact`,
+         },
+         optional: {
+            locale: "en_US",
+            siteName,
+         },
+      }}
+   />
+
+   <Container tag="article" boxGap={true}>
+      <section id="contact" class="pb-sm">
+         <h2 class="title">Contact</h2>
+
+         <p>
+            Interested in performing or being a vendor at Dark Castle Fest in
+            2024?<br />
+            Please contact us below.
+         </p>
+
+         <form
+            id="contact-form"
+            name="contact"
+            method="POST"
+            data-netlify="true"
+            netlify-honeypot="about"
+         >
+            <div class="form-control">
+               <label for="performerName" data-required
+                  >Performer Name <span class="helper-text"
+                     >(Band, DJ, Vendor, Artist Name)</span
+                  ></label
+               >
+               <input
+                  type="text"
+                  id="performerName"
+                  name="performerName"
+                  maxlength="100"
+                  aria-label="Performer Name (Band, DJ, Vendor, Artist Name)"
+                  aria-label="true"
+                  required
+               />
+            </div>
+
+            <div class="form-control">
+               <label for="contactName" data-required>Contact Name</label>
+               <input
+                  type="text"
+                  id="contactName"
+                  name="contactName"
+                  maxlength="100"
+                  aria-label="Contact Name"
+                  aria-required="true"
+                  required
+               />
+            </div>
+
+            <div class="form-control">
+               <label for="submissionType" data-required>Submission Type</label>
+               <select
+                  id="submissionType"
+                  name="submissionType"
+                  aria-label="Submission Type"
+                  aria-required="true"
+                  required
+               >
+                  <option value=""></option>
+                  <option value="Band">Band</option>
+                  <option value="DJ">DJ</option>
+                  <option value="Vendor">Vendor</option>
+                  <option value="Other">Other</option>
+               </select>
+            </div>
+
+            <div class="form-control">
+               <label for="email" data-required>Email Address</label>
+               <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  maxlength="70"
+                  aria-label="Your Email Address"
+                  aria-required="true"
+                  required
+               />
+            </div>
+
+            <div class="form-control">
+               <label for="location" data-required>Location</label>
+               <input
+                  type="text"
+                  id="location"
+                  name="location"
+                  maxlength="100"
+                  aria-label="Your Location"
+                  aria-required="true"
+                  required
+               />
+            </div>
+
+            <div class="form-control">
+               <label for="links" data-required
+                  >Links <span class="helper-text"
+                     >(Bandcamp, Social Media, YouTube, Spotify, Mixcloud, etc.)</span
+                  ></label
+               >
+               <textarea
+                  id="links"
+                  name="links"
+                  maxlength="5000"
+                  aria-label="Links (Bandcamp, Social Media, YouTube, Spotify, Mixcloud, etc.)"
+                  aria-required="true"
+                  required></textarea>
+            </div>
+
+            <div class="form-control">
+               <label for="message" data-required>Message</label>
+               <textarea
+                  id="message"
+                  name="message"
+                  maxlength="5000"
+                  aria-label="Message"
+                  aria-required="true"
+                  required></textarea>
+            </div>
+
+            <div class="form-honey">
+               <textarea name="about" aria-hidden="true"></textarea>
+            </div>
+
+            <div class="text-center">
+               <button type="submit" class="btn btn--primary"> Submit</button>
+            </div>
+         </form>
+      </section>
+   </Container>
+</Layout>

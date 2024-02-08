@@ -1,0 +1,52 @@
+---
+import { parse } from "node-html-parser";
+
+export interface Props {
+   icon: string;
+   classes?: string;
+}
+
+function getSVG(name: string) {
+   const filepath = `/src/images/icons/${name}.svg`;
+
+   const files = import.meta.glob("/src/images/icons/**/*.svg", {
+      as: "raw",
+      eager: true,
+   });
+
+   if (!(filepath in files)) {
+      throw new Error(`${filepath} not found`);
+   }
+
+   const root = parse(files[filepath]);
+
+   /* ! operator is non-null assertion for TypeScript */
+   const svg = root.querySelector("svg")!;
+   const { attributes, innerHTML } = svg;
+
+   return {
+      attributes,
+      innerHTML,
+   };
+}
+
+const { icon, ...attributes } = Astro.props as Props;
+const { attributes: baseAttributes, innerHTML } = getSVG(icon);
+
+const defaultClassName = "icon";
+
+const classNames = attributes?.classes
+   ? attributes.classes
+        .toString()
+        .split(" ")
+        .filter((str) => str !== defaultClassName)
+   : [];
+
+classNames.unshift(defaultClassName);
+
+const svgAttributes = Object.assign({}, baseAttributes, attributes, {
+   class: classNames.join(" "),
+});
+---
+
+<svg {...svgAttributes} aria-hidden="true" set:html={innerHTML} />

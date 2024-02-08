@@ -1,0 +1,146 @@
+.footer {
+    background: rgba(33, 33, 33, 0.8);
+    padding: var(--space-sm);
+    color: var(--color-text-secondary);
+    font-size: 16px;
+}
+
+.footer a {
+    color: var(--color-text);
+}
+
+.footer-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@media screen and (min-width: 900px) {
+    .footer-container {
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.footer-info {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding-bottom: var(--space-sm);
+    font-size: 14px;
+}
+
+.footer-info picture {
+    border-radius: 50%;
+    overflow: hidden;
+    width: 75px;
+}
+
+.footer-info p {
+    margin: 0;
+    padding-left: var(--space-sm);
+}
+
+@media screen and (min-width: 600px) {
+    .footer-info {
+        width: 50%;
+        padding-bottom: 0;
+    }    
+}
+
+@media screen and (min-width: 900px) {
+    .footer-info {
+        width: 25%;
+    }
+
+    .footer-info picture {
+        width: 100px;
+    }    
+}
+
+.footer-nav {
+    width: 100%;
+}
+
+.footer-menu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.footer-menu-item {
+    display: inline-block;
+}
+
+.footer-menu-item:after {
+    content: "•";
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0 0.5em;
+}
+
+.footer-menu-item:last-child:after {
+    content: "";
+    display: none;
+}
+
+.footer-menu-link {
+    color: var(--color-text);
+}
+
+.footer-social {
+    font-size: 30px;
+    line-height: 1;
+    width: 100%;
+    padding-top: var(--space-sm);
+}
+
+@media screen and (min-width: 600px) {
+    .footer-nav {
+        width: 50%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        padding-left: var(--space-sm);
+        padding-top: 0;
+    }   
+}
+
+@media screen and (min-width: 600px) {
+    .footer-social .social-nav {
+        padding-bottom: var(--space-sm);
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .footer-nav {
+        padding-left: 0;
+    }
+
+    .footer-social {
+        width: 25%;
+    }
+}
+
+.footer-copy {
+    text-align: center;
+    font-size: 80%;
+    width: 100%;
+    padding-top: var(--space-sm);
+}
+
+.footer-copy *:last-child {
+    margin: 0;
+}
+
+
+@media screen and (min-width: 600px) {
+    .footer-copy {
+        padding-top: 0;
+    }
+}

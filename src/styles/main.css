@@ -1,0 +1,60 @@
+@import "_vars.css";
+@import "_fonts.css";
+@import "_common.css";
+@import "_form.css";
+@import "_typography.css";
+@import "_lists.css";
+@import "_media.css";
+
+@import "_masthead.css";
+@import "_main.css";
+@import "_footer.css";
+
+@import "_breadcrumb.css";
+@import "_button.css";
+@import "_card.css";
+@import "_card-event.css";
+@import "_card-performer.css";
+@import "_util-text.css";
+@import "_containers.css";
+@import "_grid.css";
+@import "_icon.css";
+@import "_layout-performer.css";
+@import "_util-spacing.css";
+@import "_util-text.css";
+
+.social-nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    position: relative;
+    justify-content: center;
+}
+
+.social-nav_item {
+    margin: 0;
+}
+
+.social-nav_link {
+    color: var(--color-primary);
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

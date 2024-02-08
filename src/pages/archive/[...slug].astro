@@ -1,0 +1,177 @@
+---
+import { SEO } from "astro-seo";
+import { getCollection, getEntry } from "astro:content";
+import { Picture } from "astro:assets";
+import dayjs from "dayjs";
+import { getDynamicImage } from "../../util/images";
+import { musicEventSchema } from "../../util/jsonLd";
+import Layout from "../../layouts/Base.astro";
+import Breadcrumb from "../../components/Breadcrumb.astro";
+import Container from "../../components/Container.astro";
+import Grid from "../../components/Grid.astro";
+import GridItem from "../../components/GridItem.astro";
+import CardPerformer from "../../components/CardPerformer.astro";
+
+export async function getStaticPaths() {
+   const musicEvents = await getCollection("events");
+
+   return musicEvents
+      .filter((musicEvent) => {
+         return musicEvent?.data?.archive;
+      })
+      .map((musicEvent) => ({
+         params: { slug: musicEvent?.data?.year },
+         props: { musicEvent },
+      }));
+}
+
+const { domain, siteName } = Astro.locals;
+
+const { musicEvent } = Astro.props;
+
+const { Content } = await musicEvent.render();
+
+const bands = [];
+const djs = [];
+
+for (const { slug } of musicEvent.data.bands) {
+   const band = await getEntry("performers", slug);
+
+   if (band) {
+      bands.push(band);
+   }
+}
+
+for (const { slug } of musicEvent.data.djs) {
+   const dj = await getEntry("performers", slug);
+
+   if (dj) {
+      djs.push(dj);
+   }
+}
+
+const musicEventImage = getDynamicImage(musicEvent.data?.image);
+
+let startDate = dayjs(musicEvent?.data?.startDatetime);
+const endDate = dayjs(musicEvent?.data?.endDatetime);
+const festivalDates = [musicEvent?.data?.startDatetime];
+const diffDays = endDate.diff(musicEvent?.data?.startDatetime, "day");
+
+for (let x = 1; x <= diffDays && diffDays > 0; x++) {
+   startDate = startDate.add(1, "day");
+   festivalDates.push(`${startDate.format("YYYY-MM-DD")}`);
+}
+
+const crumbs = [
+   {
+      href: "/",
+      title: "Dark Castle Fest",
+   },
+   {
+      href: "/archive",
+      title: "Archive: Past Events",
+   },
+   {
+      href: `/archive/${musicEvent?.data?.year}`,
+      title: musicEvent?.data?.title,
+   },
+];
+
+const bandNames = bands.map((band) => band.data?.name).join(", ");
+
+const jsonSchema = musicEvent ? await musicEventSchema(musicEvent.slug) : {};
+
+const seoDescription =
+   `Featuring live performances by ${bandNames}`.slice(0, 157) + "...";
+---
+
+<Layout>
+   <SEO
+      slot="seo"
+      title=`${musicEvent?.data?.title} | Dark Castle Fest`
+      description={seoDescription}
+      openGraph={{
+         basic: {
+            title: musicEvent?.data?.title,
+            image: `${domain}${musicEvent?.data?.image}`,
+            type: "website",
+            url: `${domain}/archive/${musicEvent?.data?.year}`,
+         },
+         optional: {
+            locale: "en_US",
+            siteName,
+         },
+      }}
+   />
+
+   <Container boxGap={true} classes="pb-md">
+      <Breadcrumb crumbs={crumbs} />
+   </Container>
+
+   <Container tag="article" boxGap={true}>
+      <section>
+         <h1 class="title">{musicEvent.data?.title}</h1>
+
+         <Grid center={true} collapse={true}>
+            <GridItem xs={12} md={6} lg={8}>
+               <p class="text-secondary">
+                  {
+                     festivalDates.map((timestamp) => (
+                        <time datetime={timestamp} style="display: block;">
+                           {dayjs(timestamp).format(`dddd MMMM D, YYYY`)}
+                        </time>
+                     ))
+                  }
+               </p>
+
+               <Content />
+            </GridItem>
+            <GridItem xs={12} sm={10} md={6} lg={4} classes="text-center">
+               <figure>
+                  <Picture
+                     src={musicEventImage}
+                     formats={["webp", "avif"]}
+                     alt={`${musicEvent?.data?.title} Poster`}
+                     fallbackFormat={musicEvent?.data?.image.split(".").pop()}
+                     width={800}
+                  />
+               </figure>
+            </GridItem>
+         </Grid>
+      </section>
+
+      {
+         bands.length > 0 && (
+            <section id="bands" class="pb-lg">
+               <h2 class="title">Bands</h2>
+
+               <div class="performer-cards">
+                  {bands.map((item) => (
+                     <CardPerformer performer={item} />
+                  ))}
+               </div>
+            </section>
+         )
+      }
+
+      {
+         djs.length > 0 && (
+            <section id="djs" class="pb-lg">
+               <h2 class="title">DJs</h2>
+
+               <div class="performer-cards">
+                  {djs.map((item) => (
+                     <CardPerformer performer={item} />
+                  ))}
+               </div>
+            </section>
+         )
+      }
+   </Container>
+
+   <script
+      slot="jsonLd"
+      type="application/ld+json"
+      set:html={JSON.stringify(jsonSchema)}
+   />
+</Layout>

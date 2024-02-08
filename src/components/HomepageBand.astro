@@ -1,0 +1,115 @@
+---
+import { Picture } from "astro:assets";
+import { getDynamicImage } from "../util/images";
+
+interface Props {
+   performer: any;
+   flow?: "left" | "right";
+}
+
+const { performer, flow } = Astro.props;
+const img = getDynamicImage(performer?.data?.image);
+const { Content } = await performer.render();
+---
+
+<article
+   class:list={[
+      "story",
+      { "news--left": flow === "left" },
+      { "news--right": flow === "right" },
+   ]}
+>
+   <figure class="story-figure" aria-hidden="true">
+      <Picture
+         src={img}
+         formats={["webp", "avif"]}
+         alt={performer?.data?.name}
+         fallbackFormat={performer?.data?.image.split(".").pop()}
+         width={700}
+      />
+   </figure>
+
+   <h4 class="story-title">
+      {performer?.data?.name}
+   </h4>
+
+   <Content />
+</article>
+<style>
+   .story {
+      position: relative;
+      border-bottom: 1px solid var(--color-text-secondary);
+      margin-bottom: var(--space-lg);
+      display: flex;
+      flex-direction: column;
+      font-size: 88%;
+      color: rgba(255, 255, 255, 0.8);
+   }
+
+   .story-title {
+      margin-bottom: var(--space-sm);
+      text-transform: uppercase;
+      order: -2;
+      width: 100%;
+      color: var(--color-text);
+   }
+
+   .story-figure {
+      margin: 0 0 var(--space-md);
+      box-shadow:
+         0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+         0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+         0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+      max-width: 400px;
+      order: -1;
+   }
+
+   .story-figure,
+   .story-figure :global(img) {
+      border-radius: 4px;
+   }
+
+   @media screen and (min-width: 800px) {
+      .story {
+         display: flow-root;
+         overflow: hidden;
+      }
+
+      .story:nth-child(even) > .story-figure {
+         float: right;
+         margin-left: calc(2 * var(--size-gap));
+      }
+
+      .story:nth-child(odd) > .story-figure {
+         float: left;
+         margin-right: calc(2 * var(--size-gap));
+         clear: both;
+      }
+   }
+
+   @media screen and (min-width: 1200px) {
+      .story > :global(*) {
+         width: 50%;
+      }
+
+      .story-figure {
+         max-width: none;
+      }
+
+      .story:nth-child(odd) .story-title,
+      .story:nth-child(odd) :global(*) {
+         float: right;
+         clear: right;
+      }
+
+      .story:nth-child(even) > .story-figure {
+         padding-left: calc(2 * var(--size-gap));
+         margin-left: 0;
+      }
+
+      .story:nth-child(odd) > .story-figure {
+         padding-right: calc(2 * var(--size-gap));
+         margin-right: 0;
+      }
+   }
+</style>

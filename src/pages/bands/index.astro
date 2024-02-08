@@ -1,0 +1,92 @@
+---
+import { getCollection, getEntry } from "astro:content";
+import { SEO } from "astro-seo";
+import Layout from "../../layouts/Base.astro";
+import Container from "../../components/Container.astro";
+import InlineList from "../../components/InlineList.astro";
+
+const { domain, siteName } = Astro.locals;
+
+const allEvents = await getCollection("events");
+
+const eventBands = await Promise.all(
+   allEvents
+      .sort((a, b) => {
+         return b.data.year - a.data.year;
+      })
+      .map(async (musicEvent) => {
+         const performers = musicEvent.data.bands.slice();
+         const bands = [];
+
+         for (const { slug } of performers) {
+            const band = await getEntry("performers", slug);
+
+            if (band) {
+               bands.push({
+                  slug: band.slug,
+                  name: band.data.name,
+               });
+            }
+         }
+
+         return {
+            title: musicEvent.data.title,
+            year: musicEvent.data.year,
+            performers: bands,
+         };
+      })
+);
+---
+
+<Layout>
+   <SEO
+      slot="seo"
+      title=`Bands | Dark Castle Fest`
+      description=`Dark Castle Fest band archive.`
+      openGraph={{
+         basic: {
+            title: `Bands | Dark Castle Fest`,
+            image: `${domain}/images/dark-castle-fest-2024.jpg`,
+            type: "website",
+            url: `${domain}/bands`,
+         },
+         optional: {
+            locale: "en_US",
+            siteName,
+         },
+      }}
+   />
+
+   <Container boxGap={true}>
+      <h1 class="title">Bands</h1>
+
+      <p>
+         Artists who have performed at past Dark Castle events and/or are
+         scheduled to perform in the future.
+      </p>
+
+      {
+         eventBands
+            .filter((musicEvent) => musicEvent.performers.length)
+            .map((musicEvent) => (
+               <>
+                  <section>
+                     <h2>{musicEvent.title}</h2>
+
+                     <InlineList items={[]}>
+                        {musicEvent.performers.map((performer) => (
+                           <li>
+                              <a href={`/bands/${performer.slug}`}>
+                                 {performer.name}
+                              </a>
+                           </li>
+                        ))}
+                     </InlineList>
+                  </section>
+
+                  <hr />
+               </>
+            ))
+      }
+   </Container>
+</Layout>

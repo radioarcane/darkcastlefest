@@ -1,0 +1,195 @@
+---
+import { getCollection, getEntry } from "astro:content";
+import { Picture } from "astro:assets";
+import { SEO } from "astro-seo";
+import dayjs from "dayjs";
+import { getDynamicImage } from "../../util/images";
+import { performerSchema } from "../../util/jsonLd";
+import Layout from "../../layouts/Base.astro";
+import Breadcrumb from "../../components/Breadcrumb.astro";
+import Button from "../../components/Button.astro";
+import Container from "../../components/Container.astro";
+import Icon from "../../components/Icon.astro";
+
+export async function getStaticPaths() {
+   const performers = await getCollection("performers");
+
+   return performers
+      .filter((performer) => {
+         return performer?.data._type === "band";
+      })
+      .map((performer) => ({
+         params: { slug: performer?.slug },
+         props: { performer },
+      }));
+}
+
+const { domain, siteName } = Astro.locals;
+
+const { performer } = Astro.props;
+const { Content } = await performer.render();
+
+const performerImage = getDynamicImage(performer.data?.image);
+
+const musicEvent = await getEntry("events", performer?.data?.event?.slug);
+
+const eventExpired = dayjs().isAfter(dayjs(musicEvent?.data?.endDatetime));
+
+const crumbs = [
+   {
+      href: "/",
+      title: "Dark Castle Fest",
+   },
+   {
+      href:
+         musicEvent?.data?.archive === true
+            ? `/archive/${musicEvent.data?.year}`
+            : `/lineup`,
+      title: `${musicEvent?.data?.year} Lineup`,
+   },
+   {
+      href: "/",
+      title: performer?.data?.name,
+   },
+];
+
+const jsonSchema = performer ? await performerSchema(performer.slug) : {};
+---
+
+<Layout>
+   <SEO
+      slot="seo"
+      title=`${performer.data.name} | Dark Castle Fest  ${musicEvent?.data?.year}`
+      description={performer?.data?.seoDescription ||
+         performer?.data?.description}
+      openGraph={{
+         basic: {
+            title: `${performer.data.name} | Dark Castle Fest ${musicEvent?.data?.year}`,
+            image: `${domain}${performer.data?.image}`,
+            type: "website",
+            url: `${domain}/bands/${performer.slug}`,
+         },
+         optional: {
+            locale: "en_US",
+            siteName,
+         },
+      }}
+   />
+
+   <Container boxGap={true}>
+      <Breadcrumb crumbs={crumbs} />
+
+      <article id={performer.slug} class="l-performer">
+         <header class="l-performer-header">
+            <h1 class="l-performer-title">{performer?.data?.name}</h1>
+         </header>
+
+         <section class="l-performer-info">
+            <p class="l-performer-location mb-0">
+               <span aria-label="Location">
+                  <Icon icon="location" />
+               </span>
+               <span>{performer?.data?.location}</span>
+            </p>
+
+            <p class="mb-0">
+               Dark Castle Fest {musicEvent?.data?.year}
+            </p>
+         </section>
+
+         <section>
+            <figure class="l-performer-figure">
+               <Picture
+                  class="l-performer-img"
+                  src={performerImage}
+                  formats={["webp", "avif"]}
+                  alt={performer?.data?.name}
+                  fallbackFormat={performer?.data?.image.split(".").pop()}
+                  loading="eager"
+                  width={500}
+               />
+            </figure>
+
+            <div class="l-performer-bio">
+               <Content />
+            </div>
+         </section>
+
+         <footer class="l-performer-footer">
+            <section class="l-performer-links">
+               {
+                  Object.entries(performer?.data?.links).map(([key, value]) => {
+                     return (
+                        <a
+                           href={String(value)}
+                           target="_blank"
+                           rel="noopener"
+                           title={`${performer?.data?.name} @ ${
+                              key[0].toUpperCase() + key.slice(1)
+                           }`}
+                           aria-label={`${performer.data?.name} @ ${
+                              key[0].toUpperCase() + key.slice(1)
+                           }`}
+                           class="l-performer-link"
+                        >
+                           <Icon icon={key} />
+                        </a>
+                     );
+                  })
+               }
+            </section>
+
+            <hr />
+
+            <section class="l-perfomer-secondary">
+               {
+                  eventExpired === false &&
+                     musicEvent?.data?.archive === false &&
+                     musicEvent?.data?.ticketsUrl && (
+                        <Button
+                           href={musicEvent?.data.ticketsUrl}
+                           nodeProps={{
+                              target: "_blank",
+                              rel: "noopener",
+                           }}
+                        >
+                           <Icon icon="ticket" classes="ml-0" />{" "}
+                           <span class="inline-block">Purchase Tickets</span>
+                        </Button>
+                     )
+               }
+
+               <p>
+                  {
+                     musicEvent?.data?.archive === false && (
+                        <a href="/lineup">
+                           <span class="inline-block">
+                              Dark Castle Fest {musicEvent?.data?.year}
+                           </span>{" "}
+                           <Icon icon="right-open" />
+                        </a>
+                     )
+                  }
+
+                  {
+                     musicEvent?.data?.archive === true && (
+                        <a href={`/archive/${musicEvent?.data?.year}`}>
+                           <span class="inline-block">
+                              Dark Castle Fest {musicEvent?.data?.year}
+                           </span>{" "}
+                           <Icon icon="right-open" />
+                        </a>
+                     )
+                  }
+               </p>
+            </section>
+         </footer>
+      </article>
+   </Container>
+
+   <script
+      slot="jsonLd"
+      type="application/ld+json"
+      set:html={JSON.stringify(jsonSchema)}
+   />
+</Layout>

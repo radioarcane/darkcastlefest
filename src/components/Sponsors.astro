@@ -1,0 +1,69 @@
+---
+import Container from "./Container.astro";
+import Icon from "./Icon.astro";
+---
+
+<Container tag="aside" classes="pb-lg" boxGap={true}>
+   <h3 class="title">Sponsors</h3>
+
+   <div class="cards">
+      <div class="card">
+         <div class="card-header">
+            <h4 class="card-title">Moon Coil Media</h4>
+         </div>
+
+         <div class="card-content">
+            <p>
+               Moon Coil Media is the premier PR & artist management agency
+               specializing in the following genres: goth, industrial, ebm,
+               darkwave, post-punk, synthpop, horror punk, deathrock & extreme
+               metal.
+            </p>
+         </div>
+
+         <footer class="card-footer performer-card-footer">
+            <a
+               href="https://mooncoilmedia.com"
+               target="_blank"
+               title="Moon Coil Media Official Website"
+               aria-label="Moon Coil Media Official Website"
+               class="performer-card-link"
+               rel="noopener"
+            >
+               <Icon icon="official" />
+            </a>
+
+            <a
+               href="https://www.facebook.com/Moon-Coil-Media-106151935362238"
+               target="_blank"
+               title="Moon Coil Media @ Facebook"
+               aria-label="Moon Coil Media @ Facebook"
+               class="performer-card-link"
+               rel="noopener"
+            >
+               <Icon icon="facebook" />
+            </a>
+
+            <a
+               href="https://www.instagram.com/mooncoilmedia"
+               target="_blank"
+               title="Moon Coil Media @ Instagram"
+               aria-label="Moon Coil Media @ Instagram"
+               rel="noopener"
+            >
+               <Icon icon="instagram" />
+            </a>
+
+            <a
+               href="https://twitter.com/MoonCoilMedia"
+               target="_blank"
+               title="Moon Coil Media @ Twitter"
+               aria-label="Moon Coil Media @ Twitter"
+               rel="noopener"
+            >
+               <Icon icon="twitter" />
+            </a>
+         </footer>
+      </div>
+   </div>
+</Container>

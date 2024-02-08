@@ -1,0 +1,78 @@
+---
+import { getCollection, getEntry } from "astro:content";
+import { SEO } from "astro-seo";
+import Layout from "../../layouts/Base.astro";
+import Container from "../../components/Container.astro";
+import CardEvents from "../../components/CardEvents.astro";
+import CardEvent from "../../components/CardEvent.astro";
+
+const { domain, siteName } = Astro.locals;
+
+const allEvents = await getCollection("events");
+
+const archivedEvents = await Promise.all(
+   allEvents
+      .filter((musicEvent) => musicEvent.data.archive)
+      .sort((a, b) => {
+         return b.data.year - a.data.year;
+      })
+      .map(async (musicEvent) => {
+         const eventBands = musicEvent.data.bands.slice();
+         const eventDjs = musicEvent.data.djs.slice();
+         const bands = [];
+         const djs = [];
+
+         for (const { slug } of eventBands) {
+            const band = await getEntry("performers", slug);
+
+            if (band) {
+               bands.push(band.data.name);
+            }
+         }
+
+         for (const { slug } of eventDjs) {
+            const dj = await getEntry("performers", slug);
+
+            if (dj) {
+               djs.push(dj.data.name);
+            }
+         }
+
+         return {
+            title: musicEvent.data.title,
+            year: musicEvent.data.year,
+            startDatetime: musicEvent.data.startDatetime,
+            image: musicEvent.data.image,
+            performers: [...bands, ...djs],
+         };
+      })
+);
+---
+
+<Layout>
+   <SEO
+      slot="seo"
+      title=`Archive | Dark Castle Fest`
+      description=`Past Dark Castle Events presented by Radio Arcane in Louisville, Kentucky.`
+      openGraph={{
+         basic: {
+            title: `Archive | Dark Castle Fest`,
+            image: `${domain}/images/dark-castle-fest-2024.jpg`,
+            type: "website",
+            url: `${domain}/archive`,
+         },
+         optional: {
+            locale: "en_US",
+            siteName,
+         },
+      }}
+   />
+
+   <Container tag="article" boxGap={true}>
+      <h1 class="title">Archive: Past Events</h1>
+
+      <CardEvents classes="pb-md">
+         {archivedEvents.map((musicEvent) => <CardEvent {...musicEvent} />)}
+      </CardEvents>
+   </Container>
+</Layout>

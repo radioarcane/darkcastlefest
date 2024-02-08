@@ -1,0 +1,133 @@
+---
+import { Picture } from "astro:assets";
+import SocialIcons from "./SocialIcons.astro";
+import brandImage from "../images/branding.jpg";
+
+const currentPath = Astro.url.pathname;
+
+const { social, spotifyPlaylist } = Astro.locals;
+
+const nav = [
+   {
+      title: "Home",
+      path: "/",
+      ariaProps: {},
+   },
+   {
+      title: "Lineup",
+      path: "/lineup",
+      ariaProps: {},
+   },
+   {
+      title: "Info & Tickets",
+      path: "/info",
+      ariaProps: {},
+   },
+   {
+      title: "Contact",
+      path: "/contact",
+      ariaProps: {},
+   },
+   {
+      title: "Archive",
+      path: "/archive",
+      ariaProps: {},
+   },
+].map((item) => {
+   if (item.path === currentPath) {
+      item.ariaProps = { "aria-current": "page" };
+   }
+
+   return item;
+});
+---
+
+<header id="masthead" class="masthead" role="banner">
+   <div class="masthead-top">
+      <div class="masthead-brand">
+         <a href="/">
+            <Picture
+               src={brandImage}
+               formats={["webp", "avif"]}
+               alt="Dark Castle Fest"
+               fallbackFormat="jpg"
+               loading="eager"
+               width={200}
+            />
+         </a>
+      </div>
+
+      <button
+         id="menu-toggle"
+         class="menu-toggle"
+         title="Open Menu"
+         aria-label="Open Menu"
+         aria-haspopup="true"
+         aria-controls="navigation-menu"
+         aria-expanded="false"
+      >
+         <span></span>
+         <span></span>
+         <span></span>
+      </button>
+   </div>
+
+   <div class="masthead-nav">
+      <nav id="navigation" class="mast-nav">
+         <ul
+            id="navigation-menu"
+            class="nav-menu"
+            aria-labelledby="navigation-menu"
+            role="menu"
+         >
+            {
+               nav.map((item) => (
+                  <li class="nav-menu-item" role="menuitem">
+                     <a
+                        class="nav-menu-link"
+                        href={item.path}
+                        {...item.ariaProps}
+                     >
+                        {item.title}
+                     </a>
+                  </li>
+               ))
+            }
+         </ul>
+      </nav>
+
+      <address class="masthead-social">
+         <SocialIcons
+            facebook={social.facebook}
+            instagram={social.instagram}
+            spotify={spotifyPlaylist}
+         />
+      </address>
+   </div>
+</header>
+<script>
+   const openStateClass = "state--menu-open";
+
+   const closeNav = () => {
+      document.body.classList.remove(openStateClass);
+   };
+
+   const openNav = () => {
+      document.body.classList.add(openStateClass);
+   };
+   const navMenuToggle = document.getElementById("menu-toggle");
+
+   if (navMenuToggle) {
+      navMenuToggle.addEventListener("click", (ev) => {
+         ev.preventDefault;
+
+         const isOpen =
+            navMenuToggle.getAttribute("aria-expanded") === "true"
+               ? true
+               : false;
+         isOpen ? closeNav() : openNav();
+
+         navMenuToggle.setAttribute("aria-expanded", isOpen ? "false" : "true");
+      });
+   }
+</script>

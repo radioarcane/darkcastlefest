@@ -1,0 +1,25 @@
+---
+import type { HTMLTag } from 'astro/types';
+
+interface Props {
+    boxGap: boolean;
+	classes?: string;
+    tag?: HTMLTag;
+}
+
+const {
+  tag: Element = 'div',
+  boxGap,
+  classes,
+} = Astro.props;
+
+const classNames = [
+    'container',
+    boxGap ? 'box-gap' : '',
+    classes ? classes : '',
+]
+.filter(className => className);
+---
+<Element class={classNames.join(" ")}>
+    <slot />
+</Element>

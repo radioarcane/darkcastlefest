@@ -1,0 +1,170 @@
+---
+import { SEO } from "astro-seo";
+import { getCollection, getEntryBySlug } from "astro:content";
+import { musicEventSchema } from "../../util/jsonLd";
+import Layout from "../../layouts/Base.astro";
+import Icon from "../../components/Icon.astro";
+import CardPerformer from "../../components/CardPerformer.astro";
+
+const { currentYear, domain, siteName } = Astro.locals;
+
+const allEvents = await getCollection("events");
+const nextEvent = allEvents.find(({ data }) => data.year === currentYear);
+const nextEventBands = nextEvent?.data.bands || [];
+const nextEventDjs = nextEvent?.data.djs || [];
+
+let bands = [];
+let djs = [];
+
+for (const { slug } of nextEventBands) {
+   const band = await getEntryBySlug("performers", slug);
+
+   if (band) {
+      bands.push(band);
+   }
+}
+
+for (const { slug } of nextEventDjs) {
+   const dj = await getEntryBySlug("performers", slug);
+
+   if (dj) {
+      djs.push(dj);
+   }
+}
+
+const jsonSchema = nextEvent ? await musicEventSchema(nextEvent.slug) : {};
+---
+
+<Layout>
+   <SEO
+      slot="seo"
+      title=`${currentYear} Lineup | Dark Castle Fest 2024`
+      description="Dark Castle Fest 2024 featuring Astari Nite, The Kentucky Vampires, The Neuro Farm, Blood Dance, Attic Eyes, and more..."
+      openGraph={{
+         basic: {
+            title: `${currentYear} Lineup | Dark Castle Fest 2024`,
+            image: `${domain}/images/dark-castle-fest-2024.jpg`,
+            type: "website",
+            url: `${domain}/lineup`,
+         },
+         optional: {
+            locale: "en_US",
+            siteName,
+         },
+      }}
+   />
+
+   <div class="container box-gap">
+      <section id="info" class="pb-lg">
+         <h1 class="title">Dark Castle Fest {currentYear} Lineup</h1>
+
+         <p>
+            <time datetime="2024-09-26">Thursday September 26, 2024</time> –
+            <time datetime="2024-09-28">Saturday September 28, 2024</time>
+         </p>
+
+         <div class="grid grid--collapse">
+            <div class="grid-item xs-12 md-8">
+               <!-- 
+               <p>
+                  <strong>Ticket Options:</strong><br />
+                  Weekend Pass &ndash; $65<br />
+                  <sup class="text-secondary">*</sup>Babacastillo Pass &ndash;
+                  $95<br />
+                  Single Day Pass - $45
+               </p>
+               -->
+
+               <p>
+                  <strong>Ticket Options:</strong><br />
+                  A link to purchase tickets for Dark Castle Fest 2024 will be available
+                  here once they go on sale.
+               </p>
+
+               {
+                  nextEvent?.data?.ticketsUrl && (
+                     <a
+                        class="btn btn--primary"
+                        href={nextEvent?.data.ticketsUrl}
+                        target="_blank"
+                        rel="noopener"
+                     >
+                        <Icon icon="ticket" classes="ml-0" />
+                        <span class="inline-block">Purchase Tickets</span>
+                     </a>
+                  )
+               }
+
+               <!-- 
+               <p class="text-secondary">
+                  <small>
+                     <sup>*</sup>Babacastillo Pass details: Full event pass plus
+                     event t-shirt, event poster autographed by The Kentucky
+                     Vampires, two event stickers, single packet of Taco Bell
+                     Fire Sauce autographed by Albie Mason of Scary Black and an
+                     option for a free pic taken with Dark Castle monster
+                     Babacastillo.
+                  </small>
+               </p>
+               -->
+            </div>
+            <div class="grid-item xs-12 md-4">
+               <p>
+                  18+ to enter<br />
+                  {
+                     nextEvent?.data?.facebookEvent && (
+                        <>
+                           <a
+                              href={nextEvent.data.facebookEvent}
+                              target="_blank"
+                              rel="noopener"
+                           >
+                              Facebook Event Page
+                           </a>
+                           <br />
+                        </>
+                     )
+                  }
+
+                  <a href="#schedule">Event Schedule</a><br />
+                  Venue: <a
+                     href="https://www.google.com/maps/place/Art+Sanctuary/@38.2264103,-85.7413458,15z/data=!4m2!3m1!1s0x0:0xe8b5fa85d9ebd15f?ved=2ahUKEwjD0efWu_rfAhVKhq0KHV-nAdMQ_BIwDnoECAEQCA"
+                     target="_blank"
+                     rel="noopener">Art Sanctuary</a
+                  >
+               </p>
+            </div>
+         </div>
+      </section>
+
+      <section id="bands" class="pb-lg">
+         <h2 class="title">Band Announcements</h2>
+
+         <div class="cards performer-cards">
+            {bands.map((item) => <CardPerformer performer={item} />)}
+         </div>
+      </section>
+
+      <section id="djs" class="pv-lg">
+         <h2 class="title">DJ Announcements</h2>
+
+         <div class="cards performer-cards">
+            {djs.map((item) => <CardPerformer performer={item} />)}
+         </div>
+      </section>
+
+      <section id="schedule">
+         <h3 class="title">Schedule (EST)</h3>
+
+         <p>
+            The {currentYear} schedule will be posted here once it becomes available.
+         </p>
+      </section>
+   </div>
+
+   <script
+      slot="jsonLd"
+      type="application/ld+json"
+      set:html={JSON.stringify(jsonSchema)}
+   />
+</Layout>

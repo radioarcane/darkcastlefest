@@ -1,0 +1,162 @@
+---
+import { SEO } from "astro-seo";
+import { getCollection, getEntry } from "astro:content";
+import { Picture } from "astro:assets";
+import { musicEventSchema } from "../util/jsonLd";
+import Layout from "../layouts/Base.astro";
+import Container from "../components/Container.astro";
+import Grid from "../components/Grid.astro";
+import GridItem from "../components/GridItem.astro";
+import HomepageBand from "../components/HomepageBand.astro";
+
+import darkCastleFestPoster from "../images/dark-castle-fest-2024-banner.jpg";
+
+const { currentYear, domain, siteName, social } = Astro.locals;
+
+const allEvents = await getCollection("events");
+const nextEvent = allEvents.find(({ data }) => data.year === currentYear);
+
+const nextEventBands = nextEvent?.data.bands || [];
+const nextEventDjs = nextEvent?.data.djs || [];
+
+/*
+const location = nextEvent
+   ? await getEntry("locations", nextEvent.data.location.slug)
+   : null;
+*/
+
+let bands = [];
+let djs = [];
+
+for (const { slug } of nextEventBands) {
+   const band = await getEntry("performers", slug);
+
+   if (band) {
+      bands.push(band);
+   }
+}
+
+for (const { slug } of nextEventDjs) {
+   const dj = await getEntry("performers", slug);
+
+   if (dj) {
+      djs.push(dj);
+   }
+}
+
+const lastestActs = [];
+
+const listBands = [
+   "sinister-senile-2024",
+   "dead-souls-gothic-lounge-2024",
+   "the-kentucky-vampires-2024",
+   "count-grozny-2024",
+   "blood-dance",
+   "dj-creepy-crawly",
+   "tokyo-teens",
+   "astari-nite-2024",
+   "the-dead-speak",
+   "saddle-of-southern-darkness",
+   "motuvius-rex-2024",
+   "silver-rein",
+   "the-neuro-farm-2024",
+   "bat-noise",
+   "sombre-arcane",
+   "ghost-painted-sky",
+   "attic-eyes",
+];
+
+for (const slug of listBands) {
+   const performer = await getEntry("performers", slug);
+   lastestActs.push(performer);
+}
+
+const jsonSchema = nextEvent ? await musicEventSchema(nextEvent.slug) : {};
+---
+
+<Layout>
+   <SEO
+      slot="seo"
+      title="Dark Castle Fest 2024 - Louisville, KY"
+      description="Radio Arcane presents Dark Castle Fest. A Gothic Music & Dark Arts Festival featuring performances by Astari Nite, The Kentucky Vampires, and more."
+      openGraph={{
+         basic: {
+            title: "Dark Castle Fest 2024 - Louisville, KY",
+            image: `${domain}/images/dark-castle-fest-2024.jpg`,
+            type: "website",
+            url: domain,
+         },
+         optional: {
+            locale: "en_US",
+            siteName,
+         },
+      }}
+   />
+
+   <Container boxGap={true} tag="article" classes="pb-lg">
+      <h1 class="title">{nextEvent?.data?.title}</h1>
+
+      <Grid tag="section" center={true} collapse={true}>
+         <GridItem xs={12} md={6} lg={7}>
+            <h2 class="mb-0">
+               <a
+                  class="text-default"
+                  href="https://www.radio-arcane.com"
+                  target="_blank">Radio Arcane</a
+               > presents Dark Castle Fest<br />
+               A Gothic Music & Dark Arts Festival
+            </h2>
+
+            <p class="text-secondary">
+               <time datetime="2024-09-26">September 26</time> – <time
+                  datetime="2024-09-28">28th</time
+               >, 2024<br />
+               Louisville, Kentucky
+            </p>
+
+            <p>Dark Castle Fest {currentYear} band confirmations have begun!</p>
+
+            <p>
+               More info soon, please follow us on <a
+                  href={social?.facebook}
+                  target="_blank"
+                  rel="noopener">Facebook</a
+               > and <a href={social?.instagram} target="_blank" rel="noopener"
+                  >Instagram</a
+               > for the latest updates.
+            </p>
+         </GridItem>
+         <GridItem xs={12} md={6} lg={5}>
+            <figure>
+               <Picture
+                  src={darkCastleFestPoster}
+                  formats={["webp", "avif"]}
+                  alt=`Dark Castle Festival ${currentYear} Poster`
+                  fallbackFormat="jpg"
+                  loading="eager"
+                  width={900}
+               />
+            </figure>
+         </GridItem>
+      </Grid>
+   </Container>
+
+   <Container boxGap={true}>
+      <h3 class="title uppercase">{currentYear} Announcements!</h3>
+
+      {
+         lastestActs.map((performer, i) => (
+            <HomepageBand
+               performer={performer}
+               flow={i % 2 ? `right` : `left`}
+            />
+         ))
+      }
+   </Container>
+</Layout>
+
+<script
+   slot="jsonLd"
+   type="application/ld+json"
+   set:html={JSON.stringify(jsonSchema)}
+/>
