@@ -3,6 +3,7 @@ import { SEO } from "astro-seo";
 import { getCollection, getEntry } from "astro:content";
 import { Picture } from "astro:assets";
 import { musicEventSchema } from "../util/jsonLd";
+import Icon from "../components/Icon.astro";
 import Layout from "../layouts/Base.astro";
 import Container from "../components/Container.astro";
 import Grid from "../components/Grid.astro";
@@ -47,6 +48,8 @@ for (const { slug } of nextEventDjs) {
 const lastestActs = [];
 
 const listBands = [
+   "iris-marlowe",
+   "clubdrugs",
    "sinister-senile-2024",
    "dead-souls-gothic-lounge-2024",
    "the-kentucky-vampires-2024",
@@ -125,6 +128,20 @@ const jsonSchema = nextEvent ? await musicEventSchema(nextEvent.slug) : {};
                   >Instagram</a
                > for the latest updates.
             </p>
+
+            {
+               nextEvent?.data?.ticketsUrl && (
+                  <a
+                     class="btn btn--primary"
+                     href={nextEvent?.data.ticketsUrl}
+                     target="_blank"
+                     rel="noopener"
+                  >
+                     <Icon icon="ticket" classes="ml-0" />
+                     <span class="inline-block">Purchase Tickets</span>
+                  </a>
+               )
+            }
          </GridItem>
          <GridItem xs={12} md={6} lg={5}>
             <figure>
