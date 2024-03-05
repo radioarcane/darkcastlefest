@@ -39,39 +39,27 @@ const location = nextEvent
    <article class="container box-gap">
       <section id="tickets" class="pb-sm">
          <h2 class="title">Tickets</h2>
-
-         <!-- 
          <p>
             Dark Castle Fest {currentYear} tickets are available now.
          </p>
-         -->
 
          <p>
-            Dark Castle Fest {currentYear} ticket information will be posted here
-            once available.
-         </p>
-
-         <!-- 
-             <p>
             18+ entry<br />
             21+ bar
          </p>
 
-         
          <p>
             <strong>Ticket Options:</strong><br />
-            Weekend Pass &ndash; $65<br />
-            <sup class="text-secondary">*</sup>Babacastillo Pass &ndash; $95<br
-            />
-            Single Day Pass - $45
+            Full Event: $85<br />
+            Two Days: $65<br />
+            Single Day: $45
          </p>
-         -->
 
          {
             nextEvent?.data?.ticketsUrl && (
                <a
                   class="btn btn--primary"
-                  href="changme"
+                  href={nextEvent.data.tirkcetsUrl}
                   target="_blank"
                   rel="noopener"
                >
@@ -80,18 +68,6 @@ const location = nextEvent
                </a>
             )
          }
-
-         <!-- 
-         <p class="text-secondary">
-            <small>
-               <sup>*</sup>Babacastillo Pass details: Full event pass plus event
-               t-shirt, event poster autographed by The Kentucky Vampires, two
-               event stickers, single packet of Taco Bell Fire Sauce autographed
-               by Albie Mason of Scary Black and an option for a free pic taken
-               with Dark Castle monster Babacastillo.
-            </small>
-         </p>
-         -->
       </section>
 
       <section id="social" class="pb-sm">

@@ -7,10 +7,10 @@ image: "/images/dark-castle-2024.jpg"
 startDatetime: "2024-09-26T18:00:00Z"
 endDatetime: "2024-09-29T02:00:00Z"
 location: "art-sanctuary"
-facebookEvent: null
-ticketsUrl: null
-ticketPrice: null
-ticketDescription: null
+facebookEvent: "https://www.facebook.com/events/425627466582073"
+ticketsUrl: "https://art-sanctuary.ticketleap.com/dark-castle-fest-2024"
+ticketPrice: "$85.00"
+ticketDescription: "Full Event: $85, Two Days: $65, Single Day: $45"
 spotifyPlaylist: "https://open.spotify.com/playlist/17htGghK3PuiiOgrAXcAPe"
 bands:
    [
@@ -26,6 +26,8 @@ bands:
       silver-rein,
       bat-noise,
       tokyo-teens,
+      clubdrugs,
+      iris-marlowe,
       saddle-of-southern-darkness,
       sinister-senile-2024,
    ]
