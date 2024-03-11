@@ -19,6 +19,7 @@ const nextEvent = allEvents.find(({ data }) => data.year === currentYear);
 
 const nextEventBands = nextEvent?.data.bands || [];
 const nextEventDjs = nextEvent?.data.djs || [];
+const nextEventPerformances = nextEvent?.data.performances || [];
 
 /*
 const location = nextEvent
@@ -28,6 +29,7 @@ const location = nextEvent
 
 let bands = [];
 let djs = [];
+let performances = [];
 
 for (const { slug } of nextEventBands) {
    const band = await getEntry("performers", slug);
@@ -45,9 +47,19 @@ for (const { slug } of nextEventDjs) {
    }
 }
 
+for (const { slug } of nextEvent?.data.performances) {
+   const performance = await getEntry("performers", slug);
+
+   if (performance) {
+      performances.push(performance);
+   }
+}
+
 const lastestActs = [];
 
 const listBands = [
+   "frenchy-and-the-punk",
+   "of-limestone-chlorophyl-and-bone",
    "iris-marlowe",
    "clubdrugs",
    "sinister-senile-2024",

@@ -17,6 +17,7 @@ bands:
       astari-nite-2024,
       the-kentucky-vampires-2024,
       the-neuro-farm-2024,
+      frenchy-and-the-punk,
       blood-dance,
       ghost-painted-sky,
       attic-eyes,
@@ -32,6 +33,7 @@ bands:
       sinister-senile-2024,
    ]
 djs: [dj-creepy-crawly, dead-souls-gothic-lounge-2024, count-grozny-2024]
+performances: [of-limestone-chlorophyl-and-bone]
 ---
 
 Third Annual Dark Castle Music Festival September 26 – 28th, 2024.

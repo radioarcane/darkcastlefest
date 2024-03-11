@@ -2,7 +2,7 @@ import { z, reference } from 'astro:content';
 
 export const performerSchema = z.object({
     name: z.string(),
-    _type: z.enum(["band", "dj"]),
+    _type: z.enum(["band", "dj", "performance"]),
     path: z.string().startsWith("/").toLowerCase(),
     image: z.string().startsWith("/"),
     logo: z.string().startsWith("/").nullable(),
@@ -56,5 +56,6 @@ export const eventSchema = z.object({
     ticketDescription: z.optional(z.string().nullable()),
     spotifyPlaylist: z.optional(z.string().url().nullable()),
     bands: z.array(reference('performers')),
-    djs: z.array(reference('performers'))
+    djs: z.array(reference('performers')),
+    performances: z.array(reference('performers')),
 });
