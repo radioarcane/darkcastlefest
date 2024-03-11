@@ -17,6 +17,7 @@ bands:
       astari-nite-2024,
       the-kentucky-vampires-2024,
       the-neuro-farm-2024,
+      frenchy-and-the-punk,
       blood-dance,
       ghost-painted-sky,
       attic-eyes,
