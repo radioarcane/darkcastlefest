@@ -7,6 +7,6 @@ const { items } = Astro.props;
 ---
 
 <ul class="inline-list">
-   {items.length && items.map((item) => <li>{item}</li>)}
+   {items.length > 0 && items.map((item) => <li>{item}</li>)}
    <slot />
 </ul>

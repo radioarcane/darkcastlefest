@@ -12,9 +12,11 @@ const allEvents = await getCollection("events");
 const nextEvent = allEvents.find(({ data }) => data.year === currentYear);
 const nextEventBands = nextEvent?.data.bands || [];
 const nextEventDjs = nextEvent?.data.djs || [];
+const nextEventPerformances = nextEvent?.data.performances || [];
 
 let bands = [];
 let djs = [];
+let performances = [];
 
 for (const { slug } of nextEventBands) {
    const band = await getEntryBySlug("performers", slug);
@@ -29,6 +31,14 @@ for (const { slug } of nextEventDjs) {
 
    if (dj) {
       djs.push(dj);
+   }
+}
+
+for (const { slug } of nextEvent?.data.performances) {
+   const performance = await getEntryBySlug("performers", slug);
+
+   if (performance) {
+      performances.push(performance);
    }
 }
 
@@ -143,6 +153,20 @@ const jsonSchema = nextEvent ? await musicEventSchema(nextEvent.slug) : {};
             {djs.map((item) => <CardPerformer performer={item} />)}
          </div>
       </section>
+
+      {
+         performances.length && (
+            <section id="performances" class="pv-lg">
+               <h2 class="title">Performances</h2>
+
+               <div class="cards performer-cards">
+                  {performances.map((item) => (
+                     <CardPerformer performer={item} />
+                  ))}
+               </div>
+            </section>
+         )
+      }
 
       <section id="schedule">
          <h3 class="title">Schedule (EST)</h3>

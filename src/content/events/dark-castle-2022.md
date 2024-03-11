@@ -14,6 +14,7 @@ ticketDescription: null
 spotifyPlaylist: null
 bands: [twin-tribes, wingtips, faux-fear, vazum, blood-handsome]
 djs: []
+performances: []
 ---
 
 First Annual Dark Castle Music Festival featuring live performances by:

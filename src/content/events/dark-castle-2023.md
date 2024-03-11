@@ -30,6 +30,7 @@ bands:
       sinister-senile,
    ]
 djs: [ichabod, dead-souls-gothic-lounge, count-grozny, sorrow-vomit]
+performances: []
 ---
 
 Second Annual Dark Castle Music Festival featuring live performances by:
