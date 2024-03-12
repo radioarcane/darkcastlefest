@@ -30,9 +30,16 @@ bands:
       clubdrugs,
       iris-marlowe,
       saddle-of-southern-darkness,
+      mollys-midnight-villains,
       sinister-senile-2024,
    ]
-djs: [dj-creepy-crawly, dead-souls-gothic-lounge-2024, count-grozny-2024]
+djs:
+   [
+      ichabod-2024,
+      dj-creepy-crawly,
+      dead-souls-gothic-lounge-2024,
+      count-grozny-2024,
+   ]
 performances: [of-limestone-chlorophyl-and-bone]
 ---
 

@@ -15,6 +15,7 @@ genres:
 links:
    facebook: "https://www.facebook.com/fascinationstreetnashville"
    instagram: "https://www.instagram.com/fascination_street_nashville"
+   mixcloud: "https://www.mixcloud.com/OutovtheCoffin"
 description: "We are excited to announce that Nashville’s legendary DJ Ichabod will be joining us at Dark Castle 2023! "
 ref: null
 ---
