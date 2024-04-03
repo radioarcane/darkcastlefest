@@ -56,3 +56,16 @@
 .card-footer {
     padding: var(--space-sm) var(--space-md);
 }
+
+@media screen and (min-width: 900px) {
+    .sponsor-cards {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: stretch;
+        gap: 30px;
+    }
+
+    .sponsor-cards .card {
+        max-width: calc(33.33333% - 30px);
+    } 
+}
