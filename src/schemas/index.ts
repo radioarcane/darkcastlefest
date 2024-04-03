@@ -59,3 +59,16 @@ export const eventSchema = z.object({
     djs: z.array(reference('performers')),
     performances: z.array(reference('performers')),
 });
+
+export const sponsorSchema = z.object({
+  name: z.string(),
+  _type: z.enum(["sponsor"]),
+  image: z.string().startsWith("/").nullable(),
+  description: z.string(),
+  links: z.object({
+    official: z.optional(z.string().url().nullable()),
+    facebook: z.optional(z.string().url().nullable()),
+    instagram: z.optional(z.string().url().nullable()),
+    twitter: z.optional(z.string().url().nullable()),
+  }),
+});

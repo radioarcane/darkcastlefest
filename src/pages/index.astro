@@ -55,7 +55,10 @@ for (const { slug } of nextEventPerformances) {
    }
 }
 
-const lastestActs = [];
+const lastestActs: any[] = [
+   await getEntry("sponsors", "pale-moon-tattoo"),
+   await getEntry("sponsors", "aurora-gallery-and-boutique"),
+];
 
 const listBands = [
    "ichabod-2024",

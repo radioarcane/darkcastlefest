@@ -1,5 +1,5 @@
 import { defineCollection } from 'astro:content';
-import { performerSchema, eventSchema, locationSchema } from '../schemas';
+import { performerSchema, eventSchema, locationSchema, sponsorSchema } from '../schemas';
 
 const performers = defineCollection({
   type: 'content',
@@ -16,6 +16,11 @@ const events = defineCollection({
   schema: eventSchema
 });
 
+const sponsors = defineCollection({
+  type: 'content',
+  schema: sponsorSchema
+});
+
 export const collections = {
-  events, performers, locations,
+  events, performers, locations, sponsors,
 };
