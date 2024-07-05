@@ -14,6 +14,7 @@ ticketDescription: "Full Event: $85, Two Days: $65, Single Day: $45"
 spotifyPlaylist: "https://open.spotify.com/playlist/17htGghK3PuiiOgrAXcAPe"
 bands:
    [
+      "attrition",
       astari-nite-2024,
       the-kentucky-vampires-2024,
       the-neuro-farm-2024,

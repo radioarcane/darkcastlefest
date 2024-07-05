@@ -63,6 +63,7 @@ const lastestActs: any[] = [
 ];
 
 const listBands = [
+   "attrition",
    "ichabod-2024",
    "mollys-midnight-villains",
    "frenchy-and-the-punk",
@@ -90,7 +91,12 @@ const listBands = [
 
 for (const slug of listBands) {
    const performer = await getEntry("performers", slug);
-   lastestActs.push(performer);
+
+   if (slug === "attrition") {
+      lastestActs.unshift(performer);
+   } else {
+      lastestActs.push(performer);
+   }
 }
 
 const jsonSchema = nextEvent ? await musicEventSchema(nextEvent.slug) : {};
