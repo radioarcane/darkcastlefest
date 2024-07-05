@@ -72,3 +72,16 @@ export const sponsorSchema = z.object({
     twitter: z.optional(z.string().url().nullable()),
   }),
 });
+
+export const vendorsSchema = z.object({
+  name: z.string(),
+  _type: z.enum(["vendor"]),
+  image: z.string().startsWith("/").nullable(),
+  description: z.string().nullable(),
+  links: z.object({
+    official: z.optional(z.string().url().nullable()),
+    facebook: z.optional(z.string().url().nullable()),
+    instagram: z.optional(z.string().url().nullable()),
+    twitter: z.optional(z.string().url().nullable()),
+  }),
+});
