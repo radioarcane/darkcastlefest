@@ -14,23 +14,23 @@ ticketDescription: "Full Event: $85, Two Days: $65, Single Day: $45"
 spotifyPlaylist: "https://open.spotify.com/playlist/17htGghK3PuiiOgrAXcAPe"
 bands:
    [
-      "attrition",
-      astari-nite-2024,
+      attrition,
       the-kentucky-vampires-2024,
+      astari-nite-2024,
       the-neuro-farm-2024,
       frenchy-and-the-punk,
       blood-dance,
       ghost-painted-sky,
-      attic-eyes,
       motuvius-rex-2024,
-      the-dead-speak,
-      sombre-arcane,
-      silver-rein,
-      bat-noise,
-      tokyo-teens,
+      attic-eyes,
       clubdrugs,
+      tokyo-teens,
+      bat-noise,
+      sombre-arcane,
       iris-marlowe,
+      the-dead-speak,
       saddle-of-southern-darkness,
+      silver-rein,
       mollys-midnight-villains,
       sinister-senile-2024,
    ]
@@ -41,7 +41,7 @@ djs:
       dead-souls-gothic-lounge-2024,
       count-grozny-2024,
    ]
-performances: [of-limestone-chlorophyl-and-bone]
+performances: [of-limestone-chlorophyl-and-bone, maciste-in-hell]
 ---
 
 Third Annual Dark Castle Music Festival September 26 – 28th, 2024.

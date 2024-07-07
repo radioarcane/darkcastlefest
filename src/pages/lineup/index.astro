@@ -1,10 +1,13 @@
 ---
 import { SEO } from "astro-seo";
+import { Picture } from "astro:assets";
 import { getCollection, getEntryBySlug } from "astro:content";
 import { musicEventSchema } from "../../util/jsonLd";
 import Layout from "../../layouts/Base.astro";
 import Icon from "../../components/Icon.astro";
 import CardPerformer from "../../components/CardPerformer.astro";
+import Grid from "../../components/Grid.astro";
+import GridItem from "../../components/GridItem.astro";
 
 const { currentYear, domain, siteName } = Astro.locals;
 
@@ -13,6 +16,10 @@ const nextEvent = allEvents.find(({ data }) => data.year === currentYear);
 const nextEventBands = nextEvent?.data.bands || [];
 const nextEventDjs = nextEvent?.data.djs || [];
 const nextEventPerformances = nextEvent?.data.performances || [];
+
+import lineupPoster20240926 from "../../images/dark-castle-fest-2024-09-26-lineup.jpg";
+import lineupPoster20240927 from "../../images/dark-castle-fest-2024-09-27-lineup.jpg";
+import lineupPoster20240928 from "../../images/dark-castle-fest-2024-09-28-lineup.jpg";
 
 let bands = [];
 let djs = [];
@@ -53,7 +60,7 @@ const jsonSchema = nextEvent ? await musicEventSchema(nextEvent.slug) : {};
       openGraph={{
          basic: {
             title: `${currentYear} Lineup | Dark Castle Fest 2024`,
-            image: `${domain}/images/dark-castle-fest-2024.jpg`,
+            image: `${domain}/images/dark-castle-fest-2024-lineup.jpg`,
             type: "website",
             url: `${domain}/lineup`,
          },
@@ -73,8 +80,8 @@ const jsonSchema = nextEvent ? await musicEventSchema(nextEvent.slug) : {};
             <time datetime="2024-09-28">Saturday September 28, 2024</time>
          </p>
 
-         <div class="grid grid--collapse">
-            <div class="grid-item xs-12 md-8">
+         <Grid collapse={true} classes="pb-lg">
+            <GridItem xs={12} md={8}>
                <p>
                   <strong>Ticket Options:</strong><br />
                   Full Event: $85<br />
@@ -95,7 +102,6 @@ const jsonSchema = nextEvent ? await musicEventSchema(nextEvent.slug) : {};
                      </a>
                   )
                }
-
                <!-- 
                <p class="text-secondary">
                   <small>
@@ -108,8 +114,8 @@ const jsonSchema = nextEvent ? await musicEventSchema(nextEvent.slug) : {};
                   </small>
                </p>
                -->
-            </div>
-            <div class="grid-item xs-12 md-4">
+            </GridItem>
+            <GridItem xs={12} md={4}>
                <p>
                   18+ to enter<br />
                   {
@@ -134,8 +140,37 @@ const jsonSchema = nextEvent ? await musicEventSchema(nextEvent.slug) : {};
                      rel="noopener">Art Sanctuary</a
                   >
                </p>
-            </div>
-         </div>
+            </GridItem>
+         </Grid>
+         <Grid collapse={true} classes="pt-1">
+            <GridItem xs={12} md={4} classes="pb-md">
+               <Picture
+                  src={lineupPoster20240926}
+                  formats={["webp", "avif"]}
+                  alt={"Dark Castle Fest Lineup September 26, 2024"}
+                  loading="eager"
+                  width={500}
+               />
+            </GridItem>
+            <GridItem xs={12} md={4} classes="pb-md">
+               <Picture
+                  src={lineupPoster20240927}
+                  formats={["webp", "avif"]}
+                  alt={"Dark Castle Fest Lineup September 27, 2024"}
+                  loading="eager"
+                  width={500}
+               />
+            </GridItem>
+            <GridItem xs={12} md={4} classes="pb-md">
+               <Picture
+                  src={lineupPoster20240928}
+                  formats={["webp", "avif"]}
+                  alt={"Dark Castle Fest Lineup September 28, 2024"}
+                  loading="eager"
+                  width={500}
+               />
+            </GridItem>
+         </Grid>
       </section>
 
       <section id="bands" class="pb-lg">

@@ -10,7 +10,7 @@ import Grid from "../components/Grid.astro";
 import GridItem from "../components/GridItem.astro";
 import HomepageBand from "../components/HomepageBand.astro";
 
-import darkCastleFestPoster from "../images/dark-castle-fest-2024-banner.jpg";
+import darkCastleFest2024Poster from "../images/dark-castle-fest-2024-lineup.jpg";
 
 const { currentYear, domain, siteName, social } = Astro.locals;
 
@@ -56,49 +56,37 @@ for (const { slug } of nextEventPerformances) {
 }
 
 const lastestActs: any[] = [
+   await getEntry("performers", "maciste-in-hell"),
+   await getEntry("performers", "attrition"),
    await getEntry("vendors", "the-gingerbread-hag"),
    await getEntry("sponsors", "the-hive"),
    await getEntry("sponsors", "third-house-communications"),
    await getEntry("sponsors", "pale-moon-tattoo"),
    await getEntry("sponsors", "aurora-gallery-and-boutique"),
+   await getEntry("performers", "ichabod-2024"),
+   await getEntry("performers", "mollys-midnight-villains"),
+   await getEntry("performers", "frenchy-and-the-punk"),
+   await getEntry("performers", "of-limestone-chlorophyl-and-bone"),
+   await getEntry("performers", "iris-marlowe"),
+   await getEntry("performers", "clubdrugs"),
+   await getEntry("performers", "sinister-senile-2024"),
+   await getEntry("performers", "dead-souls-gothic-lounge-2024"),
+   await getEntry("performers", "the-kentucky-vampires-2024"),
+   await getEntry("performers", "count-grozny-2024"),
+   await getEntry("performers", "blood-dance"),
+   await getEntry("performers", "dj-creepy-crawly"),
+   await getEntry("performers", "tokyo-teens"),
+   await getEntry("performers", "astari-nite-2024"),
+   await getEntry("performers", "the-dead-speak"),
+   await getEntry("performers", "saddle-of-southern-darkness"),
+   await getEntry("performers", "motuvius-rex-2024"),
+   await getEntry("performers", "silver-rein"),
+   await getEntry("performers", "the-neuro-farm-2024"),
+   await getEntry("performers", "bat-noise"),
+   await getEntry("performers", "sombre-arcane"),
+   await getEntry("performers", "ghost-painted-sky"),
+   await getEntry("performers", "attic-eyes"),
 ];
-
-const listBands = [
-   "attrition",
-   "ichabod-2024",
-   "mollys-midnight-villains",
-   "frenchy-and-the-punk",
-   "of-limestone-chlorophyl-and-bone",
-   "iris-marlowe",
-   "clubdrugs",
-   "sinister-senile-2024",
-   "dead-souls-gothic-lounge-2024",
-   "the-kentucky-vampires-2024",
-   "count-grozny-2024",
-   "blood-dance",
-   "dj-creepy-crawly",
-   "tokyo-teens",
-   "astari-nite-2024",
-   "the-dead-speak",
-   "saddle-of-southern-darkness",
-   "motuvius-rex-2024",
-   "silver-rein",
-   "the-neuro-farm-2024",
-   "bat-noise",
-   "sombre-arcane",
-   "ghost-painted-sky",
-   "attic-eyes",
-];
-
-for (const slug of listBands) {
-   const performer = await getEntry("performers", slug);
-
-   if (slug === "attrition") {
-      lastestActs.unshift(performer);
-   } else {
-      lastestActs.push(performer);
-   }
-}
 
 const jsonSchema = nextEvent ? await musicEventSchema(nextEvent.slug) : {};
 ---
@@ -111,7 +99,7 @@ const jsonSchema = nextEvent ? await musicEventSchema(nextEvent.slug) : {};
       openGraph={{
          basic: {
             title: "Dark Castle Fest 2024 - Louisville, KY",
-            image: `${domain}/images/dark-castle-fest-2024.jpg`,
+            image: `${domain}/images/dark-castle-fest-2024-lineup.jpg`,
             type: "website",
             url: domain,
          },
@@ -143,10 +131,8 @@ const jsonSchema = nextEvent ? await musicEventSchema(nextEvent.slug) : {};
                Louisville, Kentucky
             </p>
 
-            <p>Dark Castle Fest {currentYear} band confirmations have begun!</p>
-
             <p>
-               More info soon, please follow us on <a
+               Please follow us on <a
                   href={social?.facebook}
                   target="_blank"
                   rel="noopener">Facebook</a
@@ -172,7 +158,7 @@ const jsonSchema = nextEvent ? await musicEventSchema(nextEvent.slug) : {};
          <GridItem xs={12} md={6} lg={5}>
             <figure>
                <Picture
-                  src={darkCastleFestPoster}
+                  src={darkCastleFest2024Poster}
                   formats={["webp", "avif"]}
                   alt=`Dark Castle Festival ${currentYear} Poster`
                   fallbackFormat="jpg"
