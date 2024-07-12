@@ -8,6 +8,7 @@ import Icon from "../../components/Icon.astro";
 import CardPerformer from "../../components/CardPerformer.astro";
 import Grid from "../../components/Grid.astro";
 import GridItem from "../../components/GridItem.astro";
+import Schedule2024 from "../../components/Schedule2024.astro";
 
 const { currentYear, domain, siteName } = Astro.locals;
 
@@ -209,6 +210,8 @@ const jsonSchema = nextEvent ? await musicEventSchema(nextEvent.slug) : {};
          <p>
             The {currentYear} schedule will be posted here once it becomes available.
          </p>
+
+         <Schedule2024 />
       </section>
    </div>
 
