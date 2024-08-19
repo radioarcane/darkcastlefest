@@ -26,6 +26,7 @@ export const performerSchema = z.object({
     description: z.string(),
     seoDescription: z.optional(z.string().nullable()),
     ref: z.string().url().nullable(),
+    canceled: z.optional(z.boolean()).default(false),
   });
 
 export const locationSchema = z.object({
