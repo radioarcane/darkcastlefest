@@ -25,7 +25,7 @@ const location = nextEvent
       openGraph={{
          basic: {
             title: `Info & Tickets | Dark Castle Fest ${currentYear}`,
-            image: `${domain}/images/dark-castle-fest-2024-lineup.jpg`,
+            image: `${domain}/images/dark-castle-2025.jpg`,
             type: "website",
             url: `${domain}/info`,
          },
@@ -39,6 +39,22 @@ const location = nextEvent
    <article class="container box-gap">
       <section id="tickets" class="pb-sm">
          <h2 class="title">Tickets</h2>
+
+         <p>
+            Ticket information and line-up will be posted here once that becomes available.
+         </p>
+
+         <p>
+            Please follow us on <a
+               href={social?.facebook}
+               target="_blank"
+               rel="noopener">Facebook</a
+            > and <a href={social?.instagram} target="_blank" rel="noopener"
+               >Instagram</a
+            > for the latest updates.
+         </p>
+         
+         <!-- 
          <p>
             Dark Castle Fest {currentYear} tickets are available now.
          </p>
@@ -54,6 +70,7 @@ const location = nextEvent
             Two Days: $65<br />
             Single Day: $45
          </p>
+         -->
 
          {
             nextEvent?.data?.ticketsUrl && (

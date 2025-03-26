@@ -1,7 +1,7 @@
 import { defineMiddleware } from "astro/middleware";
 
 export const siteData = defineMiddleware(({locals}, next) => {
-    locals.currentYear = 2024;
+    locals.currentYear = 2025;
 
     locals.siteName = "Dark Castle Fest";
     locals.domain = "https://www.darkcastlefest.com";

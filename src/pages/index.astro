@@ -10,7 +10,7 @@ import Grid from "../components/Grid.astro";
 import GridItem from "../components/GridItem.astro";
 import HomepageBand from "../components/HomepageBand.astro";
 
-import darkCastleFest2024Poster from "../images/dark-castle-fest-2024-lineup.jpg";
+import darkCastleFest2025Poster from "../images/dark-castle-2025.jpg";
 
 const { currentYear, domain, siteName, social } = Astro.locals;
 
@@ -94,12 +94,12 @@ const jsonSchema = nextEvent ? await musicEventSchema(nextEvent.slug) : {};
 <Layout>
    <SEO
       slot="seo"
-      title="Dark Castle Fest 2024 - Louisville, KY"
-      description="Radio Arcane presents Dark Castle Fest. A Gothic Music & Dark Arts Festival featuring performances by Astari Nite, The Kentucky Vampires, and more."
+      title="Dark Castle Fest 2025 - Louisville, KY"
+      description="Radio Arcane presents Dark Castle Fest. A Gothic Music & Dark Arts Festival."
       openGraph={{
          basic: {
-            title: "Dark Castle Fest 2024 - Louisville, KY",
-            image: `${domain}/images/dark-castle-fest-2024-lineup.jpg`,
+            title: "Dark Castle Fest 2025 - Louisville, KY",
+            image: `${domain}/images/dark-castle-2025.jpg`,
             type: "website",
             url: domain,
          },
@@ -125,8 +125,8 @@ const jsonSchema = nextEvent ? await musicEventSchema(nextEvent.slug) : {};
             </h2>
 
             <p class="text-secondary">
-               <time datetime="2024-09-26">September 26</time> – <time
-                  datetime="2024-09-28">28th</time
+               <time datetime="2025-10-31">October 31</time> – <time
+                  datetime="2025-11-01">November 1st</time
                >, 2024<br />
                Louisville, Kentucky
             </p>
@@ -158,7 +158,7 @@ const jsonSchema = nextEvent ? await musicEventSchema(nextEvent.slug) : {};
          <GridItem xs={12} md={6} lg={5}>
             <figure>
                <Picture
-                  src={darkCastleFest2024Poster}
+                  src={darkCastleFest2025Poster}
                   formats={["webp", "avif"]}
                   alt=`Dark Castle Festival ${currentYear} Poster`
                   fallbackFormat="jpg"
@@ -171,7 +171,7 @@ const jsonSchema = nextEvent ? await musicEventSchema(nextEvent.slug) : {};
    </Container>
 
    <Container boxGap={true}>
-      <h3 class="title uppercase">{currentYear} Announcements!</h3>
+      <h3 class="title uppercase">2024 Announcements!</h3>
 
       {
          lastestActs.map((performer, i) => (
