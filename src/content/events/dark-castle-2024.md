@@ -1,9 +1,9 @@
 ---
 title: "Dark Castle Fest 2024"
 slug: "dark-castle-fest-2024"
-archive: false
+archive: true
 year: 2024
-image: "/images/dark-castle-2024.jpg"
+image: "/images/dark-castle-fest-2024-lineup.jpg"
 startDatetime: "2024-09-26T18:00:00Z"
 endDatetime: "2024-09-29T02:00:00Z"
 location: "art-sanctuary"
