@@ -28,7 +28,7 @@ Dark Castle Fest is overjoyed to announce “Ak’chamel - The Giver Of Illness�
 
 To be frank, we’re not entirely sure what to expect. They look incredible and once explored musically it was time to invite these cats to Louisville. Sounding as if Martin Denny made a desert pilgrimage on ayahuasca or some other wildly grown psychedelic. Looking like… I know our photographers will surely have a blast shooting these guys. For a better perspective on this it’s time to cut and paste a quote from better writers.
 
-“Few bands are as inscrutable as the mysterious Texas duo Ak’chamel. The pair are known for their countless cassettes, films, and full-length records (such as the publicly and critically acclaimed ‘The Totemist’), as well as for performing their ritualistic sounds in homespun costumes with self-made instruments.” 
-- leguesswho.com
+“Few bands are as inscrutable as the mysterious Texas duo Ak’chamel. The pair are known for their countless cassettes, films, and full-length records (such as the publicly and critically acclaimed ‘The Totemist’), as well as for performing their ritualistic sounds in homespun costumes with self-made instruments.”<br />
+– leguesswho.com
 
 Check out Ak’chamel on Bandcamp or wherever you choose to listen to music.
