@@ -19,8 +19,10 @@ links:
    official: "https://silverreinmusic.com"
 description: "Silver Rein is a body of solo musical work by Ithaca-based singer songwriter, Sarah Green. Looped electric cello is layered over deep resonant found object beats with powerful sweeping vocals woven throughout. Her work explores loneliness, isolation, death, and depression against the landscape of an old yet familiar world."
 seoDescription: "Prepare to be enchanted by the haunting melodies of Silver Rein at Dark Castle Fest 2024! Delight in the refreshing sound of live cello within a Gothic framework, reminiscent of Gothic Expressionism, Post Industrial, Neofolk, and Neoclassical traditions. This dark folk project, created by a talented composer, vocalist, and cellist, captures the essence of a bygone era, blending classical instruments with a minimalist palette."
-ref: null
+ref: "https://musicbrainz.org/artist/453efe2e-46c8-4480-b478-949a277641a9"
 ---
+
+Silver Rein at Dark Castle Fest: 
 
 We’re very excited to introduce this next confirmation because, quite honestly, it’s just refreshing to hear live cello in a Gothic framework right now.
 We know it's not the first or only dark project to utilize classical instruments but it is sweet to hear them done well to a minimalist palette like in decades past. This music actually feels within the traditions of Gothic Expressionism, Post Industrial, Neofolk and Neoclassical music and it’s not been over polished or sterilized for a more commercial appeal; praise the gods. It was wonderful to hear and an instant attraction.

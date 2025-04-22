@@ -10,7 +10,7 @@ import Grid from "../components/Grid.astro";
 import GridItem from "../components/GridItem.astro";
 import HomepageBand from "../components/HomepageBand.astro";
 
-import darkCastleFest2025Poster from "../images/dark-castle-2025.jpg";
+import darkCastleFest2025Poster from "../images/dark-castle-2025.png";
 
 const { currentYear, domain, siteName, social } = Astro.locals;
 
@@ -56,36 +56,8 @@ for (const { slug } of nextEventPerformances) {
 }
 
 const lastestActs: any[] = [
-   await getEntry("performers", "maciste-in-hell"),
-   // await getEntry("performers", "attrition"),
-   await getEntry("vendors", "the-gingerbread-hag"),
-   await getEntry("sponsors", "the-hive"),
-   await getEntry("sponsors", "third-house-communications"),
-   await getEntry("sponsors", "pale-moon-tattoo"),
-   await getEntry("sponsors", "aurora-gallery-and-boutique"),
-   await getEntry("performers", "ichabod-2024"),
-   await getEntry("performers", "mollys-midnight-villains"),
-   await getEntry("performers", "frenchy-and-the-punk"),
-   await getEntry("performers", "of-limestone-chlorophyl-and-bone"),
-   await getEntry("performers", "iris-marlowe"),
-   await getEntry("performers", "clubdrugs"),
-   await getEntry("performers", "sinister-senile-2024"),
-   await getEntry("performers", "dead-souls-gothic-lounge-2024"),
-   await getEntry("performers", "the-kentucky-vampires-2024"),
-   await getEntry("performers", "count-grozny-2024"),
-   await getEntry("performers", "blood-dance"),
-   await getEntry("performers", "dj-creepy-crawly"),
-   await getEntry("performers", "tokyo-teens"),
-   await getEntry("performers", "astari-nite-2024"),
-   await getEntry("performers", "the-dead-speak"),
-   await getEntry("performers", "saddle-of-southern-darkness"),
-   await getEntry("performers", "motuvius-rex-2024"),
-   await getEntry("performers", "silver-rein"),
-   await getEntry("performers", "the-neuro-farm-2024"),
-   await getEntry("performers", "bat-noise"),
-   await getEntry("performers", "sombre-arcane"),
-   await getEntry("performers", "ghost-painted-sky"),
-   await getEntry("performers", "attic-eyes"),
+   await getEntry("performers", "akchamel-the-giver-of-illness"),
+   await getEntry("performers", "silver-rein-2025"),
 ];
 
 const jsonSchema = nextEvent ? await musicEventSchema(nextEvent.slug) : {};
@@ -99,7 +71,7 @@ const jsonSchema = nextEvent ? await musicEventSchema(nextEvent.slug) : {};
       openGraph={{
          basic: {
             title: "Dark Castle Fest 2025 - Louisville, KY",
-            image: `${domain}/images/dark-castle-2025.jpg`,
+            image: `${domain}/images/dark-castle-2025.png`,
             type: "website",
             url: domain,
          },
@@ -127,7 +99,7 @@ const jsonSchema = nextEvent ? await musicEventSchema(nextEvent.slug) : {};
             <p class="text-secondary">
                <time datetime="2025-10-31">October 31</time> – <time
                   datetime="2025-11-01">November 1st</time
-               >, 2024<br />
+               >, 2025<br />
                Louisville, Kentucky
             </p>
 
@@ -171,7 +143,7 @@ const jsonSchema = nextEvent ? await musicEventSchema(nextEvent.slug) : {};
    </Container>
 
    <Container boxGap={true}>
-      <h3 class="title uppercase">2024 Announcements!</h3>
+      <h3 class="title uppercase">2025 Announcements!</h3>
 
       {
          lastestActs.map((performer, i) => (
