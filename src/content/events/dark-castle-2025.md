@@ -14,6 +14,7 @@ ticketDescription: "Full Event: $35, Single Day: $25"
 spotifyPlaylist: null
 bands:
    [
+      "dead-cool-2025",
       "akchamel-the-giver-of-illness",
       "silver-rein-2025",
    ]
