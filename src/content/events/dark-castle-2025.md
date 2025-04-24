@@ -15,6 +15,7 @@ spotifyPlaylist: null
 bands:
    [
       "dead-cool-2025",
+      "feyleux",
       "akchamel-the-giver-of-illness",
       "silver-rein-2025",
    ]
