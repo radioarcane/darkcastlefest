@@ -18,6 +18,7 @@ bands:
       "feyleux",
       "akchamel-the-giver-of-illness",
       "silver-rein-2025",
+      "pas-musique",
    ]
 djs:
    [
