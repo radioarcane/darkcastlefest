@@ -16,6 +16,7 @@ bands:
    [
       "dead-cool-2025",
       "feyleux",
+      "amulet",
       "akchamel-the-giver-of-illness",
       "silver-rein-2025",
       "pas-musique",
