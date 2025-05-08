@@ -20,6 +20,7 @@ bands:
       "akchamel-the-giver-of-illness",
       "silver-rein-2025",
       "pas-musique",
+      "sinister-senile-2025",
    ]
 djs:
    [
