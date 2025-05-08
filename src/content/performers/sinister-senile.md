@@ -14,6 +14,9 @@ genres:
 links:
    bandcamp: "https://sinistersenile.bandcamp.com"
    youtube: "https://www.youtube.com/@sinistersenile5138"
+   spotify: "https://open.spotify.com/artist/6u6uXaxNc1kqrz9WKAKUG3"
+   facebook: "https://www.facebook.com/p/Sinister-Senile-100064053244179"
+   instagram: "https://www.instagram.com/sinistersenile"
 description: "Sinister Senile is an evolving experimental project with a dark electro-accoustc edge."
 ref: null
 ---
