@@ -19,8 +19,11 @@ bands:
       "amulet",
       "akchamel-the-giver-of-illness",
       "silver-rein-2025",
+      "motuvius-rex-2025",
       "pas-musique",
+      "dark-mountain-orchid",
       "sinister-senile-2025",
+      "lord-overstreet",
    ]
 djs:
    [
