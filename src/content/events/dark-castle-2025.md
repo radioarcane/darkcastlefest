@@ -14,8 +14,10 @@ ticketDescription: "Full Event: $35, Single Day: $25"
 spotifyPlaylist: null
 bands:
    [
+      "the-kentucky-vampires-2025",
       "dead-cool-2025",
       "feyleux",
+      "witchhands",
       "amulet",
       "akchamel-the-giver-of-illness",
       "silver-rein-2025",
