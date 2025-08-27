@@ -10,7 +10,7 @@ import Grid from "../components/Grid.astro";
 import GridItem from "../components/GridItem.astro";
 import HomepageBand from "../components/HomepageBand.astro";
 
-import darkCastleFest2025Poster from "../images/dark-castle-2025.png";
+import darkCastleFest2025Poster from "../images/dark-castle-fest-2025-lineup.jpg";
 
 const { currentYear, domain, siteName, social } = Astro.locals;
 
@@ -81,7 +81,7 @@ const jsonSchema = nextEvent ? await musicEventSchema(nextEvent.slug) : {};
       openGraph={{
          basic: {
             title: "Dark Castle Fest 2025 - Louisville, KY",
-            image: `${domain}/images/dark-castle-2025.png`,
+            image: `${domain}/images/dark-castle-fest-2025.jpg`,
             type: "website",
             url: domain,
          },

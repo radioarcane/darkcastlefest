@@ -3,7 +3,7 @@ title: "Dark Castle Fest 2025"
 slug: "dark-castle-fest-2025"
 archive: false
 year: 2025
-image: "/images/dark-castle-2025.jpg"
+image: "/images/dark-castle-2025.png"
 startDatetime: "2025-10-31T18:30:00Z"
 endDatetime: "2025-11-02T02:00:00Z"
 location: "art-sanctuary"
