@@ -7,7 +7,7 @@ image: "/images/bands/feyleux.jpg"
 logo: null
 event: "dark-castle-fest-2025"
 location: "North Carolina"
-performanceDate: null
+performanceDate: "2025-11-01T22:30:00Z"
 genres:
    - Darkwave
    - Post-Punk

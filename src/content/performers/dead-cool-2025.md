@@ -7,7 +7,7 @@ image: "/images/bands/dead-cool-2025.jpg"
 logo: null
 event: "dark-castle-fest-2025"
 location: "Wilmington, North Carolina"
-performanceDate: null
+performanceDate: "2025-11-01T21:00:00Z"
 genres:
    - Darkwave
    - Post-Punk

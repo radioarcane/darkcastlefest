@@ -7,7 +7,7 @@ image: "/images/bands/sinister-senile-2025.jpg"
 logo: null
 event: "dark-castle-fest-2025"
 location: "Louisville, Kentucky"
-performanceDate: null
+performanceDate: "2025-11-01T19:00:00Z"
 genres:
    - Dark Ambient
    - Experimental

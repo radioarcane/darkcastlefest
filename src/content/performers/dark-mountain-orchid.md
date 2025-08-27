@@ -7,7 +7,7 @@ image: "/images/bands/dark-mountain-orchid.jpg"
 logo: null
 event: "dark-castle-fest-2025"
 location: "Knoxville, Tennessee"
-performanceDate: null
+performanceDate: "2025-11-01T19:45:00Z"
 genres:
    - Appalachian Folk
 links:

@@ -7,7 +7,7 @@ image: "/images/bands/pas-musique.jpg"
 logo: null
 event: "dark-castle-fest-2025"
 location: "Brooklyn, New York"
-performanceDate: null
+performanceDate: "2025-10-31T19:00:00Z"
 genres:
    - Ambient
    - Industrial
