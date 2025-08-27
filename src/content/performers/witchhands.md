@@ -7,7 +7,7 @@ image: "/images/bands/witchhands.jpg"
 logo: null
 event: "dark-castle-fest-2025"
 location: "Colorado Springs, Colorado"
-performanceDate: null
+performanceDate: "2025-10-31T21:45:00Z"
 genres:
    - Deathrock
    - Gothic Rock

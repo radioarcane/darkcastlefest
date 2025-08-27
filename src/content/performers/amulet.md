@@ -7,7 +7,7 @@ image: "/images/bands/amulet.jpg"
 logo: null
 event: "dark-castle-fest-2025"
 location: "Washington, D.C."
-performanceDate: null
+performanceDate: "2025-10-31T22:30:00Z"
 genres:
    - Electro Rock
    - Goth

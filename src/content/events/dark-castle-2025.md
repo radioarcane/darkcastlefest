@@ -15,17 +15,17 @@ spotifyPlaylist: null
 bands:
    [
       "the-kentucky-vampires-2025",
-      "dead-cool-2025",
-      "feyleux",
-      "witchhands",
-      "amulet",
-      "akchamel-the-giver-of-illness",
       "silver-rein-2025",
+      "feyleux",
+      "dead-cool-2025",
+      "amulet",
+      "witchhands",
       "motuvius-rex-2025",
+      "akchamel-the-giver-of-illness",
       "pas-musique",
       "dark-mountain-orchid",
-      "sinister-senile-2025",
       "lord-overstreet",
+      "sinister-senile-2025",
    ]
 djs:
    [

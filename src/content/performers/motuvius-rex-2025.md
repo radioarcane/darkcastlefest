@@ -7,7 +7,7 @@ image: "/images/bands/motuvius-rex-2025.jpg"
 logo: null
 event: "dark-castle-fest-2025"
 location: "Lousiville, Kentucky"
-performanceDate: null
+performanceDate: "2025-10-31T21:00:00Z"
 genres:
    - Dark Folk
    - Gothic Rock

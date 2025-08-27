@@ -7,7 +7,7 @@ image: "/images/bands/silver-rein.jpg"
 logo: null
 event: "dark-castle-fest-2024"
 location: "Ithaca, New York"
-performanceDate: null
+performanceDate: "2025-11-01T23:15:00Z"
 genres:
    - Dark Folk
 links:

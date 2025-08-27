@@ -7,7 +7,7 @@ image: "/images/bands/akchamel.jpg"
 logo: null
 event: "dark-castle-fest-2025"
 location: "Houston, Texas"
-performanceDate: null
+performanceDate: "2025-10-31T23:15:00Z"
 genres:
    - Dark Folk
    - Psychedelic

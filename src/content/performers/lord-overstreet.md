@@ -7,7 +7,7 @@ image: "/images/bands/lord-overstreet.jpg"
 logo: null
 event: "dark-castle-fest-2025"
 location: "Kentucky / Tennessee"
-performanceDate: null
+performanceDate: "2025-10-31T19:45:00Z"
 genres:
    - Blues
    - Psychedelic Rock

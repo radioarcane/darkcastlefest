@@ -8,7 +8,7 @@ import Icon from "../../components/Icon.astro";
 import CardPerformer from "../../components/CardPerformer.astro";
 import Grid from "../../components/Grid.astro";
 import GridItem from "../../components/GridItem.astro";
-import Schedule2024 from "../../components/Schedule2024.astro";
+import Schedule2025 from "../../components/Schedule2025.astro";
 
 const { currentYear, domain, siteName, social } = Astro.locals;
 
@@ -57,7 +57,7 @@ const jsonSchema = nextEvent ? await musicEventSchema(nextEvent.slug) : {};
    <SEO
       slot="seo"
       title=`${currentYear} Lineup | Dark Castle Fest 2025`
-      description="Dark Castle Fest 2025: Updates Coming Soon!"
+      description="Dark Castle Fest 2025 featuring The Kentucky Vampires, Dead Cool, Feyleux"
       openGraph={{
          basic: {
             title: `${currentYear} Lineup | Dark Castle Fest 2025`,
@@ -83,30 +83,12 @@ const jsonSchema = nextEvent ? await musicEventSchema(nextEvent.slug) : {};
 
          <Grid collapse={true} classes="pb-lg">
             <GridItem xs={12} md={8}>
-               <!-- 
                <p>
                   <strong>Ticket Options:</strong><br />
-                  Full Event: $85<br />
-                  Two Days: $65<br />
-                  Single Day: $45
+                  Full Event: $32<br />
+                  Single Day: $25
                </p>
-
-               -->
                
-               <p>
-                  Ticket information and line-up will be posted here once that becomes available.
-               </p>
-
-               <p>
-                  Please follow us on <a
-                     href={social?.facebook}
-                     target="_blank"
-                     rel="noopener">Facebook</a
-                  > and <a href={social?.instagram} target="_blank" rel="noopener"
-                     >Instagram</a
-                  > for the latest updates.
-               </p>
-
                {
                   nextEvent?.data?.ticketsUrl && (
                      <a
@@ -120,6 +102,16 @@ const jsonSchema = nextEvent ? await musicEventSchema(nextEvent.slug) : {};
                      </a>
                   )
                }
+
+               <p>
+                  Please follow us on <a
+                     href={social?.facebook}
+                     target="_blank"
+                     rel="noopener">Facebook</a
+                  > and <a href={social?.instagram} target="_blank" rel="noopener"
+                     >Instagram</a
+                  > for the latest updates.
+               </p>
 
             </GridItem>
             <GridItem xs={12} md={4}>
@@ -186,11 +178,9 @@ const jsonSchema = nextEvent ? await musicEventSchema(nextEvent.slug) : {};
       }
 
       <section id="schedule">
-         <h3 class="title">Schedule (EST)</h3>
+         <h3 class="title">2025 Schedule (EST)</h3>
 
-         <p>
-            The {currentYear} schedule will be posted here once it becomes available.
-         </p>
+         <Schedule2025 />
       </section>
    </div>
 
