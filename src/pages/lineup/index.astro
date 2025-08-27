@@ -18,9 +18,7 @@ const nextEventBands = nextEvent?.data.bands || [];
 const nextEventDjs = nextEvent?.data.djs || [];
 const nextEventPerformances = nextEvent?.data.performances || [];
 
-import lineupPoster20240926 from "../../images/dark-castle-fest-2024-09-26-lineup.jpg";
-import lineupPoster20240927 from "../../images/dark-castle-fest-2024-09-27-lineup.jpg";
-import lineupPoster20240928 from "../../images/dark-castle-fest-2024-09-28-lineup.jpg";
+import lineupPoster2025 from "../../images/dark-castle-fest-2025-lineup.jpg";
 
 let bands = [];
 let djs = [];
@@ -61,7 +59,7 @@ const jsonSchema = nextEvent ? await musicEventSchema(nextEvent.slug) : {};
       openGraph={{
          basic: {
             title: `${currentYear} Lineup | Dark Castle Fest 2025`,
-            image: `${domain}/images/dark-castle-2025.png`,
+            image: `${domain}/images/dark-castle-fest-2025.jpg`,
             type: "website",
             url: `${domain}/lineup`,
          },
@@ -180,6 +178,14 @@ const jsonSchema = nextEvent ? await musicEventSchema(nextEvent.slug) : {};
       <section id="schedule">
          <h3 class="title">2025 Schedule (EST)</h3>
 
+         <div class="line-up-img">
+            <Picture 
+               src={lineupPoster2025}
+               alt="Dark Castle Festival 2025 Lineup"
+               formats={["webp"]}
+            />
+         </div>
+
          <Schedule2025 />
       </section>
    </div>
@@ -190,3 +196,10 @@ const jsonSchema = nextEvent ? await musicEventSchema(nextEvent.slug) : {};
       set:html={JSON.stringify(jsonSchema)}
    />
 </Layout>
+
+<style>
+   .line-up-img {
+      max-width: 500px;
+      margin: 0 0 30px;
+   }
+</style>
